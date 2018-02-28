@@ -1,15 +1,94 @@
-# $how Me The Money
+# Dice Life
 
-# Kahu 2018 Cohort Group Project
+### A Project by James, Phuong, Guy, Edi and Hayden
 
-Meetings are expensive, but sometimes we forget how expensive they are and feel the need to talk for too long about topics that are unimportant for the meeting purpose.
 
-This is an app to display the costs of meetings, and track the costs of your meetings over time.
 
-The idea of the App is to be able to display the real-time cost of a meeting as it occurs.
-This cost is calculated based on the hourly wages of the meeting's attendees and the current duration of the meeting.
+# Information For The Team:
 
-The intended effect of this App is to make meeting attendees aware of how much this time is costing the business.
+
+### TODOs:
+A place for me to remember what to 
+* link to heroku
+* slack chat group
+* roster that shows when certain things are (code freeze, etc.)
+* fill in blank spaces on this readme
+
+
+## Tech Expectations:
+
+### Git Stuff:
+    Before each pull request, pull down from dev to assure that your local changes don't overwrite dev with an outdated dev.
+
+### Comment Your Code:
+    A brief description of what your code is doing.
+    If stuck, describe the problem in comments before handover.
+
+
+## People Expectations:
+
+### We WILL get stressed. This is a stressful time:
+ * Taking breaks is good for team morale.
+ * Be aware of people's triggers.
+ * Communication is key. Take 5 minutes to talk to someone, it will help to ensure that nothing snowballs.
+ * Clarity: If unclear about something, ask.
+
+ ### Conflict Resolution:
+ * already taken a break
+ * already had a chat with someone face to face
+ * talk to Project manager to initiate a conversation where a mediator is present.
+ * If needed, a full team meeting 
+ * A team bonding activity to clear the air.
+ * It is ok to take a break. Even a big break.
+
+
+### Hours:
+ * 9am Start
+ * 1pm Lunch (group lunch not mandatory)
+ * 5pm Summary meeting (go home if you want)
+ * weekends negotiable
+ * If you cannot make it at these times, let the team know.
+
+## Roles:
+    New roles assigned at start of day. Product Owner will be James for the entire 7 days. If someone wants to change roles before end of day, this can be discussed.
+
+### Project Manager:
+ Here are some expectations of this role:
+  * Facilitates meetings
+  * Not buried too deep in code.
+  * Looking out for the people in the team.
+  * Checking in on how different parts of the project are going.
+  * Summary meeting in afternoon: where are we now, what happened today?
+  * Morning meeting , what do we want to do today? Does everyone have something to do? What are our goals?
+  * Bolstering the team: doing overviews of what is going on, being vocal about problems.
+  * Resolutions for how to improve the next day.
+  * Doing a handover to the next PM to keep people up to speed.
+
+### GIT Person:
+ Here are some expectations of this role:
+ * Review Pull Requests
+ * Check for merge conflicts, if there are any, reject the pull request.
+ * Ensure people are rebasing before pull requests.
+
+ ### Product Owner:
+ Here are some expectations of this role:
+ * Communicate your ideas
+ * Final say on What The App IS
+ * It's ok to not know exactly
+ * People will ask you questions
+ * Saying yes or no to new features
+ * MVP
+ * User Stories
+ * Prioritising what needs to be done.
+
+### Dependency Manager:
+ Here are some expectations of this role:
+ * check with this person if you want to add a dependency
+ * if there is a dependency issue, talk to this person.
+
+
+
+# Information About The App:
 
 
 ## User Stories
@@ -17,19 +96,17 @@ The intended effect of this App is to make meeting attendees aware of how much t
 ### MVP
 
 As a user:
-  * I want to register for the App under my name, and state my hourly wage
-  * I want to start a new meeting, and add all the meeting members. (MVP: Add member names and wages manually)
-  * I want to start my created meeting, and see a ($) cost tracker display the current meeting cost every second
-  * I want to be able to save a meeting's cost, attendess, duration and date/time when it is finished for later viewing
-  * I want to be able to view previous meetings in date/time order, and see more information about a past meeting.
-  * I want to see a graph of meeting costs over time
+  * I want to see a list of what will happen if I roll a certain number.
+  * I want to be able to click on a button that will roll a dice, resulting in a number between 2 and 12.
+  * I want to see an outcome based on my roll that will tell me what to do with my Friday Night.
+  
 
 ### Stretch
-  * I want to be able to select existing users of the App as meeting attendees, so that our wages don't have to be shown / inputted manually. If a meeting attendee doesn't have an account, I want to be able to manually add them to the App.
-  * I want to set a Maximum Cost an Maximum Duration for my Meeting, and see colourised progress bar displaying both a these
-  * I want to be able to state my yearly salary rather than hourly rate as an option on register
-  * I want to be able to view all meetings that I am an attenee for, and I want information about my meetings to not be visible to all users of the app.
-  * I want to create a group of regular attendees for my meeting group to make setting up my meeting easier.
+  * I want to be able to pick a different category to roll for. One for meals, one for weekends, and one for a night out.
+  * I want to be able to create my own category and input different outcomes.
+  * I want to save and go back to some dice I previously made.
+  * I want to be able to see outcomes of my previous dice rolls.
+  * I want a guide so that I know how to use this app.
 
   ---
 
@@ -37,11 +114,11 @@ As a user:
   | name | purpose |
   | --- | --- |
   | Login | View for user to enter their login credentials |
-  | Register | View for user to sign up for the App |
-  | CreateMeeting | View for user to arrange meeting attendees and information before starting the timer |
-  | Meeting | View to display current meeting time, cost and other information while the meeting is in progress |
-  | History | Display a list of past meetings the user has attended with select preview information |
-  | PastMeeting | Display a single meeting from the history list, displaying more information and a list of attendees for the past meeting |
+  | Register | View for user to sign up for the app. |
+  | HowTo | View to explain to user how the app works. |
+  | AllDice | View where user selects which dice to roll (meal, friday night, or weekend) |
+  | SpecificDice | Displays a table of possible outcomes, and a back button, and a ROLL button. An animation of a rolling dice. |
+  | Result | Displays the result of the dice roll e.g. "You should go for a walk!" |
 
 
 ## Reducers (Client Side)
@@ -49,31 +126,30 @@ As a user:
   | name | purpose |
   | --- | --- |
   | auth | Store information regarding user logins, auth status and auth errors |
-  | currentMeeting | Track meeting progress such as current cost and current duration |
-  | meetings | store the list of meetings the user has attended in the past |
-  | users | store the list of users who can attend meetings |
+  | dice | Gets all the dice, maps the options to the dice. Each dice, map through the options and filter it to match the options. |
+  
   
  ## Actions
  
- ### meetings
+ ### dice
  
  | type | data | purpose | 
  | --- | --- | --- | 
- | RECEIVE_MEETINGS | meetings | retreive meetings from the db and store in redux | 
- | ADD_MEETING | meeting | Add a single meeting to the history after it is created | 
+ | 1 | ? | ? | 
+ | 2 | ? | ? | 
  
  ### users 
  | type | data | purpose |
  | --- | --- | --- |
- | RECEIVE_USERS | users | retreive the users from the server | 
+ | 1 | ? | ? | 
  
- ### currentMeeting 
+ ### options
   | type | data | purpose | 
 | --- | --- | --- | 
-| START_MEETING | attendees ([]), meeting_name | a meeting has started, set initial meeting state | 
-| END_MEETING | null | Set meeting in progress flag to false |  
-| TICK_ONE_SECOND | null | Increase running total by 1s worth of $ | 
-| RESET_MEETING | null | Revert to initial state | 
+| 1 | ? | ? | 
+| 2 | ? | ? |  
+| 3 | ? | ? | 
+| 4 | ? | ? | 
 
 
 
@@ -83,10 +159,8 @@ As a user:
 | --- | --- | --- | --- | --- |
 | Post | /api/auth/login | Yes | Log In a User | The Users JWT Token |
 | Post | /api/auth/register | Yes | Register a User | The Users JWT Token |
-| Get | /api/meetings | Yes | Get a Users Meeting Histroy | An Array of Meetings |
-| Post | /api/meetings | Yes | Save a completed meeting | The Meeting that has been saved in db read format |
-| Get | /api/meetings/:id/users | Yes | Get the attendees of a Meeting | An Array of User objects |
-| Get | /api/users | Yes | Get the users of the app | An Array of User Objects |
+| Get | /api/dice | Yes | ? | ? |
+
 
 ## DB (Server Side)
   There should be three tables for MVP
@@ -100,23 +174,24 @@ As a user:
   | last_name | String |
   | hash | text |
 
-### Meetings
+### Dice
   | Column Name | Data Type |
   | --- | --- |
-  | id | Integer |
-  | meeting_name | String |
-  | time | Timestamp |
-  | attendees | integer |
-  | cost | Decimal |
+  | dice_id | Integer(autoincrement) |
+  | dice_name | String |
+  | user_id | Integer |
+  
 
-### Attendees (Join Table M2M)
+### DiceOptions
 
   Many Users attend Many Meetings
 
  | Column Name | Data Type |
  | --- | --- |
- | user_id | Integer |
- | meeting_id | Integer |
+ | option_id | Integer(autoincrement) |
+ | name | String |
+  | diceID | Integer |
+   | Position | Integer |
 
  ---
  
@@ -139,9 +214,9 @@ knex seed:run
 
 ## Heroku!!!
 
-### Creating your app
+### Creating app
 
-Create your app with `heroku create [name]`
+Create app with `heroku create [name]`
 
 You can check that this was successful by running `heroku apps` to view a list of your apps
 
@@ -155,8 +230,6 @@ Check that pg has been added by running `heroku addons` to ensure the postgresql
 
 ### Deploying!
 
-I have created several npm scripts that will be useful for deploying your app to heroku easily.
-
 `npm run h:deploy` will push your local master branch to your heroku app
 
 `npm run h:migrate` will run your knex migrations on your deployed heroku app
@@ -168,3 +241,6 @@ If ever you need to rollback, you can also just use `npm run h:rollback`
 
 ### Ta-Da!
 Your app should be deployed!
+
+
+# Remember to have fun and take care of yourselves and each other! Go Team.
