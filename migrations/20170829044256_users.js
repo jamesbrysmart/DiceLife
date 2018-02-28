@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
     table.string('user_name')
     table.string('first_name')
     table.string('last_name')
-    table.decimal('hourly_wage')
     table.string('hash')
   })
 };
