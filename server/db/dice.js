@@ -4,8 +4,11 @@ const connection = require('knex')(config)
 
 function getDiceOptions (testDb) {
   const db = testDb || connection
-  return db('dice_options')
-  .join('dice_names', )
+  return db('dice_names')
+  .join('dice_options', 'dice_names.id', 'dice_options.dice_names_id') 
+  }  
 }
 
-//module.exports = connection
+module.exports = {
+  getDiceOptionss
+} 
