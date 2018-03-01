@@ -17,15 +17,15 @@ class Home extends React.Component {
     this.toggleHowTo = this.toggleHowTo.bind(this)
     }
  toggleHowTo() {
-     this.state = {
+     this.setState({
          showButtons: false, 
          showHowTo: false
-     }
+     })
  }
  handleButton() {
-     this.state = {
+     this.setState({
          showButtons: false
-     }
+     })
      return
  }
  render(){
