@@ -4,27 +4,14 @@ import OKButton from './OKButton'
 import Home from './Home'
 
 class HowTo extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            showButton: true
-        }
-    this.handleButton = this.handleButton.bind(this)
-    }
 
- handleButton() {
-     this.state = {
-         showButton: false
-     }
-     return
- }
  render(){
      return (
-       <div className= "buttons">
-         {this.state.showButton && <HomeButtons handleButton= {this.handleButton}/>} 
+       <div className= "HowTo">
+        <p> this is the how to page </p>
        </div>
      ) 
   }
 }
 
-module.exports = Home
+module.exports = HowTo

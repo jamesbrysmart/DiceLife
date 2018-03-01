@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import HomeButtons from './HomeButtons'
+import {connect} from 'react-redux'
+import HowTo from './HowTo'
 
 class Home extends React.Component {
     constructor() {
@@ -18,12 +20,24 @@ class Home extends React.Component {
      return
  }
  render(){
+    const {auth} = this.props
      return (
-       <div className= "buttons">
-         {this.state.showButtons && <HomeButtons handleButton= {this.handleButton}/>} 
-       </div>
+       <div className= "HomeBody">
+       {auth.isAuthenticated
+        ? [
+            <HowTo/>
+        ]
+        : [
+         <HomeButtons handleButton= {this.handleButton}/>
+        ]
+      }
+      </div>
      ) 
   }
 }
 
-module.exports = Home
+const mapStateToProps = ({auth}) => {
+    return {auth}
+  }
+
+  export default connect(mapStateToProps)(Home)
