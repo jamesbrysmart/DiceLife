@@ -1,8 +1,12 @@
 import React from 'react'
+<<<<<<< 2cf3b5e589c4c6cf0a00ddaebbbba3ab9f017bfa
 <<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
 import { connect } from 'react-redux'
 =======
 >>>>>>> preparing to rebase
+=======
+import { connect } from 'react-redux'
+>>>>>>> added working diceroll function and button'
 
 class Results extends React.component {
   
@@ -14,11 +18,15 @@ class Results extends React.component {
       </div>
       <div className = 'results'>
         {/* above not correct, placeholder */}
+<<<<<<< 2cf3b5e589c4c6cf0a00ddaebbbba3ab9f017bfa
 <<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
         Props to you for putting your life decisions at the whims of the dice!
 =======
         Props to you for putting your life decisions into the whims of the dice!
 >>>>>>> preparing to rebase
+=======
+        Props to you for putting your life decisions at the whims of the dice!
+>>>>>>> added working diceroll function and button'
 
         The dice has decided on the below outcome:
         <h3>{this.props.diceResult}</h3>
@@ -35,7 +43,10 @@ class Results extends React.component {
     </div>
   }
 }
+<<<<<<< 2cf3b5e589c4c6cf0a00ddaebbbba3ab9f017bfa
 <<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
+=======
+>>>>>>> added working diceroll function and button'
 
 function mapStateToProps (state){
 
@@ -45,6 +56,10 @@ function mapStateToProps (state){
   }
  }
  
+<<<<<<< 2cf3b5e589c4c6cf0a00ddaebbbba3ab9f017bfa
  export default connect(mapStateToProps)(Results)
 =======
 >>>>>>> preparing to rebase
+=======
+ export default connect(mapStateToProps)(Results)
+>>>>>>> added working diceroll function and button'
