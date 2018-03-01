@@ -30,8 +30,6 @@ class Nav extends React.Component {
           <div className="navbar-end">
             {auth.isAuthenticated
               ? [
-                <Link onClick={this.toggleBurger} className="navbar-item" to="/meeting">Start Meeting</Link>,
-                <Link onClick={this.toggleBurger} className="navbar-item" to="/history">Meeting History</Link>,
                 <a className="navbar-item" onClick={() => logout()}>Logout</a>
               ]
               : [
