@@ -6,7 +6,7 @@ function OKButton (props) {
   return (
     <div className= "OKButton">
     <div className= 'button'>
-    <Link to='/AllDice' onClick ={props.handleButton}> OK! </Link>
+    <Link to='/AllDice' onClick ={props.toggleHowTo}> OK! </Link>
     </div>
     </div>
   )
