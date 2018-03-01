@@ -9,8 +9,3 @@ function rollDice (){
 
   sum = diceOne + diceTwo
 }
-
-rollDice()
-console.log('dice 1: ', diceOne)
-console.log('dice 2: ', diceTwo)
-console.log('total: ', sum)
