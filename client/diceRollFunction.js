@@ -3,7 +3,7 @@ var diceTwo = null
 
 var sum = null
 
-function rollDice (){
+export function rollDice (diceOne, diceTwo){
   diceOne = (Math.floor(Math.random() * 6) + 1)
   diceTwo = (Math.floor(Math.random() * 6) + 1)
 
@@ -12,4 +12,4 @@ function rollDice (){
   return sum
 }
 
-module.exports = rollDice
+
