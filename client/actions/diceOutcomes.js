@@ -62,5 +62,7 @@ export function editDice (oldDice, newDice){
       .send(newDice)
       .then(res=>dispatch(editDiceOutcome(res.body)))
       .catch(err=> console.log({err}))
+      dispatch(getDiceOutcomes())
   }
+  
 }
