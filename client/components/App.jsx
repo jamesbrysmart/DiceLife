@@ -7,6 +7,8 @@ import Nav from './Nav'
 import Home from './Home'
 import Login from './Login'
 import HowTo from './HowTo'
+import SpecificDice from './SpecificDice'
+import AllDice from './AllDice'
 
 const App = ({auth}) => (
   <Router>
@@ -21,12 +23,17 @@ const App = ({auth}) => (
         </div>
       </div>
 
+      <Link to="/alldice">All Dice</Link>
+
+
       <div className=''>
         <Route path="/" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register} />
         <Route path="/howto" component={HowTo} />
         <Route path="/history" component={History} />
+        <Route path="/alldice" component={AllDice} />
+        <Route path="/alldice/:id" component={SpecificDice} />
       </div>
 
     </div>
