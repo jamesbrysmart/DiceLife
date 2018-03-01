@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from {'react-redux'}
+import {connect} from 'react-redux'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -57,6 +57,10 @@ class SpecificDice extends React.Component {
       </div>
     )
   }
+}
+
+const mapStateToProps = state => {
+  return state
 }
 
 export default connect(mapStateToProps)(SpecificDice)
