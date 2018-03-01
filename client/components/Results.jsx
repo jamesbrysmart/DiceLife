@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class Results extends React.component {
   
@@ -10,7 +11,7 @@ class Results extends React.component {
       </div>
       <div className = 'results'>
         {/* above not correct, placeholder */}
-        Props to you for putting your life decisions into the whims of the dice!
+        Props to you for putting your life decisions at the whims of the dice!
 
         The dice has decided on the below outcome:
         <h3>{this.props.diceResult}</h3>
@@ -27,3 +28,13 @@ class Results extends React.component {
     </div>
   }
 }
+
+function mapStateToProps (state){
+
+  return {
+    title: state.title,
+    attendees:state.attendees
+  }
+ }
+ 
+ export default connect(mapStateToProps)(Results)

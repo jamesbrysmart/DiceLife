@@ -1,19 +1,10 @@
 import React from 'react'
-import rollDice from '../diceRollFunction'
 
-class RollDiceButton (props) {
-  constructor
-
-  rollThedice(){
-    var diceOne = (Math.floor(Math.random() * 6) + 1)
-    var diceTwo = (Math.floor(Math.random() * 6) + 1)
-    var total = diceOne + diceTwo
-  }
-
+export default function RollDiceButton (props) {
   return (
-    <div>
-      <button onClick ={props.rollTheDice}>
+    <div className='button'>
+      <a onClick ={props.rollTheDice}>Roll The Dice</a>
     </div>
-
   )
 }
+
