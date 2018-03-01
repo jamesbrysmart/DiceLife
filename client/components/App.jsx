@@ -23,9 +23,6 @@ const App = ({auth}) => (
         </div>
       </div>
 
-      <Link to="/alldice">All Dice</Link>
-
-
       <div className=''>
         <Route path="/" component={Home}/>
         <Route path="/login" component={Login}/>
