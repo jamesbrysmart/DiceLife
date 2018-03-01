@@ -1,5 +1,5 @@
 const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
+const config = require('../../knexfile')[environment]
 const connection = require('knex')(config)
 
 function getDiceOptions (testDb) {
@@ -7,8 +7,8 @@ function getDiceOptions (testDb) {
   return db('dice_names')
   .join('dice_options', 'dice_names.id', 'dice_options.dice_names_id') 
   }  
-}
 
 module.exports = {
-  getDiceOptionss
+  getDiceOptions,
+  connection
 } 
