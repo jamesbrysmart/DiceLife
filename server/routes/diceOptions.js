@@ -2,12 +2,16 @@ const { decode } = require('../auth/token')
 const express = require('express')
 const router = express.Router()
 
-var fakeOptions = [
- {id: 1, diceOptions: 'go to hell', position: 3, diceNameId:1}
-]
+const db = require('../db/dice')
 
 router.get('/', decode, (req, res) => {
-  res.json(fakeOptions)
+  db.getDiceOptions() 
+    .then(dice => {
+      res.json({dice})
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE_ERROR: ' + err.message)
+    })
 })
 
 module.exports = router
