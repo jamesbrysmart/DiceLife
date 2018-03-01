@@ -1,5 +1,8 @@
 import React from 'react'
+<<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
 import { connect } from 'react-redux'
+=======
+>>>>>>> preparing to rebase
 
 class Results extends React.component {
   
@@ -11,7 +14,11 @@ class Results extends React.component {
       </div>
       <div className = 'results'>
         {/* above not correct, placeholder */}
+<<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
         Props to you for putting your life decisions at the whims of the dice!
+=======
+        Props to you for putting your life decisions into the whims of the dice!
+>>>>>>> preparing to rebase
 
         The dice has decided on the below outcome:
         <h3>{this.props.diceResult}</h3>
@@ -28,6 +35,7 @@ class Results extends React.component {
     </div>
   }
 }
+<<<<<<< f505c0da9806e51caae824acd6d7cf6afc75a936
 
 function mapStateToProps (state){
 
@@ -38,3 +46,5 @@ function mapStateToProps (state){
  }
  
  export default connect(mapStateToProps)(Results)
+=======
+>>>>>>> preparing to rebase
