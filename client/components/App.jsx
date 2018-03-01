@@ -7,6 +7,7 @@ import Nav from './Nav'
 import Meeting from './Meeting'
 import History from './History'
 import Home from './Home'
+import Login from './Login'
 
 const App = ({auth}) => (
   <Router>
@@ -23,6 +24,7 @@ const App = ({auth}) => (
 
       <div className=''>
         <Route path="/" component={Home}/>
+        <Route path="/login" component={Login}/>
         <Route path="/register" component={Register} />
         <Route path="/meeting" component={Meeting} />
         <Route path="/history" component={History} />
