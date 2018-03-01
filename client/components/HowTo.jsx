@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import OKButton from './OKButton'
 import Home from './Home'
 
 class HowTo extends React.Component {
@@ -8,7 +7,7 @@ class HowTo extends React.Component {
  render(){
      return (
        <div className= "HowTo">
-        <p> this is the how to page </p>
+        <p> Rule number 1: You must obey the will of the Dice </p>
        </div>
      ) 
   }
