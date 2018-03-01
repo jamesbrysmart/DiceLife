@@ -16,6 +16,9 @@
     "h:seed": "heroku run knex seed:run",
     "knex": "knex"
   },
+  "jest": {
+    "collectCoverage": true
+  },
   "ava": {
     "require": "babel-register",
     "babel": "inherit"
@@ -48,6 +51,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "express-jwt": "^5.3.0",
+    "jest": "^22.4.2",
     "jsdom": "^11.0.0",
     "jsonwebtoken": "^7.4.3",
     "jsx-loader": "^0.13.2",
