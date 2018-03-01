@@ -8,4 +8,8 @@ function rollDice (){
   diceTwo = (Math.floor(Math.random() * 6) + 1)
 
   sum = diceOne + diceTwo
+
+  return sum
 }
+
+module.exports = rollDice
