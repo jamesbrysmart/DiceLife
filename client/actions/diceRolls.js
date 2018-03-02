@@ -1,9 +1,7 @@
 
-function newDiceRoll (diceOne, diceTwo, sum) {
+export default function diceRolls (arr) {
   return {
     type:'NEW_DICE_ROLL',
-    diceOne,
-    diceTwo,
-    sum
+    arr
   }
 }
