@@ -29,8 +29,8 @@ const App = ({auth}) => (
         <Route path="/register" component={Register} />
         <Route path="/howto" component={HowTo} />
         <Route path="/history" component={History} />
-        <Route path="/alldice" component={AllDice} />
-        <Route path="/alldice/:id" component={SpecificDice} />
+        <Route exact path="/alldice" component={AllDice} />
+        <Route exact path="/alldice/:id" component={SpecificDice} />
       </div>
 
     </div>
