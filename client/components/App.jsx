@@ -10,6 +10,7 @@ import HowTo from './HowTo'
 import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
 import Results from './Results'
+import Header from './Header'
 
 const App = ({auth}) => (
   <Router>
@@ -18,7 +19,7 @@ const App = ({auth}) => (
       <div className="hero is-small is-dark">
         <div className="hero-body has-text-centered">
           <Link to='/' className="">
-            <h1 className="title is-1">Dice Life</h1>
+            <Header/>
           </Link>
           <Nav />
         </div>
@@ -32,6 +33,7 @@ const App = ({auth}) => (
         <Route path="/history" component={History} />
         <Route exact path="/alldice" component={AllDice} />
         <Route exact path="/alldice/:id" component={SpecificDice} />
+        <Route path="/results" component={Results}/>
       </div>
 
     </div>
