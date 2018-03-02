@@ -15,6 +15,7 @@ class SpecificDice extends React.Component {
     this.diceRoll =this.diceRoll.bind(this)
   }
 
+
   diceRoll() {
     return Math.floor(Math.random() * 6) + 1
   }
@@ -38,7 +39,6 @@ class SpecificDice extends React.Component {
     const diceOptions = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
     const specificDice = this.props.diceOutcomes.dice[diceId].dice_name
-    console.log(specificDice)
     return (
       <div>
         <h2>{specificDice}</h2>
