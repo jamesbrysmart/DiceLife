@@ -15,6 +15,7 @@ class SpecificDice extends React.Component {
     this.diceRoll =this.diceRoll.bind(this)
   }
 
+
   diceRoll() {
     return Math.floor(Math.random() * 6) + 1
   }
@@ -38,6 +39,7 @@ class SpecificDice extends React.Component {
 // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
+
     const diceNames = this.props.diceNames[diceId-1]['dice_name']
 
 // Filter the diceOutcomes by the specific dice name
