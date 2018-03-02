@@ -9,6 +9,11 @@ import Login from './Login'
 import HowTo from './HowTo'
 import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
+import Results from './Results'
+<<<<<<< HEAD
+import Header from './Header'
+=======
+>>>>>>> e690c893c7103957632c3de22acad774cc73bcfd
 
 const App = ({auth}) => (
   <Router>
@@ -17,7 +22,7 @@ const App = ({auth}) => (
       <div className="hero is-small is-dark">
         <div className="hero-body has-text-centered">
           <Link to='/' className="">
-            <h1 className="title is-1">Dice Life</h1>
+            <Header/>
           </Link>
           <Nav />
         </div>
@@ -29,8 +34,14 @@ const App = ({auth}) => (
         <Route path="/register" component={Register} />
         <Route path="/howto" component={HowTo} />
         <Route path="/history" component={History} />
+<<<<<<< HEAD
         <Route exact path="/alldice" component={AllDice} />
         <Route exact path="/alldice/:id" component={SpecificDice} />
+=======
+        <Route path="/alldice" component={AllDice} />
+        <Route path="/alldice/:id" component={SpecificDice} />
+>>>>>>> e690c893c7103957632c3de22acad774cc73bcfd
+        <Route path="/results" component={Results}/>
       </div>
 
     </div>
