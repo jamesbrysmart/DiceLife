@@ -35,16 +35,23 @@ class SpecificDice extends React.Component {
 
   }
   render() {
-    const diceOptions = this.props.diceOutcomes.dice
+// getting the name of the selected dice to filter options
+    const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
-    const specificDice = this.props.diceOutcomes.dice[diceId].dice_name
-    console.log(specificDice)
+    const diceNames = this.props.diceNames[diceId-1]['dice_name']
+
+// Filter the diceOutcomes by the specific dice name
+    const specificDiceOptions = diceOutcomes.filter((dice, i) => {
+      if (dice.dice_name == diceNames) {
+        return dice
+      }
+    })
     return (
       <div>
-        <h2>{specificDice}</h2>
+        <h2>{diceNames}</h2>
         <table>
           <tbody>
-            {diceOptions.map((dice, i) => {
+            {specificDiceOptions.map((dice, i) => {
               return <tr key={i}><td>{dice.dice_option}</td></tr>
             })}
           </tbody>
