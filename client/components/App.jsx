@@ -9,6 +9,7 @@ import Login from './Login'
 import HowTo from './HowTo'
 import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
+import tester from './tester'
 
 const App = ({auth}) => (
   <Router>
@@ -31,6 +32,7 @@ const App = ({auth}) => (
         <Route path="/history" component={History} />
         <Route path="/alldice" component={AllDice} />
         <Route path="/alldice/:id" component={SpecificDice} />
+        <Route path="/tester" component={tester}/>
       </div>
 
     </div>
