@@ -9,6 +9,7 @@ import Login from './Login'
 import HowTo from './HowTo'
 import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
+import tester from './tester'
 
 const App = ({auth}) => (
   <Router>

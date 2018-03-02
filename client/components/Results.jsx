@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 class Results extends React.component {
   
   render(){
+    return (
     <div>
       <div className = 'dice_images'>
         <img src = {`../public/images/dice${this.props.dice_1}`} /> 
@@ -26,6 +27,7 @@ class Results extends React.component {
         Say hello to your new, more exciting life...
       </div>
     </div>
+    )
   }
 }
 
