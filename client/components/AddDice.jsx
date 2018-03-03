@@ -10,11 +10,15 @@ class AddDice extends React.Component {
       dice_name: '',
       user_id: 1,
       dice_option_1: '',
+      position_1: 1,
       dice_option_2: '',
+      position_2: 2,
       dice_option_3: '',
+      position_3: 3,
       dice_option_4: '',
+      position_4: 4,
       dice_option_5: '',
-      dice_option_6: ''
+      position_5: 5
   }
   this.addDice=this.addDice.bind(this)
  }  
@@ -44,8 +48,6 @@ class AddDice extends React.Component {
           <input type='text' name='dice_option_4' onChange={(e) => this.handleChange(e)} />
           <br/>
           <input type='text' name='dice_option_5' onChange={(e) => this.handleChange(e)} />
-          <br/>
-          <input type='text' name='dice_option_6' onChange={(e) => this.handleChange(e)} />
           <br/>
           <button onClick={this.addDice}>Add dice</button>
       </div>
