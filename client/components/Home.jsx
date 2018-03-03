@@ -32,7 +32,10 @@ class Home extends React.Component {
     const {auth} = this.props
      return (
      <Router>
-       <div className= "HomeBody">
+        
+       <div id="homebuttons">
+       <p>Welcome to dicelife</p>
+       <br/><br/><br/>
        {auth.isAuthenticated 
         ? this.state.showHowTo && [
             <HowTo/>,
@@ -40,7 +43,9 @@ class Home extends React.Component {
         ]
         : <HomeButtons handleButton= {this.handleButton}/>
       }
-      </div>
+       
+     </div>
+     
       </Router>
      ) 
   }

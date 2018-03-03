@@ -10,7 +10,7 @@ class Resultsif7 extends React.component {
       </div>
        {/* above not correct, placeholder */}
       <div className = 'roll_again'>
-       You rolled a 7! Time to roll again!
+      <p> You rolled a 7! Time to roll again! </p>
         <RollDiceButton />
       </div>
     </div>

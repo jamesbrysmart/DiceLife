@@ -36,13 +36,28 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <h1>Dice Life</h1>
-        <p>Eat,</p>
-        <p>play,</p>
-        <p id="changingWord"></p>
+        
+<div className="indexTitles">
+<h1 className="title is-1 has-text-centered">
+    Dice Life
+</h1>
+<h2 className="subtitle is-3  has-text-centered">
+ Eat,play...<p id="changingWord"></p>
+ </h2>
+      </div>
       </div>
     )
   }
 }
 
 export default Header
+
+
+{/* <div class="indexTitles">
+<h1 class="title is-1 has-text-centered">
+    Dice Life
+</h1>
+<h2 class="subtitle is-3  has-text-centered">
+    Eat, Play,  <strong>... ?</strong>
+</h2>
+</div> */}

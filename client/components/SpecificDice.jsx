@@ -47,7 +47,7 @@ class SpecificDice extends React.Component {
         <table>
           <tbody>
             {specificDiceOptions.map((dice, i) => {
-              return <tr key={i}><td>{dice.dice_option}</td></tr>
+              return <tr key={i}><td><p>{dice.dice_option}</p></td></tr>
             })}
           </tbody>
         </table>
