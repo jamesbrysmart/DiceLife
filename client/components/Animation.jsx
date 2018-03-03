@@ -1,5 +1,5 @@
 import React from 'react'
-import Results from './Results'
+import ResultsParent from './ResultsParent'
 
 class Animation extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class Animation extends React.Component {
     return (
       <div>
         <h1>Animation</h1>
-        {this.state.showResults && <Results/>}
+        {this.state.showResults && <ResultsParent/>}
         <img id="animation" src="/images/loading.gif" alt="" />
       </div>
     )

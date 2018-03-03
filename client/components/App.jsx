@@ -12,6 +12,8 @@ import AllDice from './AllDice'
 import Results from './Results'
 import Header from './Header'
 import Animation from './Animation'
+import ResultsParent from './ResultsParent'
+
 
 const App = ({ auth }) => (
   <Router>
@@ -34,6 +36,7 @@ const App = ({ auth }) => (
           <Route exact path="/alldice/:id" component={SpecificDice} />
           <Route path="/results" component={Results} />
           <Route path="/animation" component={Animation} />
+          <Route path="/resultsparent" component={ResultsParent} />
         </div>
         </div>
       </section>
