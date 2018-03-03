@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
+import diceID from '../actions/diceID'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class SpecificDice extends React.Component {
 
 
   componentDidMount() {
-
+    this.props.dispatch(diceID(this.props.match.params.id))
   }
   render() {
 // getting the name of the selected dice to filter options

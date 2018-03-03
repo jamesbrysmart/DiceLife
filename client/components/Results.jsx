@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 class Results extends React.Component {
   render(){
+    console.log('from results: ', this.props.diceID)
+    //console.log(this.props.diceID)
     return (
     <div>
       <div className = 'dice_images'>
@@ -33,10 +35,10 @@ class Results extends React.Component {
 }
 
 function mapStateToProps (state){
-  console.log(state)
   return {
     dice:state.diceRolls,
-    names:state.diceNames
+    names:state.diceNames, 
+    diceID: state.diceID
   }
  }
  
