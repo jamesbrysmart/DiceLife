@@ -1,24 +1,78 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+
 class Results extends React.Component {
+constructor(){
+  super()
+  this.state = {
+    outcome: '',
+    CurrentActivity: ''
+  }
+}
+   MapSumToPosition(sum){
+    if (sum == 2 || sum ==  12) {
+      return 6
+    }
+    else if (sum == 3 || sum == 11) {
+    return 5
+    }
+    else if (sum == 4 || sum == 10) {
+    return 4
+    }  
+    else if (sum == 5 || sum == 9) {
+    return 3
+    }
+    else if (sum == 6 || sum == 8) {
+    return 2
+    }
+    else if (sum == 7) {
+    return 1
+    }    
+    }
+    componentDidMount(){
+      var diceSum = this.props.dice[2]
+      var ActivityID = this.props.diceID
+      var ActivityList = this.props.names
+      var CurrentActivityMock = ActivityList[ActivityID - 1].dice_name
+      var allOutcomes = this.props.outcomes.dice
+      var currentOutComes = allOutcomes.filter((outcome) => {
+        return outcome.dice_name == CurrentActivityMock
+      })
+
+      var OutCome = currentOutComes.filter((outcome) => {
+        return outcome.position == this.MapSumToPosition(diceSum)
+      })
+      console.log('OutComeMock: ', OutCome[0])
+      console.log('OutCome Option: ', OutCome[0].dice_option)
+      this.setState({
+        outcome: OutCome[0].dice_option,
+        CurrentActivity: CurrentActivityMock
+      })
+    }
   render(){
-    console.log('from results: ', this.props.diceID)
-    //console.log(this.props.diceID)
+    console.log('state: ', this.state.outcome)
     return (
     <div>
       <div className = 'dice_images'>
-        <img src = {`../public/images/dice${this.props.dice[0]}`} /> 
-        <img src = {`../public/images/dice${this.props.dice[1]}`} /> 
+        <img src = {`/images/dice${this.props.dice[0]}.png`} /> 
+        <img src = {`/images/dice${this.props.dice[1]}.png`} /> 
       </div>
       <div className = 'results'>
         {/* above not correct, placeholder */}
        <p> Props to you for putting your life decisions at the whims of the dice!
 
         The dice has decided on the below outcome:
+<<<<<<< HEAD
         </p>
         <h1 >{this.props.dice[2]}</h1>
         <h2><p>{this.props.diceOption}</p></h2>
+=======
+        <h3> Your {this.state.CurrentActivity} </h3>
+        <h3> {this.state.outcome} </h3>
+        <h3>{this.props.dice[2]}</h3>
+        <h2>{this.props.diceOption}</h2>
+>>>>>>> results from diceRoll showing MVP achieved
 
        <p> Remember, this only works if you obey the dice. 
         
@@ -38,7 +92,8 @@ function mapStateToProps (state){
   return {
     dice:state.diceRolls,
     names:state.diceNames, 
-    diceID: state.diceID
+    diceID: state.diceID, 
+    outcomes: state.diceOutcomes
   }
  }
  
