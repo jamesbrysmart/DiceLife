@@ -52,10 +52,10 @@ class SpecificDice extends React.Component {
 
               <tbody id="makewhite">
                 {/* this is for the headers of the table */}
-                <tr>
-                  <th>Number</th>
-                  <th>Chance</th>
-                  <th>What To Do:</th>
+                <tr id="makewhite">
+                  <th id="makewhite">Number</th>
+                  <th id="makewhite">Chance</th>
+                  <th id="makewhite">What To Do:</th>
                 </tr>
 
                 <tr><td>1</td><td>likely</td><td><p>Roll Again</p></td></tr>
