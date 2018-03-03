@@ -44,14 +44,21 @@ class SpecificDice extends React.Component {
     })
     return (
       <div>
-        <h2>{diceNames}</h2>
-        <table>
+        <h2 className="title is-4">{diceNames}</h2>
+        <div className="columns">
+        <span className="column is-3"></span>
+        <span className="column is-6">
+        <table className="table is-fullwidth" id="bgimg">
+
           <tbody>
             {specificDiceOptions.map((dice, i) => {
               return <tr key={i}><td><p>{dice.dice_option}</p></td></tr>
             })}
           </tbody>
         </table>
+        </span>
+        <span className="column is-3"></span>
+        </div>
         <RollDiceButton rollTheDice= {this.rollTheDice}/>
       </div>
     )
