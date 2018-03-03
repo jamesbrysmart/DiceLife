@@ -7,6 +7,9 @@ export default function RollDiceButton (props) {
     <div className='button is-danger'>
       <Link to='/results' onClick ={props.rollTheDice}>Roll The Dice</Link>
     </div>
+    <div className='button is-danger'>
+      <Link to='/allDice'> Back </Link>
+    </div>
     </div>
   )
 }
