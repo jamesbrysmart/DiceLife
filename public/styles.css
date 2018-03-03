@@ -1,6 +1,10 @@
-/* h1, h2, a, p {
+h1, h2, p, a {
     color: white;
-} */
+}
+
+#makewhite {
+    color:white;
+}
 
 #bgimg {
     background-color: #000000;
@@ -23,4 +27,8 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-light
 
 .hero-bod {
     height: 70vh;
+}
+
+#homebuttons {
+    height: 15vh;
 }
