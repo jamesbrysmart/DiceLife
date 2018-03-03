@@ -42,7 +42,7 @@ class Header extends React.Component {
     Dice Life
 </h1>
 <h2 className="subtitle is-3  has-text-centered">
- Eat,play...<p id="changingWord"></p>
+<p> Eat,play...<p id="changingWord"></p></p>
  </h2>
       </div>
       </div>
