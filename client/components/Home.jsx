@@ -6,6 +6,8 @@ import HowTo from './HowTo'
 import OKButton from './OKButton'
 import {HashRouter as Router} from 'react-router-dom'
 
+
+
 class Home extends React.Component {
     constructor(props) {
         super(props)

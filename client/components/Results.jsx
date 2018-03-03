@@ -43,15 +43,12 @@ constructor(){
       var OutCome = currentOutComes.filter((outcome) => {
         return outcome.position == this.MapSumToPosition(diceSum)
       })
-      console.log('OutComeMock: ', OutCome[0])
-      console.log('OutCome Option: ', OutCome[0].dice_option)
       this.setState({
         outcome: OutCome[0].dice_option,
         CurrentActivity: CurrentActivityMock
       })
     }
   render(){
-    console.log('state: ', this.state.outcome)
     return (
     <div>
       <div className = 'dice_images'>
