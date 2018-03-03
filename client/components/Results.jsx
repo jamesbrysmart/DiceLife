@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import {Link} from 'react-router-dom'
 
 class Results extends React.Component {
 constructor(){
@@ -75,6 +75,9 @@ constructor(){
 
         Say hello to your new, more exciting life... </p>
       </div>
+      <div className='button is-danger'>
+      <Link to='/allDice'> Back </Link>
+    </div>
     </div>
     )
   }
