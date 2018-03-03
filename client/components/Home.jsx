@@ -36,8 +36,8 @@ class Home extends React.Component {
      <Router>
         
        <div id="homebuttons">
-       <p>Welcome to dicelife</p>
-       <br/><br/><br/>
+       <p id="blurb">Welcome to dicelife</p>
+    
        {auth.isAuthenticated 
         ? this.state.showHowTo && [
             <HowTo/>,

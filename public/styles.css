@@ -32,3 +32,11 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-light
 #homebuttons {
     height: 15vh;
 }
+
+#makeblack {
+    color:black;
+}
+
+#blurb {
+    padding-bottom: 3em;
+}
