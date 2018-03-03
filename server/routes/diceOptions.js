@@ -15,7 +15,16 @@ router.get('/', decode, (req, res) => {
 })
 
 router.post('/', decode, (req, res) => {
-  res.json({"thePostRoute": "It is alive"})
+  db.addNewDice(req)
+  .then(diceId => {
+    db.addNewDiceOptions(diceId, req)
+    .then(optionId => {
+      res.json({optionId})
+    })
+  })
+  .catch(err => {
+    res.status(500).send('DATABASE_ERROR: ' + err.message)
+  })
 })
 
 module.exports = router
