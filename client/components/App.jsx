@@ -11,6 +11,7 @@ import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
 import Results from './Results'
 import Header from './Header'
+import AddDice from './AddDice'
 
 const App = ({ auth }) => (
   <Router>
@@ -26,6 +27,7 @@ const App = ({ auth }) => (
         <div className=''>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/addDice" component={AddDice} />
           <Route path="/register" component={Register} />
           <Route path="/howto" component={HowTo} />
           <Route path="/history" component={History} />
