@@ -11,6 +11,7 @@ import SpecificDice from './SpecificDice'
 import AllDice from './AllDice'
 import Results from './Results'
 import Header from './Header'
+import Animation from './Animation'
 
 const App = ({ auth }) => (
   <Router>
@@ -22,7 +23,7 @@ const App = ({ auth }) => (
             <Header />
           </Link>
           <Nav />
-        
+
         <div className=''>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
@@ -32,10 +33,11 @@ const App = ({ auth }) => (
           <Route exact path="/alldice" component={AllDice} />
           <Route exact path="/alldice/:id" component={SpecificDice} />
           <Route path="/results" component={Results} />
+          <Route path="/animation" component={Animation} />
         </div>
         </div>
       </section>
-      
+
     </div>
   </Router>
 )
