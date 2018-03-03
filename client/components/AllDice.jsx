@@ -16,13 +16,23 @@ class AllDice extends React.Component {
     const specificDice = this.props.diceNames
     return (
     <div>
-      <h2>Select a dice</h2>
+      <h2 className="title is-3">Select a dice</h2>
+      <div className="columns">
+      <span className="column is-3"></span>
       {specificDice.map((dice, i) => {
-        return <div key={i}>
+        return <div className="column" key={i}>
           <img src="/images/dice_placeholder.png" alt="Dice image"/>
-          <p><Link to={`/alldice/${dice.id}`}>{dice.dice_name}</Link></p>
+          <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>{dice.dice_name}</Link></p>
+         
+          {/* <div className="column" key="4">
+          <img src="/images/dice_placeholder.png" alt="Dice image"></img>
+          </div> */}
+         
         </div>
       })}
+      <span className="column is-3"></span>
+      
+      </div>
       <Link to="#">Create your own dice</Link>
     </div>
     )
