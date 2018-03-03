@@ -34,6 +34,7 @@ const App = ({ auth }) => (
           <Route exact path="/alldice" component={AllDice} />
           <Route exact path="/alldice/:id" component={SpecificDice} />
           <Route path="/results" component={Results} />
+          <Route path="/create" component={AddDice} />
         </div>
         </div>
       </section>
