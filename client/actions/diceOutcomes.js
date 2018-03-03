@@ -66,3 +66,9 @@ export function editDice (oldDice, newDice){
   }
   
 }
+
+export function getOptionsByDiceName(diceName) {
+  return (dispatch) => {
+    
+  }
+}

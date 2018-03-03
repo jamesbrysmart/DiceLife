@@ -1,16 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import RollDiceButton from './RollDiceButton'
-
+import diceRolls from '../actions/diceRolls'
+import diceID from '../actions/diceID'
 
 class SpecificDice extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      diceOne: 0,
-      diceTwo: 0,
-      diceTotal: 0
-    }
+
     this.rollTheDice = this.rollTheDice.bind(this)
     this.diceRoll =this.diceRoll.bind(this)
   }
@@ -24,16 +21,13 @@ class SpecificDice extends React.Component {
     var d1 = this.diceRoll()
     var d2 = this.diceRoll()
     var total = d1 + d2
-
-    this.setState({
-     diceOne:d1,
-     diceTwo: d2,
-     diceTotal: total
-    })
+    var arr = [d2, d1, total]
+    this.props.dispatch(diceRolls(arr))
   }
 
-  componentDidMount() {
 
+  componentDidMount() {
+    this.props.dispatch(diceID(this.props.match.params.id))
   }
   render() {
 // getting the name of the selected dice to filter options
@@ -54,7 +48,7 @@ class SpecificDice extends React.Component {
         <table>
           <tbody>
             {specificDiceOptions.map((dice, i) => {
-              return <tr key={i}><td>{dice.dice_option}</td></tr>
+              return <tr key={i}><td><p>{dice.dice_option}</p></td></tr>
             })}
           </tbody>
         </table>

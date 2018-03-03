@@ -10,8 +10,6 @@
 ### TODOs:
 A place for me to remember what to
 * link to heroku
-* slack chat group
-* roster that shows when certain things are (code freeze, etc.)
 * fill in blank spaces on this readme
 
 
@@ -113,6 +111,7 @@ As a user:
 ## Views (Client Side)
   | name | purpose |
   | --- | --- |
+  | Home | Brief description of the app, also has a login and register button. |
   | Login | View for user to enter their login credentials |
   | Register | View for user to sign up for the app. |
   | HowTo | View to explain to user how the app works. |
@@ -131,19 +130,21 @@ As a user:
 
  ## Actions
 
- ### dice
+ ### login
 
  | type | data | purpose |
  | --- | --- | --- |
- | 1 | ? | ? |
- | 2 | ? | ? |
+ | LOGIN_REQUEST | none | Requests info  about user |
+ | LOGIN_SUCCESS | user | Authenticates the user |
+ | LOGIN_FAILURE | message | displays an error message. |
 
- ### users
+ ### logout
  | type | data | purpose |
  | --- | --- | --- |
- | 1 | ? | ? |
+ | LOGOUT_REQUEST | none | sends the request to remove the user. |
+ | LOGOUT_SUCCESS | none | reverts the user to having no authentication (being logged out) |
 
- ### diceOptions
+ ### diceOutcomes
   | type | data | purpose |
 | --- | --- | --- |
 | REQUEST_DICE_OUTCOME | dice options and dice | Request all the dice names |
