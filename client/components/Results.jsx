@@ -59,20 +59,13 @@ constructor(){
         <img src = {`/images/dice${this.props.dice[1]}.png`} /> 
       </div>
       <div className = 'results'>
-        {/* above not correct, placeholder */}
-       <p> Props to you for putting your life decisions at the whims of the dice!
+       <p> Props to you for putting your life decisions at the whims of the dice! </p>
 
         The dice has decided on the below outcome:
-<<<<<<< HEAD
-        </p>
-        <h1 >{this.props.dice[2]}</h1>
-        <h2><p>{this.props.diceOption}</p></h2>
-=======
         <h3> Your {this.state.CurrentActivity} </h3>
         <h3> {this.state.outcome} </h3>
         <h3>{this.props.dice[2]}</h3>
         <h2>{this.props.diceOption}</h2>
->>>>>>> results from diceRoll showing MVP achieved
 
        <p> Remember, this only works if you obey the dice. 
         
@@ -80,8 +73,7 @@ constructor(){
 
         Does the above scare you? That's exactly the point. It's hard to push yourself out of your comfort zone. The dice help you do that. 
 
-        Say hello to your new, more exciting life...
-        </p>
+        Say hello to your new, more exciting life... </p>
       </div>
     </div>
     )
