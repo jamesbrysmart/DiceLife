@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Results from './Results'
 import ResultsIf7 from './Resultsif7'
 import {HashRouter as Router} from 'react-router-dom'
+import Header from './Header'
 
 
 class ResultsParent extends React.Component {
@@ -29,6 +30,7 @@ class ResultsParent extends React.Component {
         console.log(this.state.dice)
         console.log(this.props.dice[2])
         return (
+
         <Router>
             <div>
         {!this.state.dice && <Results/>}

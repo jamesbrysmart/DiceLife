@@ -16,9 +16,12 @@ class AllDice extends React.Component {
   render() {
     const specificDice = this.props.diceNames
     return (
+
+      <div>
+      <Header />
     <div className="alldice">
-    <Header />
-      <h2 className="title is-3">Select a dice</h2>
+  
+      <h2 className="title is-3" id="makewhite">Select a dice</h2>
       <div className="columns">
       <span className="column is-3"></span>
       {specificDice.map((dice, i) => {
@@ -36,6 +39,7 @@ class AllDice extends React.Component {
       
       </div>
       <Link to="#">Create your own dice</Link>
+    </div>
     </div>
     )
   }

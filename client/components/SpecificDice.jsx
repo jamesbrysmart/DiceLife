@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import diceID from '../actions/diceID'
+import Header from './Header'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -52,16 +53,25 @@ class SpecificDice extends React.Component {
     const option5 = specificDiceOptions[4].dice_option
     return (
       <div>
-        <h2>{diceNames}</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Result</th>
-              <th>Liklihood</th>
-              <th>Option</th>
+        <Header />
+       
+       
+
+
+
+        <h2 className="title is-4" id="makewhite">{diceNames}</h2>
+        <div className="columns">
+          <span className="column is-3"></span>
+          <span className="column is-6">
+          <table  className="table is-fullwidth"  id="bgimg">
+          <thead id="makewhite">
+            <tr id="makewhite">
+              <th id="makewhite">Result</th>
+              <th id="makewhite">Liklihood</th>
+              <th id="makewhite">Option</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="makewhite">
             <tr>
               <td>7</td>
               <td>Most Likely</td>
@@ -94,28 +104,6 @@ class SpecificDice extends React.Component {
             </tr>
           </tbody>
         </table>
-        <RollDiceButton rollTheDice= {this.rollTheDice}/>
-        <h2 className="title is-4">{diceNames}</h2>
-        <div className="columns">
-          <span className="column is-3"></span>
-          <span className="column is-6">
-            <table className="table is-fullwidth" id="bgimg">
-
-              <tbody id="makewhite">
-                {/* this is for the headers of the table */}
-                <tr id="makewhite">
-                  <th id="makewhite">Number</th>
-                  <th id="makewhite">Chance</th>
-                  <th id="makewhite">What To Do:</th>
-                </tr>
-
-                <tr><td>1</td><td>likely</td><td><p>Roll Again</p></td></tr>
-                {specificDiceOptions.map((dice, i) => {
-                  return <tr key={i}><td>1</td><td>likely</td><td><p>{dice.dice_option}</p></td>
-                  </tr>
-                })}
-              </tbody>
-            </table>
           </span>
           <span className="column is-3"></span>
         </div>
@@ -133,3 +121,7 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(SpecificDice)
+
+
+
+

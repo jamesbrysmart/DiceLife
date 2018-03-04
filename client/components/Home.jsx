@@ -5,7 +5,8 @@ import {connect} from 'react-redux'
 import HowTo from './HowTo'
 import {HashRouter as Router} from 'react-router-dom'
 import {getUsers} from '../actions/users'
-import Header from './Header.jsx'
+import Nav from './Nav.jsx'
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -44,7 +45,7 @@ componentDidMount() {
         <div className="hero-body">
             <div className="container">
             <h1 className="title">
-            <Header />
+           <Nav />
             </h1>
            
          <div className="homeview">

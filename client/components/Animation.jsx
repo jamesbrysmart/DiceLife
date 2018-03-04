@@ -1,5 +1,6 @@
 import React from 'react'
 import ResultsParent from './ResultsParent'
+import Header from './Header'
 
 class Animation extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Animation extends React.Component {
   render() {
     return (
       <div>
-        <h1>Animation</h1>
+        <Header />
         {this.state.showResults && <ResultsParent/>}
         <img id="animation" src="/images/loading.gif" alt="" />
       </div>
