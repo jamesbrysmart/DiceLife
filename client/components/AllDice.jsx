@@ -19,8 +19,7 @@ class AllDice extends React.Component {
       <h2>Select a dice</h2>
       {specificDice.map((dice, i) => {
         return <div key={i}>
-          <img src="/images/dice_placeholder.png" alt="Dice image"/>
-          <p><Link to={`/alldice/${dice.id}`}>{dice.dice_name}</Link></p>
+          <p><Link to={`/alldice/${dice.id}`}>{<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>
         </div>
       })}
       <Link to="#">Create your own dice</Link>
