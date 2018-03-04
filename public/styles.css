@@ -7,10 +7,7 @@ h1, h2, p, a {
 }
 
 #bgimg {
-    background-color: #000000;
-background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-/* height: 100v */
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+ background-color: #393939;
 }
 
 .indexHero {
@@ -32,3 +29,4 @@ background-image: url("https://www.transparenttextures.com/patterns/asfalt-light
 #homebuttons {
     height: 15vh;
 }
+
