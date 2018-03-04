@@ -31,6 +31,12 @@ function addNewDiceOptions(result, data, testDb) {
             {'dice_option': data.body.dice_option_6,'position': data.body.position_6, 'dice_names_id': result[0]}])
 }
 
+function updateDice(data, testDb) {
+  const db = testDb || connection
+  return db('dice_options')
+  .where('dice_names_id', data.id)
+}
+
 function getUsers (testDb) {
   const db = testDb || connection
   return db('users')
@@ -43,5 +49,6 @@ module.exports = {
   addNewDice,
   addNewDiceOptions,
   connection,
+  updateDice,
   getUsers
 }
