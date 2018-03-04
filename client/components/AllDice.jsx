@@ -26,12 +26,8 @@ class AllDice extends React.Component {
       <span className="column is-3"></span>
       {specificDice.map((dice, i) => {
         return <div className="column" key={i}>
-          <img src="/images/dice_placeholder.png" alt="Dice image"/>
-          <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>{dice.dice_name}</Link></p>
-         
-          {/* <div className="column" key="4">
-          <img src="/images/dice_placeholder.png" alt="Dice image"></img>
-          </div> */}
+          <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>
+          {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>
          
         </div>
       })}
