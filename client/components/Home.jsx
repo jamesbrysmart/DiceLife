@@ -3,10 +3,7 @@ import {Link} from 'react-router-dom'
 import HomeButtons from './HomeButtons'
 import {connect} from 'react-redux'
 import HowTo from './HowTo'
-import OKButton from './OKButton'
 import {HashRouter as Router} from 'react-router-dom'
-
-
 
 class Home extends React.Component {
     constructor(props) {
@@ -40,8 +37,7 @@ class Home extends React.Component {
        <br/><br/><br/>
        {auth.isAuthenticated 
         ? this.state.showHowTo && [
-            <HowTo/>,
-            <OKButton toggleHowTo = {this.toggleHowTo}/>
+            <HowTo toggleHowTo = {this.toggleHowTo}/>,
         ]
         : <HomeButtons handleButton= {this.handleButton}/>
       }
