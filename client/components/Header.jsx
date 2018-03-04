@@ -36,13 +36,13 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        
+
 <div className="indexTitles">
 <h1 className="title is-1 has-text-centered">
     Dice Life
 </h1>
 <h2 className="subtitle is-3  has-text-centered">
- Eat,play...<p id="changingWord"></p>
+<p> Eat,play...<p id="changingWord">Karaoke</p></p>
  </h2>
       </div>
       </div>
