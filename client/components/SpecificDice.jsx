@@ -1,15 +1,16 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import diceID from '../actions/diceID'
+import Header from './Header'
 
 class SpecificDice extends React.Component {
   constructor(props) {
     super(props)
 
     this.rollTheDice = this.rollTheDice.bind(this)
-    this.diceRoll =this.diceRoll.bind(this)
+    this.diceRoll = this.diceRoll.bind(this)
   }
 
 
@@ -17,7 +18,7 @@ class SpecificDice extends React.Component {
     return Math.floor(Math.random() * 6) + 1
   }
 
-  rollTheDice(){
+  rollTheDice() {
     var d1 = this.diceRoll()
     var d2 = this.diceRoll()
     var total = d1 + d2
@@ -35,6 +36,7 @@ class SpecificDice extends React.Component {
     const diceId = this.props.match.params.id
     const diceNames = this.props.diceNames[diceId-1]['dice_name']
 
+
     // Filter the diceOutcomes by the specific dice name
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
     if (dice.dice_name == diceNames) {
@@ -51,16 +53,25 @@ class SpecificDice extends React.Component {
     const option5 = specificDiceOptions[4].dice_option
     return (
       <div>
-        <h2>{diceNames}</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Result</th>
-              <th>Liklihood</th>
-              <th>Option</th>
+        <Header />
+       
+       
+
+
+
+        <h2 className="title is-4" id="makewhite">{diceNames}</h2>
+        <div className="columns">
+          <span className="column is-3"></span>
+          <span className="column is-6">
+          <table  className="table is-fullwidth"  id="bgimg">
+          <thead id="makewhite">
+            <tr id="makewhite">
+              <th id="makewhite">Result</th>
+              <th id="makewhite">Liklihood</th>
+              <th id="makewhite">Option</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="makewhite">
             <tr>
               <td>7</td>
               <td>Most Likely</td>
@@ -93,7 +104,10 @@ class SpecificDice extends React.Component {
             </tr>
           </tbody>
         </table>
-        <RollDiceButton rollTheDice= {this.rollTheDice}/>
+          </span>
+          <span className="column is-3"></span>
+        </div>
+        <RollDiceButton rollTheDice={this.rollTheDice} />
       </div>
     )
   }
@@ -107,3 +121,7 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(SpecificDice)
+
+
+
+

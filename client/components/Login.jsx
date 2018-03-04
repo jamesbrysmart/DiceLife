@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {loginUser, loginError} from '../actions/login'
+import Header from "./Header.jsx"
 
 class Login extends React.Component {
   constructor(props) {
@@ -26,7 +27,16 @@ class Login extends React.Component {
   render() {
     const {auth} = this.props
     return (
-      <form className="form box" id="bgimg"  onSubmit={this.submit}>
+      <div>
+       
+
+
+
+
+       <section className="hero is-dark is-fullheight" id="heroimg">
+       <div className="hero-body">
+       <div className="container">
+      <form className="form "   onSubmit={this.submit}>
         <h1 className="title is-2" id="makewhite">Login</h1>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
@@ -38,6 +48,16 @@ class Login extends React.Component {
         </label>
         <input className="button is-large is-fullwidth is-success" value='Login' type="submit" />
       </form>
+      </div>
+      </div>
+      </section>
+
+
+
+
+
+      
+      </div>
     )
   }
 }

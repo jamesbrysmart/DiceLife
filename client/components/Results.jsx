@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
+import Header from './Header'
 
 class Results extends React.Component {
 constructor(){
@@ -50,27 +51,53 @@ constructor(){
     }
   render(){
     return (
-    <div>
+    <div className="resultview">
+    <div className="columns">
+    <span className="column is-3"></span>
+    <div className="box column is-6" id="bgimg">
       <div className = 'dice_images'>
         <img src = {`/images/dice${this.props.dice[0]}.png`} /> 
         <img src = {`/images/dice${this.props.dice[1]}.png`} /> 
       </div>
+      </div>
+      <span className="column is-3"></span>
+      </div>
       <div className = 'results'>
-       <p> Props to you for putting your life decisions at the whims of the dice! </p>
+       {/* <p> Props to you for putting your life decisions at the whims of the dice! </p> */}
+       <div className="columns">
+       <span className="column is-3"></span>
+<div className="box column is-6">
+      <div className="columns">
+      <div className="column is-4">
+      <p id="makeblack">  The dice has decided on the below outcome:</p>
+      <h3  className="title is-3" id="makeblack">{this.props.dice[2]}</h3>
+      </div>
+      <div className="column is-8">
+        <h3  id="makeblack"> Your {this.state.CurrentActivity} </h3>
+        <h3 className="title is-3" id="makeblack"> {this.state.outcome} </h3>
+        
+        <h2  id="makeblack">{this.props.diceOption}</h2>
+        </div>
+        </div>
+       
+</div>
+<span className="column is-3"></span> 
+</div>
 
-        The dice has decided on the below outcome:
-        <h3> Your {this.state.CurrentActivity} </h3>
-        <h3> {this.state.outcome} </h3>
-        <h3>{this.props.dice[2]}</h3>
-        <h2>{this.props.diceOption}</h2>
 
-       <p> Remember, this only works if you obey the dice. 
+<div className="columns">
+<span className="column is-3"></span>
+<div className="box column is-6" id="bgimg">
+       <p > Remember, this only works if you obey the dice. 
         
         Does the above seem too easy? If so, oh well. Next time the dice may not be so forgiving... Still. did you feel the adrenaline rush as the dice rolled? That's life when you live by the dice (if not, maybe you need to be more ambitious with your potential plans).
 
         Does the above scare you? That's exactly the point. It's hard to push yourself out of your comfort zone. The dice help you do that. 
 
         Say hello to your new, more exciting life... </p>
+</div>
+        <span className="column is-3"></span>
+      </div>
       </div>
       <div className='button is-danger'>
       <Link to='/allDice'> Back </Link>
