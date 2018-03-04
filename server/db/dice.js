@@ -31,10 +31,17 @@ function addNewDiceOptions(result, data, testDb) {
             {'dice_option': data.body.dice_option_6,'position': data.body.position_6, 'dice_names_id': result[0]}])
 }
 
+function getUsers (testDb) {
+  const db = testDb || connection
+  return db('users')
+    .select()
+}
+
 module.exports = {
   getDiceOptions,
   getDiceNames,
   addNewDice,
   addNewDiceOptions,
-  connection
+  connection,
+  getUsers
 }

@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import HowTo from './HowTo'
 import OKButton from './OKButton'
 import {HashRouter as Router} from 'react-router-dom'
+import {getUsers} from '../actions/users'
 
 class Home extends React.Component {
     constructor(props) {
@@ -28,6 +29,11 @@ class Home extends React.Component {
      })
      return
  }
+
+componentDidMount() {
+    this.props.dispatch(getUsers())
+}
+
  render(){
     const {auth} = this.props
      return (
