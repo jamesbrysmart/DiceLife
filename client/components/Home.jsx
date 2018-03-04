@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import HowTo from './HowTo'
 import {HashRouter as Router} from 'react-router-dom'
 import {getUsers} from '../actions/users'
+import Header from './Header.jsx'
 
 class Home extends React.Component {
     constructor(props) {
@@ -38,16 +39,39 @@ componentDidMount() {
      return (
      <Router>
         
-       <div id="homebuttons">
-       <p>Welcome to dicelife</p>
-       <br/><br/><br/>
+       <div id="home">
+       <section className="hero is-dark is-fullheight">
+        <div className="hero-body">
+            <div className="container">
+            <h1 className="title">
+            <Header />
+            </h1>
+           
        {auth.isAuthenticated 
         ? this.state.showHowTo && [
             <HowTo toggleHowTo = {this.toggleHowTo}/>,
         ]
         : <HomeButtons handleButton= {this.handleButton}/>
       }
-       
+            </div>
+        </div>
+        
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      </div>
      
       </Router>

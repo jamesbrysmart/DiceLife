@@ -19,15 +19,10 @@ import ResultsParent from './ResultsParent'
 const App = ({ auth }) => (
   <Router>
     <div className="has-text-centered">
-
-      <section className="hero is-danger is-fullheight indexHero" id="bgimg">
-        <div className="hero-head">
           <Link to='/howTo' className="">
-            <Header />
+            
           </Link>
-          <Nav />
-
-        <div className=''>
+          
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/addDice" component={AddDice} />
@@ -40,10 +35,6 @@ const App = ({ auth }) => (
           <Route path="/create" component={AddDice} />
           <Route path="/animation" component={Animation} />
           <Route path="/resultsparent" component={ResultsParent} />
-        </div>
-        </div>
-      </section>
-
     </div>
   </Router>
 )
