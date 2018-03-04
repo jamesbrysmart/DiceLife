@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('dice_options').insert([
-        {id: 1, dice_option: 'Roll again', position: 1, dice_names_id: 1},
+        {id: 1, dice_option: 'Go Dancing', position: 1, dice_names_id: 1},
         {id: 2, dice_option: 'Watch a movie', position: 2, dice_names_id: 1},
         {id: 3, dice_option: 'Go out for dinner', position: 3, dice_names_id: 1},
         {id: 4, dice_option: 'Call your parents and tell them you love them', position: 4, dice_names_id: 1},
