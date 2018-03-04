@@ -31,7 +31,9 @@ class AddDice extends React.Component {
 
   findUserId() {
     let activeUser = this.props.state.auth.user.user_name
+    console.log(activeUser)
     let usersArray = this.props.state.users.users
+    console.log(usersArray)
     let currentUser = usersArray.find(user => user.user_name == activeUser)
     this.setState({user_id: currentUser.id})
   }
