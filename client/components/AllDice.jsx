@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getDiceOutcomes} from '../actions/diceOutcomes'
 import {getDiceNames} from '../actions/diceNames'
+import Header from './Header'
 
 class AllDice extends React.Component {
   constructor(props){
@@ -15,7 +16,8 @@ class AllDice extends React.Component {
   render() {
     const specificDice = this.props.diceNames
     return (
-    <div>
+    <div className="alldice">
+    <Header />
       <h2 className="title is-3">Select a dice</h2>
       <div className="columns">
       <span className="column is-3"></span>

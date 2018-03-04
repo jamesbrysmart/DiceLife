@@ -40,7 +40,7 @@ componentDidMount() {
      <Router>
         
        <div id="home">
-       <section className="hero is-dark is-fullheight">
+       <section className="hero is-dark is-fullheight" id="heroimg"> 
         <div className="hero-body">
             <div className="container">
             <h1 className="title">
@@ -52,21 +52,18 @@ componentDidMount() {
         <div className="columns">
        
        <span className="column is-3"> </span>
-       <p id="blurb">Welcome to dice life! This is an app based off of the book Dice Man where someone decides to spice up their life by letting a dice make some of their decisions.
-        </p>
+       
        
          <span className="column is-3"> </span>
     </div>
     </div>
 
-    <div className="img">
-    <img src ="./images/dice3.png"/> 
-    </div>
+   
 
     <div className="columns">
     <span className="column is-3"> </span>
-    <p className="column is-6 is-fullwidth"id="blurb">Are you brave enough to challenge yourself to this fun game of luck?
-        </p>
+  
+       
        
     </div>
   

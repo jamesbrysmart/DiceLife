@@ -10,6 +10,17 @@ h1, h2, p, a {
  background-color: #393939;
 }
 
+#heroimg {
+    
+    background-image: url("./images/sihouette.svg") ;
+    background-color: #393939;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+   /* width: 150% !important;  */
+}
+   
+
 .indexHero {
     height: 100vh;
 }
