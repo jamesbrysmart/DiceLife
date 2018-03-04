@@ -49,7 +49,6 @@ class SpecificDice extends React.Component {
     const option3 = specificDiceOptions[2].dice_option
     const option4 = specificDiceOptions[3].dice_option
     const option5 = specificDiceOptions[4].dice_option
-    const option6 = specificDiceOptions[5].dice_option
     return (
       <div>
         <h2>{diceNames}</h2>
@@ -65,32 +64,32 @@ class SpecificDice extends React.Component {
             <tr>
               <td>7</td>
               <td>Most Likely</td>
-              <td>{option1}</td>
+              <td>Roll Again</td>
             </tr>
             <tr>
               <td>6 or 8</td>
               <td>Likely</td>
-              <td>{option2}</td>
+              <td>{option1}</td>
             </tr>
             <tr>
               <td>5 or 9</td>
               <td>Probable</td>
-              <td>{option3}</td>
+              <td>{option2}</td>
             </tr>
             <tr>
               <td>4 or 10</td>
               <td>Possible</td>
-              <td>{option4}</td>
+              <td>{option3}</td>
             </tr>
             <tr>
               <td>3 or 11</td>
               <td>Unlikely</td>
-              <td>{option5}</td>
+              <td>{option4}</td>
             </tr>
             <tr>
               <td>2 or 12</td>
               <td>Rare...but not impossible</td>
-              <td>{option6}</td>
+              <td>{option5}</td>
             </tr>
           </tbody>
         </table>
