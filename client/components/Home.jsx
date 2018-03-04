@@ -47,6 +47,29 @@ componentDidMount() {
             <Header />
             </h1>
            
+         <div className="homeview">
+         <div id="homebuttons">
+        <div className="columns">
+       
+       <span className="column is-3"> </span>
+       <p id="blurb">Welcome to dice life! This is an app based off of the book Dice Man where someone decides to spice up their life by letting a dice make some of their decisions.
+        </p>
+       
+         <span className="column is-3"> </span>
+    </div>
+    </div>
+
+    <div className="img">
+    <img src ="./images/dice3.png"/> 
+    </div>
+
+    <div className="columns">
+    <span className="column is-3"> </span>
+    <p className="column is-6 is-fullwidth"id="blurb">Are you brave enough to challenge yourself to this fun game of luck?
+        </p>
+       
+    </div>
+  
        {auth.isAuthenticated 
         ? this.state.showHowTo && [
             <HowTo toggleHowTo = {this.toggleHowTo}/>,
@@ -55,7 +78,7 @@ componentDidMount() {
       }
             </div>
         </div>
-        
+        </div>
         </section>
 
 

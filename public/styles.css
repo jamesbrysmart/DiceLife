@@ -30,3 +30,14 @@ h1, h2, p, a {
     height: 15vh;
 }
 
+#makeblack {
+    color:black;
+}
+
+#blurb {
+    padding-bottom: 3em;
+}
+
+#alldicepadding {
+    padding-bottom: 3em;
+}

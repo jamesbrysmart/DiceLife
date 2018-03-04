@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import diceID from '../actions/diceID'
@@ -9,7 +9,7 @@ class SpecificDice extends React.Component {
     super(props)
 
     this.rollTheDice = this.rollTheDice.bind(this)
-    this.diceRoll =this.diceRoll.bind(this)
+    this.diceRoll = this.diceRoll.bind(this)
   }
 
 
@@ -17,7 +17,7 @@ class SpecificDice extends React.Component {
     return Math.floor(Math.random() * 6) + 1
   }
 
-  rollTheDice(){
+  rollTheDice() {
     var d1 = this.diceRoll()
     var d2 = this.diceRoll()
     var total = d1 + d2
@@ -34,6 +34,8 @@ class SpecificDice extends React.Component {
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
     const diceNames = this.props.diceNames[diceId-1]['dice_name']
+
+    const diceNames = this.props.diceNames[diceId - 1]['dice_name']
 
     // Filter the diceOutcomes by the specific dice name
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
@@ -95,6 +97,31 @@ class SpecificDice extends React.Component {
           </tbody>
         </table>
         <RollDiceButton rollTheDice= {this.rollTheDice}/>
+        <h2 className="title is-4">{diceNames}</h2>
+        <div className="columns">
+          <span className="column is-3"></span>
+          <span className="column is-6">
+            <table className="table is-fullwidth" id="bgimg">
+
+              <tbody id="makewhite">
+                {/* this is for the headers of the table */}
+                <tr id="makewhite">
+                  <th id="makewhite">Number</th>
+                  <th id="makewhite">Chance</th>
+                  <th id="makewhite">What To Do:</th>
+                </tr>
+
+                <tr><td>1</td><td>likely</td><td><p>Roll Again</p></td></tr>
+                {specificDiceOptions.map((dice, i) => {
+                  return <tr key={i}><td>1</td><td>likely</td><td><p>{dice.dice_option}</p></td>
+                  </tr>
+                })}
+              </tbody>
+            </table>
+          </span>
+          <span className="column is-3"></span>
+        </div>
+        <RollDiceButton rollTheDice={this.rollTheDice} />
       </div>
     )
   }
