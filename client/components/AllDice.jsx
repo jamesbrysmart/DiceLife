@@ -23,7 +23,7 @@ class AllDice extends React.Component {
           <p><Link to={`/alldice/${dice.id}`}>{dice.dice_name}</Link></p>
         </div>
       })}
-      <Link to="#">Create your own dice</Link>
+      <Link to="/create">Create your own dice</Link>
     </div>
     )
   }
