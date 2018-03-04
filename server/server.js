@@ -15,5 +15,6 @@ server.use(express.static(path.join(__dirname, '../public')))
 server.use('/api/auth', require('./routes/auth'))
 server.use('/api/diceNames', require('./routes/diceNames'))
 server.use('/api/diceOptions', require('./routes/diceOptions'))
+server.use('/api/users', require('./routes/users'))
 
 module.exports = server

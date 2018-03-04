@@ -23,6 +23,8 @@ function getUserByName (user_name, db) {
     .first()
 }
 
+
+
 module.exports = {
   createUser,
   userExists,
