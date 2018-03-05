@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav'
 
 class Header extends React.Component {
   constructor(props) {
@@ -45,6 +46,9 @@ class Header extends React.Component {
               <h2 className="subtitle is-3  has-text-centered">
         <p> Eat,play...<p id="changingWord">Karaoke</p></p>
         </h2>
+        <h4 className="title is-4">
+           <Nav />
+            </h4>
             </div>
           </div>
         </section>
