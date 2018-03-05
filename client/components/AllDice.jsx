@@ -10,7 +10,11 @@ import {addUserID} from '../actions/userID'
 class AllDice extends React.Component {
   constructor(props){
   super(props)
+  this.state = {
+    
+  }
   this.findUserId = this.findUserId.bind(this)
+
   }
 
   findUserId() {

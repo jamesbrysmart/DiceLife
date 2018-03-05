@@ -34,13 +34,11 @@ class SpecificDice extends React.Component {
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
-    const diceNames = this.props.diceNames[Number(diceId)-1]['dice_name']
-
+    const diceNames = this.props.diceNames[diceId - 1]['dice_name']
 
     // Filter the diceOutcomes by the specific dice name
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
-      
-    if (dice.dice_name == diceNames && dice.dice_names_id == diceId) {
+      if (dice.dice_name == diceNames) {
         return dice
       }
     })
@@ -53,63 +51,62 @@ class SpecificDice extends React.Component {
     const option4 = specificDiceOptions[3].dice_option
     const option5 = specificDiceOptions[4].dice_option
     return (
-      <div>
-        <Header />
-       
-       
-
-
-
-        <h2 className="title is-4" id="makewhite">{diceNames}</h2>
-        <div className="columns">
-          <span className="column is-3"></span>
-          <span className="column is-6">
-          <table  className="table is-fullwidth"  id="bgimg">
-          <thead id="makewhite">
-            <tr id="makewhite">
-              <th id="makewhite">Result</th>
-              <th id="makewhite">Liklihood</th>
-              <th id="makewhite">Option</th>
-            </tr>
-          </thead>
-          <tbody id="makewhite">
-            <tr>
-              <td>7</td>
-              <td>Most Likely</td>
-              <td>Roll Again</td>
-            </tr>
-            <tr>
-              <td>6 or 8</td>
-              <td>Likely</td>
-              <td>{option1}</td>
-            </tr>
-            <tr>
-              <td>5 or 9</td>
-              <td>Probable</td>
-              <td>{option2}</td>
-            </tr>
-            <tr>
-              <td>4 or 10</td>
-              <td>Possible</td>
-              <td>{option3}</td>
-            </tr>
-            <tr>
-              <td>3 or 11</td>
-              <td>Unlikely</td>
-              <td>{option4}</td>
-            </tr>
-            <tr>
-              <td>2 or 12</td>
-              <td>Rare...but not impossible</td>
-              <td>{option5}</td>
-            </tr>
-          </tbody>
-        </table>
-          </span>
-          <span className="column is-3"></span>
+      <div className="hero is-dark is-fullheight">
+        <div className="hero-head">
+          <h2 className="title is-2 specificDiceTitle" id="makewhite">{diceNames}</h2>
         </div>
-        <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
 
+        <div className="hero-body">
+          <span className="column is-6 is-offset-3">
+            <table className="table is-fullwidth" id="bgimg">
+              <thead id="makewhite">
+                <tr id="makewhite">
+                  <th id="makewhite">Result</th>
+                  <th id="makewhite">Liklihood</th>
+                  <th id="makewhite">Option</th>
+                </tr>
+              </thead>
+              <tbody id="makewhite">
+                <tr>
+                  <td>7</td>
+                  <td>Most Likely</td>
+                  <td>Roll Again</td>
+                </tr>
+                <tr>
+                  <td>6 or 8</td>
+                  <td>Likely</td>
+                  <td>{option1}</td>
+                </tr>
+                <tr>
+                  <td>5 or 9</td>
+                  <td>Probable</td>
+                  <td>{option2}</td>
+                </tr>
+                <tr>
+                  <td>4 or 10</td>
+                  <td>Possible</td>
+                  <td>{option3}</td>
+                </tr>
+                <tr>
+                  <td>3 or 11</td>
+                  <td>Unlikely</td>
+                  <td>{option4}</td>
+                </tr>
+                <tr>
+                  <td>2 or 12</td>
+                  <td>Rare...but not impossible</td>
+                  <td>{option5}</td>
+                </tr>
+              </tbody>
+            </table>
+          </span>
+        </div>
+
+        <div className="hero-foot">
+          <span className="specificDiceFooter">
+            <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+          </span>
+        </div>
       </div>
     )
   }

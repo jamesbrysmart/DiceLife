@@ -58,12 +58,10 @@ componentDidMount() {
          <span className="column is-3"> </span>
     </div>
     </div>
-
    
 
     <div className="columns">
     <span className="column is-3"> </span>
-  
        
        
     </div>
@@ -78,20 +76,6 @@ componentDidMount() {
         </div>
         </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
      </div>
      
