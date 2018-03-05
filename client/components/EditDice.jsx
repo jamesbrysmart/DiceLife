@@ -35,7 +35,6 @@ class EditDice extends React.Component {
         
     }
     onEditClick(e) {
-        console.log(Number(e.target.id) + 1)
         this.setState({
             isEditing: !this.state.isEditing,
             selectedID: Number(e.target.id) + 1

@@ -41,8 +41,7 @@ class Animation extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Header />
+      <div className="animations">
         {this.state.showResults && <ResultsParent/>}
         <img id="animation1" src="/images/loading.gif" alt="" />
         <img id="animation2" src="/images/loading.gif" alt="" />
