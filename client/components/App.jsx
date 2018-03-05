@@ -15,6 +15,7 @@ import AddDice from './AddDice'
 import Animation from './Animation'
 import ResultsParent from './ResultsParent'
 import EditDice from './EditDice'
+import NEwEdit from './NEwEdit'
 
 
 const App = ({ auth }) => (
@@ -36,7 +37,7 @@ const App = ({ auth }) => (
           <Route path="/create" component={AddDice} />
           <Route path="/animation" component={Animation} />
           <Route path="/resultsparent" component={ResultsParent} />
-          <Route path="/edit/:id" component={EditDice} />
+          <Route path="/edit/:id" component={NEwEdit} />
     </div>
   </Router>
 )
