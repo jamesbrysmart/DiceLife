@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { addNewDice } from './../actions/diceOutcomes'
 
 class EditDice extends React.Component {
     constructor(props) {
@@ -61,13 +62,19 @@ class EditDice extends React.Component {
         })
     }
 
+    addDice(){
+    
+        this.props.dispatch(addNewDice(this.state))
+      }
+
     renderEdit() {
 
         const diceOutcomes = this.props.diceOutcomes.dice
         const diceId = this.props.match.params.id
         const diceNames = this.props.diceNames[diceId-1]['dice_name']
         const specificDiceOptions = diceOutcomes.filter((dice, i) => {
-            if (dice.dice_name == diceNames) {
+            if (dice.dice_name == diceNames && dice.id === this.props.match.params.id) {
+                console.log(diceOutcomes)
                 return dice
             }
         })
@@ -86,12 +93,12 @@ class EditDice extends React.Component {
                     </td>
                     <td>{specificDiceOptions.map((option, i) => {
                     return <p>{option.dice_option}<button id={i} onClick={this.onEditClick.bind(this)}>Change</button></p>})}
-                </td>
+                    </td>
                 </tr>
             )
         }
         return (
-            <div>
+            <tbody>
                 <tr>
                     <td>{this.state.dice_option_1} <button id="0" onClick={this.onEditClick.bind(this)}>Change</button></td>
                 </tr>
@@ -107,7 +114,10 @@ class EditDice extends React.Component {
                 <tr>
                     <td>{this.state.dice_option_5} <button id="5" onClick={this.onEditClick.bind(this)}>Change</button></td>
                 </tr>
-            </div>      
+                <tr>
+                <button onClick={this.addDice.bind(this)}>Save changes</button>
+                </tr>
+            </tbody>       
         )
     }
     render() {
