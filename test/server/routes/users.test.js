@@ -23,7 +23,7 @@ test('GET /api/users returns an array of objects', () => {
     .expect(200)
     .set(headers)
     .then(res => {
-      expedct(res.body.length).toBe(2)
+      expect(res.body.length).toBe(2)
     })
     .catch(err => {
       expect(err).toBeFalsy()
