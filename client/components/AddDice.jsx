@@ -9,7 +9,7 @@ class AddDice extends React.Component {
     super(props)
     this.state = {
       dice_name: '',
-      user_id: 3,
+      user_id: this.props.userID,
       dice_option_1: '',
       position_1: 1,
       dice_option_2: '',
@@ -22,7 +22,6 @@ class AddDice extends React.Component {
       position_5: 5
   }
   this.addDice=this.addDice.bind(this)
-  this.findUserId = this.findUserId.bind(this)
  }  
   handleChange(e) {
     e.preventDefault();
@@ -30,22 +29,13 @@ class AddDice extends React.Component {
     console.log(this.state)
   }
 
-  findUserId() {
-    let activeUser = this.props.state.auth.user.user_name
-    console.log(activeUser)
-    let usersArray = this.props.state.users.users
-    console.log(usersArray)
-    let currentUser = usersArray.find(user => user.user_name == activeUser)
-    this.setState({user_id: currentUser.id})
-  }
- 
   addDice(){
-    
     this.props.dispatch(addNewDice(this.state))
   }
 
-  componentDidMount(){
-    this.findUserId()
+  componentWillMount(){
+    console.log(this.props.userID)
+    console.log(this.state)
   }
  
   render () {
@@ -101,11 +91,9 @@ class AddDice extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {
-  // console.log('Hello' + state)
-  state
-  }
-  // return state
+  return state
+  
+  
 }
 
 export default connect(mapStateToProps)(AddDice)

@@ -16,5 +16,6 @@ server.use('/api/auth', require('./routes/auth'))
 server.use('/api/diceNames', require('./routes/diceNames'))
 server.use('/api/diceOptions', require('./routes/diceOptions'))
 server.use('/api/users', require('./routes/users'))
+server.use('/api/history', require('./routes/diceHistory'))
 
 module.exports = server

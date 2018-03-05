@@ -31,24 +31,25 @@ constructor(){
     return 1
     }    
     }
-    componentDidMount(){
-      var diceSum = this.props.dice[2]
-      var ActivityID = this.props.diceID
-      var ActivityList = this.props.names
-      var CurrentActivityMock = ActivityList[ActivityID - 1].dice_name
-      var allOutcomes = this.props.outcomes.dice
-      var currentOutComes = allOutcomes.filter((outcome) => {
-        return outcome.dice_name == CurrentActivityMock
-      })
 
-      var OutCome = currentOutComes.filter((outcome) => {
-        return outcome.position == this.MapSumToPosition(diceSum)
-      })
-      this.setState({
-        outcome: OutCome[0].dice_option,
-        CurrentActivity: CurrentActivityMock
-      })
-    }
+  componentDidMount(){
+    var diceSum = this.props.dice[2]
+    var ActivityID = this.props.diceID
+    var ActivityList = this.props.names
+    var CurrentActivityMock = ActivityList[ActivityID - 1].dice_name
+    var allOutcomes = this.props.outcomes.dice
+    var currentOutComes = allOutcomes.filter((outcome) => {
+      return outcome.dice_name == CurrentActivityMock
+    })
+
+    var OutCome = currentOutComes.filter((outcome) => {
+      return outcome.position == this.MapSumToPosition(diceSum)
+    })
+    this.setState({
+      outcome: OutCome[0].dice_option,
+      CurrentActivity: CurrentActivityMock
+    })
+  }
   render(){
     return (
     <div className="resultview">
@@ -113,7 +114,7 @@ function mapStateToProps (state){
     names:state.diceNames, 
     diceID: state.diceID, 
     outcomes: state.diceOutcomes
-  }
+ }
  }
  
 export default connect(mapStateToProps)(Results)
