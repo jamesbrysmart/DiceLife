@@ -33,11 +33,8 @@ class SpecificDice extends React.Component {
   render() {
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
-    console.log(diceOutcomes)
     const diceId = this.props.match.params.id
-    console.log(diceId)
     const diceNames = this.props.diceNames[Number(diceId)-1]['dice_name']
-    console.log(diceNames)
 
 
     // Filter the diceOutcomes by the specific dice name
@@ -47,7 +44,6 @@ class SpecificDice extends React.Component {
         return dice
       }
     })
-    console.log(specificDiceOptions)
 
     // If you tried printitng the value directly into the table
     // It broke the page. Passing in a variable was ok

@@ -30,7 +30,6 @@ class AllDice extends React.Component {
   }
   render() {
     const specificDice = this.props.diceNames
-    console.log(specificDice)
     return (
 
       <div>

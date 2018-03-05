@@ -5,7 +5,6 @@ import { addNewDice } from './../actions/diceOutcomes'
 class EditDice extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         const diceOutcomes = this.props.diceOutcomes.dice
         const diceId = this.props.match.params.id
         const foundDice = this.props.diceNames.find(die => die.id == diceId)
@@ -36,7 +35,6 @@ class EditDice extends React.Component {
         
     }
     onEditClick(e) {
-        console.log(Number(e.target.id) + 1)
         this.setState({
             isEditing: !this.state.isEditing,
             selectedID: Number(e.target.id) + 1
@@ -75,7 +73,6 @@ class EditDice extends React.Component {
         const diceNames = this.props.diceNames[diceId-1]['dice_name']
         const specificDiceOptions = diceOutcomes.filter((dice, i) => {
             if (dice.dice_name == diceNames && dice.id === this.props.match.params.id) {
-                console.log(diceOutcomes)
                 return dice
             }
         })

@@ -6,7 +6,6 @@ import Header from './Header'
 class NEwEdit extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         const diceOutcomes = this.props.diceOutcomes.dice
         const diceId = this.props.match.params.id
         const foundDice = this.props.diceNames.find(die => die.id == diceId)
@@ -54,7 +53,6 @@ render() {
     const diceNames = this.props.diceNames[diceId - 1]['dice_name']
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
         if (dice.dice_name == diceNames && dice.id === this.props.match.params.id) {
-            console.log(diceOutcomes)
             return dice
         }
     })
