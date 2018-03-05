@@ -24,12 +24,13 @@ class History extends React.Component {
         
     }
     componentWillMount() {
-        this.props.dispatch(getDiceHistory())
+        
         
     }
 
     componentDidMount() {
-        this.findHistory()
+        this.props.dispatch(getDiceHistory())
+        // this.findHistory()
         
         
     }
@@ -40,6 +41,12 @@ class History extends React.Component {
             <div>
                 <Header />
                 hello world
+                <br/>
+                {this.props.previousRolls && this.props.previousRolls.dice && this.props.previousRolls.dice.map((dice)=>{
+                    return (
+                        <p>{dice.roll_score}</p>
+                    )
+                })}
                 
             </div>
         )
@@ -49,6 +56,7 @@ class History extends React.Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state)
     return {
         names: state.diceNames,
         diceID: state.diceID,
