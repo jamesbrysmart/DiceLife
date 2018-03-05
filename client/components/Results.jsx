@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import Header from './Header'
+import {addNewRoll} from '../actions/diceHistory'
 
 class Results extends React.Component {
 constructor(){
@@ -49,6 +50,13 @@ constructor(){
       outcome: OutCome[0].dice_option,
       CurrentActivity: CurrentActivityMock
     })
+    var newRoll = {
+      user_id: this.props.userID,
+      roll_score: diceSum, 
+      dice_name_id: ActivityID,
+      dice_option_id: OutCome[0].id
+    }
+    this.props.dispatch(addNewRoll(newRoll))
   }
   render(){
     return (
@@ -113,7 +121,8 @@ function mapStateToProps (state){
     dice:state.diceRolls,
     names:state.diceNames, 
     diceID: state.diceID, 
-    outcomes: state.diceOutcomes
+    outcomes: state.diceOutcomes,
+    userID: state.userID
  }
  }
  

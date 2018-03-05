@@ -6,6 +6,7 @@ import {getDiceNames} from '../actions/diceNames'
 import Header from './Header'
 import {getUsers} from '../actions/users'
 import {addUserID} from '../actions/userID'
+import Nav from './Nav'
 
 class AllDice extends React.Component {
   constructor(props){
@@ -38,6 +39,7 @@ class AllDice extends React.Component {
 
       <div>
       <Header />
+      <Nav />
     <div className="alldice">
   
       <h2 className="title is-3" id="makewhite">Select a dice</h2>

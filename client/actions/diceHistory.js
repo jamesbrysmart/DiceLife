@@ -7,16 +7,17 @@ function requestDiceHistory() {
 }
   
 function receiveDiceHistory(history) {
+  console.log(history)
 return {
     type:'RECEIVE_DICE_HISTORY',
     history
     }
 }
 
-function addDiceHistory(newRoll) {
+function addDiceHistory(roll) {
     return {
       type:'ADD_DICE_HISTORY',
-      newRoll
+      roll
     }
 }
 

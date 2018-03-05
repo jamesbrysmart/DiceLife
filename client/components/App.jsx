@@ -15,7 +15,11 @@ import AddDice from './AddDice'
 import Animation from './Animation'
 import ResultsParent from './ResultsParent'
 import EditDice from './EditDice'
+<<<<<<< HEAD
 import NEwEdit from './NEwEdit'
+=======
+import History from './History'
+>>>>>>> started history
 
 
 const App = ({ auth }) => (

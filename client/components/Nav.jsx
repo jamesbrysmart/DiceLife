@@ -36,6 +36,7 @@ class Nav extends React.Component {
                   </div>
                   <div className = 'nav2'>
                     <Link className="navbar-item" to= '/howto'> How To Play? </Link>
+                    <Link className="navbar-item" to= '/history'> History </Link>
                   </div>
                 </div>
               

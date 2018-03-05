@@ -32,9 +32,6 @@ class AddDice extends React.Component {
   addDice(){
     this.props.dispatch(addNewDice(this.state))
   }
-
-  componentWillMount(){
-  }
  
   render () {
     return (
