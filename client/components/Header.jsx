@@ -1,20 +1,21 @@
 import React from 'react'
 import Nav from './Nav'
+import { connect } from 'react-redux'
 
 class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       words: ['Hunt', 'Bungy jump', 'Ski', 'Eat the Hottest Chilli', 'Ice Swim', 'Nap', 'Ibiza'],
-      time: 0
+      time: 0,
     }
     this.timer = this.timer.bind(this)
     this.printTime = this.printTime.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
   }
   componentWillMount() {
-    this.resetTimer()
-    this.timer()
+    
+      this.timer()
   }
   timer() {
     setInterval(this.printTime, 1500, clearInterval(this.timer))
@@ -59,5 +60,9 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+mapStateMapProps(){
+ return state
+}
+
+export default connect(mapStateToProps)(Header)
 
