@@ -1,7 +1,5 @@
 
-export default function diceID(id){
-    console.log('action: ', id)
-    console.log('hello from the action')
+export default function addDiceID(id){
     return {
         type: 'ADD_DICE_ID',
         id

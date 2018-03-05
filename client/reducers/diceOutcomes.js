@@ -3,9 +3,10 @@
 function diceOutcomes(state=[], action) {
   switch(action.type) {
     case 'RECEIVE_DICE_OUTCOME':
+    console.log(action)
       return action.outcomes
-    // case 'ADD_DICE_OUTCOME':
-    //   return [...state, action.outcome]
+    case 'ADD_DICE_OUTCOME':
+      return [...state, action.outcome]
     // case 'EDIT_DICE_OUTCOME':
     //   if action.oldDice
     //   return [...state]

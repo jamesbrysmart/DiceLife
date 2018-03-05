@@ -37,11 +37,25 @@ function getUsers (testDb) {
     .select()
 }
 
+function getDiceHistory(testDb) {
+  const db = testDb || connection
+  return db('previous_dice_rolls')
+    .select()
+}
+
+function addNewRoll(data, testDb) {
+  const db = testDb || connection
+  return db('previous_dice_rolls')
+    .insert({roll_score: data.body.roll_score, user_id: data.body.user_id, dice_name_id: data.body.dice_name_id, dice_option_id: data.body.dice_option_id})
+}
+
 module.exports = {
   getDiceOptions,
   getDiceNames,
   addNewDice,
   addNewDiceOptions,
   connection,
-  getUsers
+  getUsers,
+  getDiceHistory,
+  addNewRoll
 }

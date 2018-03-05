@@ -34,17 +34,18 @@ class Animation extends React.Component {
     if (this.state.time >= 3) {
       this.toggleResults()
       clearInterval(this.state.intervalHandle)
-      console.log(`Interval cleared`)
-      document.getElementById('animation').style.display = "none"
+
+      document.getElementById('animation1').style.display = "none"
+      document.getElementById('animation2').style.display = "none"
     }
-    console.log(this.state.time)
   }
   render() {
     return (
       <div>
         <Header />
         {this.state.showResults && <ResultsParent/>}
-        <img id="animation" src="/images/loading.gif" alt="" />
+        <img id="animation1" src="/images/loading.gif" alt="" />
+        <img id="animation2" src="/images/loading.gif" alt="" />
       </div>
     )
   }

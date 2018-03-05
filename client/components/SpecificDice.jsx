@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
-import diceID from '../actions/diceID'
+import addDiceID from '../actions/diceID'
 import Header from './Header'
 
 class SpecificDice extends React.Component {
@@ -28,11 +28,12 @@ class SpecificDice extends React.Component {
 
 
   componentDidMount() {
-    this.props.dispatch(diceID(this.props.match.params.id))
+    this.props.dispatch(addDiceID(this.props.match.params.id))
   }
   render() {
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
+    console.log(this.props)
     const diceId = this.props.match.params.id
     const diceNames = this.props.diceNames[diceId-1]['dice_name']
 
@@ -107,7 +108,8 @@ class SpecificDice extends React.Component {
           </span>
           <span className="column is-3"></span>
         </div>
-        <RollDiceButton rollTheDice={this.rollTheDice} />
+        <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+
       </div>
     )
   }
