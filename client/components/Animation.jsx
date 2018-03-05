@@ -44,8 +44,8 @@ class Animation extends React.Component {
       <div>
         <Header />
         {this.state.showResults && <ResultsParent/>}
-        <img id="animation1" src="/images/dice-basic-ease-in.gif" alt="" />
-        <img id="animation2" src="/images/dice-basic-random-ease-in.gif" alt="" />
+        <img id="animation1" src="/images/dice-basic-random-slow.gif" alt="" />
+        <img id="animation2" src="/images/dice-basic-slow.gif" alt="" />
       </div>
     )
   }
