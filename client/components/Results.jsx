@@ -10,6 +10,7 @@ constructor(){
     outcome: '',
     CurrentActivity: ''
   }
+  this.findUserId=this.findUserId.bind(this)
 }
    MapSumToPosition(sum){
     if (sum == 2 || sum ==  12) {
@@ -31,7 +32,19 @@ constructor(){
     return 1
     }    
     }
+
+    findUserId() {
+      let activeUser = this.props.state.auth.user.user_name
+      console.log(activeUser)
+      let usersArray = this.props.state.users.users
+      console.log(usersArray)
+      console.log('state: ', this.props.state)
+      let currentUser = usersArray.find(user => user.user_name == activeUser)
+      return currentUser.id
+    }
+
     componentDidMount(){
+      console.log('userID: ', this.findUserId())
       var diceSum = this.props.dice[2]
       var ActivityID = this.props.diceID
       var ActivityList = this.props.names
@@ -112,7 +125,8 @@ function mapStateToProps (state){
     dice:state.diceRolls,
     names:state.diceNames, 
     diceID: state.diceID, 
-    outcomes: state.diceOutcomes
+    outcomes: state.diceOutcomes,
+    state
   }
  }
  

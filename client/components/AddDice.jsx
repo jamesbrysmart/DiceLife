@@ -40,11 +40,10 @@ class AddDice extends React.Component {
   }
  
   addDice(){
-    
     this.props.dispatch(addNewDice(this.state))
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.findUserId()
   }
  

@@ -4,17 +4,36 @@ import {connect} from 'react-redux'
 import {getDiceOutcomes} from '../actions/diceOutcomes'
 import {getDiceNames} from '../actions/diceNames'
 import Header from './Header'
+import {getUsers} from '../actions/users'
+import {addDiceID} from '../actions/diceID'
 
 class AllDice extends React.Component {
   constructor(props){
   super(props)
+  this.state={
+    nothing:''
   }
-  componentDidMount() {
+  this.findUserId = this.findUserId.bind(this)
+  }
+
+  findUserId() {
+    let activeUser = this.props.auth.user.user_name
+    let usersArray = this.props.users.users
+    let currentUser = usersArray.find(user => user.user_name == activeUser)
+    return currentUser.id
+  }
+
+  componentWillMount() {
     this.props.dispatch(getDiceOutcomes())
     this.props.dispatch(getDiceNames())
+    this.props.dispatch(getUsers())
+  }
+  componentDidMount(){
+    this.props.dispatch(addDiceID(this.findUserId()))
   }
   render() {
     const specificDice = this.props.diceNames
+    console.log(this.findUserId())
     return (
 
       <div>
@@ -43,6 +62,7 @@ class AllDice extends React.Component {
 
 const mapStateToProps = state => {
   return state
+  
 }
 
 export default connect(mapStateToProps)(AllDice)
