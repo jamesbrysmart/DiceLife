@@ -33,6 +33,7 @@ class SpecificDice extends React.Component {
   render() {
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
+    console.log(this.props)
     const diceId = this.props.match.params.id
     const diceNames = this.props.diceNames[diceId-1]['dice_name']
 
@@ -107,7 +108,8 @@ class SpecificDice extends React.Component {
           </span>
           <span className="column is-3"></span>
         </div>
-        <RollDiceButton rollTheDice={this.rollTheDice} />
+        <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+
       </div>
     )
   }

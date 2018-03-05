@@ -7,6 +7,7 @@ function requestDiceOutcomes() {
 }
 
 function receiveDiceOutcomes(outcomes) {
+  console.log(outcomes)
   return {
     type:'RECEIVE_DICE_OUTCOME',
     outcomes
@@ -40,6 +41,7 @@ export function getDiceOutcomes () {
     dispatch(requestDiceOutcomes())
     request('get', 'diceOptions')
     .then(res => {
+      console.log(res)
       dispatch(receiveDiceOutcomes(res.body))
     })
     .catch(err => {
