@@ -24,7 +24,6 @@ test('GET /api/dicenames returns an array of objects', () => {
     .expect(200)
     .set(headers)
     .then(res => {
-      console.log(res.body)
       expect(res.body.length).toBe(2)
     })
     .catch(err => {
