@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Header from './Header'
-
+import {Link} from 'react-router-dom'
 import { addNewDice } from './../actions/diceOutcomes'
 
 class AddDice extends React.Component {
@@ -81,10 +81,11 @@ class AddDice extends React.Component {
                   <input className="input" type='text' name='dice_option_5' placeholder='eg Spin the globe and buy a one way flight'onChange={(e) => this.handleChange(e)} /> 
                 </div>
               </div>  
-              <button className='button-is-danger' onClick={this.addDice}>Add dice</button>
+              <Link to="/alldice" className='button-is-danger' onClick={this.addDice}>Add dice</Link>
             <span className="column is-3"></span>
           </div>  
         </div>  
+        <Link className="button" to="/alldice">Cancel</Link> 
       </div>
     )
   }
