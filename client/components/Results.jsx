@@ -33,7 +33,6 @@ constructor(){
     }
 
   componentDidMount(){
-    console.log(this.props.userID)
     var diceSum = this.props.dice[2]
     var ActivityID = this.props.diceID
     var ActivityList = this.props.names
@@ -114,9 +113,8 @@ function mapStateToProps (state){
     dice:state.diceRolls,
     names:state.diceNames, 
     diceID: state.diceID, 
-    outcomes: state.diceOutcomes,
-    userID: state.userID
-  }
+    outcomes: state.diceOutcomes
+ }
  }
  
 export default connect(mapStateToProps)(Results)
