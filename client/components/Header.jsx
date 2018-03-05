@@ -12,12 +12,12 @@ class Header extends React.Component {
     this.printTime = this.printTime.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
   }
-  componentDidMount() {
+  componentWillMount() {
+    this.resetTimer()
     this.timer()
   }
-
   timer() {
-    setInterval(this.printTime, 1500)
+    setInterval(this.printTime, 1500, clearInterval(this.timer))
   }
   printTime() {
     document.getElementById('changingWord').innerHTML = this.state.words[this.state.time]
@@ -32,8 +32,8 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
+    clearInterval(this.timer)
   }
-
   render() {
     return (
       <div className="is-bold">
@@ -55,29 +55,9 @@ class Header extends React.Component {
 
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
     )
   }
 }
 
 export default Header
 
-
-{/* <div class="indexTitles">
-<h1 class="title is-1 has-text-centered">
-    Dice Life
-</h1>
-<h2 class="subtitle is-3  has-text-centered">
-    Eat, Play,  <strong>... ?</strong>
-</h2>
-</div> */}

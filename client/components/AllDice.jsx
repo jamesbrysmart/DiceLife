@@ -10,7 +10,11 @@ import {addUserID} from '../actions/userID'
 class AllDice extends React.Component {
   constructor(props){
   super(props)
+  this.state = {
+    
+  }
   this.findUserId = this.findUserId.bind(this)
+
   }
 
   findUserId() {
@@ -30,7 +34,6 @@ class AllDice extends React.Component {
   }
   render() {
     const specificDice = this.props.diceNames
-    console.log(this.findUserId())
     return (
 
       <div>

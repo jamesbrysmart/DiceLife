@@ -26,7 +26,6 @@ class AddDice extends React.Component {
   handleChange(e) {
     e.preventDefault();
     this.setState({[e.target.name]: e.target.value});
-    console.log(this.state)
   }
 
   addDice(){
@@ -34,8 +33,6 @@ class AddDice extends React.Component {
   }
 
   componentWillMount(){
-    console.log(this.props.userID)
-    console.log(this.state)
   }
  
   render () {
