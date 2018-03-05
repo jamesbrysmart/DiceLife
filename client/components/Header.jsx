@@ -1,24 +1,25 @@
 import React from 'react'
-import Nav from './Nav'
-import { connect } from 'react-redux'
+import setHeaderToMounted from '../actions/header' 
+import {connect} from 'react-redux'
 
 class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       words: ['Hunt', 'Bungy jump', 'Ski', 'Eat the Hottest Chilli', 'Ice Swim', 'Nap', 'Ibiza'],
-      time: 0,
+      time: 0
     }
     this.timer = this.timer.bind(this)
     this.printTime = this.printTime.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
   }
-  componentWillMount() {
-    
-      this.timer()
+  componentDidMount() {
+    this.props.dispatch(setHeaderToMounted())
+    this.timer()
   }
+
   timer() {
-    setInterval(this.printTime, 1500, clearInterval(this.timer))
+    setInterval(this.printTime, 1500)
   }
   printTime() {
     document.getElementById('changingWord').innerHTML = this.state.words[this.state.time]
@@ -33,8 +34,8 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
-    clearInterval(this.timer)
   }
+
   render() {
     return (
       <div className="is-bold">
@@ -47,9 +48,6 @@ class Header extends React.Component {
               <h2 className="subtitle is-3  has-text-centered">
         <p> Eat,play...<p id="changingWord">Karaoke</p></p>
         </h2>
-        <h4 className="title is-4">
-           <Nav />
-            </h4>
             </div>
           </div>
         </section>
@@ -59,10 +57,11 @@ class Header extends React.Component {
     )
   }
 }
-
-mapStateMapProps(){
- return state
+function mapStateToProps(state) {
+  return state
 }
 
 export default connect(mapStateToProps)(Header)
+
+
 
