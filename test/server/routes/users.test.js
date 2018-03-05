@@ -4,7 +4,7 @@ var secret = 'Krang'
 process.env.JWT_SECRET = secret
 
 jest.mock('../../../server/db/dice', () => ({
-  getDiceNames: () => Promise.resolve([
+  getUsers: () => Promise.resolve([
     {id: 1, name: 'test name 1'},
     {id: 2, name: 'test name 2'}
   ])
@@ -14,7 +14,7 @@ const server = require('../../../server/server')
 
 test('GET /api/users returns an array of objects', () => {
   var token = JWT.sign({id: 1, name: "symesharr"}, secret)
-  const header = {
+  const headers = {
     Accept: 'application/json',
     Authorization: "Bearer "+token
   }
