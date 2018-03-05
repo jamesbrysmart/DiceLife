@@ -10,7 +10,6 @@ constructor(){
     outcome: '',
     CurrentActivity: ''
   }
-  this.findUserId=this.findUserId.bind(this)
 }
    MapSumToPosition(sum){
     if (sum == 2 || sum ==  12) {
@@ -33,35 +32,25 @@ constructor(){
     }    
     }
 
-    findUserId() {
-      let activeUser = this.props.state.auth.user.user_name
-      console.log(activeUser)
-      let usersArray = this.props.state.users.users
-      console.log(usersArray)
-      console.log('state: ', this.props.state)
-      let currentUser = usersArray.find(user => user.user_name == activeUser)
-      return currentUser.id
-    }
+  componentDidMount(){
+    console.log(this.props.userID)
+    var diceSum = this.props.dice[2]
+    var ActivityID = this.props.diceID
+    var ActivityList = this.props.names
+    var CurrentActivityMock = ActivityList[ActivityID - 1].dice_name
+    var allOutcomes = this.props.outcomes.dice
+    var currentOutComes = allOutcomes.filter((outcome) => {
+      return outcome.dice_name == CurrentActivityMock
+    })
 
-    componentDidMount(){
-      console.log('userID: ', this.findUserId())
-      var diceSum = this.props.dice[2]
-      var ActivityID = this.props.diceID
-      var ActivityList = this.props.names
-      var CurrentActivityMock = ActivityList[ActivityID - 1].dice_name
-      var allOutcomes = this.props.outcomes.dice
-      var currentOutComes = allOutcomes.filter((outcome) => {
-        return outcome.dice_name == CurrentActivityMock
-      })
-
-      var OutCome = currentOutComes.filter((outcome) => {
-        return outcome.position == this.MapSumToPosition(diceSum)
-      })
-      this.setState({
-        outcome: OutCome[0].dice_option,
-        CurrentActivity: CurrentActivityMock
-      })
-    }
+    var OutCome = currentOutComes.filter((outcome) => {
+      return outcome.position == this.MapSumToPosition(diceSum)
+    })
+    this.setState({
+      outcome: OutCome[0].dice_option,
+      CurrentActivity: CurrentActivityMock
+    })
+  }
   render(){
     return (
     <div className="resultview">
@@ -126,7 +115,7 @@ function mapStateToProps (state){
     names:state.diceNames, 
     diceID: state.diceID, 
     outcomes: state.diceOutcomes,
-    state
+    userID: state.userID
   }
  }
  
