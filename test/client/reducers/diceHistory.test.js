@@ -1,7 +1,5 @@
 import reducer from '../../../client/reducers/diceHistory'
 
-const state = [7, 6, 3]
-
 test('diceHistory inital state', () => {
   expect(reducer(undefined, {})).toEqual([])
 })
