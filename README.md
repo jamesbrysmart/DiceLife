@@ -9,7 +9,7 @@
 
 ### BUGS 
 
-Place to put busy
+Place to put bugs
 
  - Doesn't show outcome when rolls 12
 
