@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {inactiveDice} from '../actions/diceNames'
 
 export default function RollDiceButton (props) {
   return (
@@ -9,6 +10,9 @@ export default function RollDiceButton (props) {
     </div>
     <div className='button is-danger'>
       <Link to={`/edit/${props.diceID}`}>Edit dice options</Link>
+    </div>
+    <div className='button is-danger'>
+      <Link to='/alldice' onClick={inactiveDice(props.diceID)}>Delete dice </Link>
     </div>
     <div className='button is-danger'>
       <Link to='/allDice'> Back </Link>

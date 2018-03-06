@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Header from './Header'
 import {Link} from 'react-router-dom'
 import { addNewDice } from './../actions/diceOutcomes'
+import { addDiceName } from './../actions/diceNames'
 
 class AddDice extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class AddDice extends React.Component {
 
   addDice(){
     this.props.dispatch(addNewDice(this.state))
+    this.props.dispatch(addDiceName(this.state.dice_name))
   }
 
   componentWillMount(){

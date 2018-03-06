@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addNewDice } from './../actions/diceOutcomes'
+import { inactiveDice } from './../actions/diceNames'
 import Header from './Header'
 
 class NEwEdit extends React.Component {
@@ -28,7 +29,6 @@ class NEwEdit extends React.Component {
             position_4: 4,
             dice_option_5: specificDiceOptions[4].dice_option,
             position_5: 5,
-            active: true
 
         }
 
@@ -43,6 +43,7 @@ class NEwEdit extends React.Component {
     addDice() {
 
         this.props.dispatch(addNewDice(this.state))
+        this.props.dispatch(inactiveDice(diceId))
     }   
 
 

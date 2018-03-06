@@ -16,5 +16,15 @@ router.get('/', decode, (req, res) => {
     })
 })
 
+router.put('/', decode, (req, res) => {
+  db.inactiveDice(req.body)
+    .then(result => {
+      res.json({result})
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE_ERROR: ' + err.message)
+    })
+  })
+
 
 module.exports = router
