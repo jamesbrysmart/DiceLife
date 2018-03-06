@@ -7,6 +7,12 @@
 # Information For The Team:
 
 
+### BUGS 
+
+Place to put busy
+
+ - Doesn't show outcome when rolls 12
+
 ### TODOs:
 A place for me to remember what to
 
