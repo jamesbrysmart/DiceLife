@@ -149,3 +149,11 @@ background-color: #393939af;
    
 }
 
+#PossibleFont {
+font-family: 'Bree Serif', serif;
+color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
+
+#toppaddingforbanner {
+    padding-top: 10vh;
+}

@@ -44,7 +44,7 @@ class AllDice extends React.Component {
       <div className="columns">
       <span className="column is-3"></span>
       {specificDice.map((dice, i) => {
-        return <div className="column" key={i}>
+        return <div className="column is-3" key={i}>
           <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>
           {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>
 
@@ -53,7 +53,24 @@ class AllDice extends React.Component {
       <span className="column is-3"></span>
 
       </div>
-      <p><Link to="/create" className="create">Create your own dice</Link></p>
+      <button class="button is-danger">
+        <p><Link to="/create" className="create">Create your own dice</Link></p>
+      </button>
+      <nav class="pagination" role="navigation" aria-label="pagination">
+          <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
+          <a class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li>
+              <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+            </li>
+            <li>
+              <a class="pagination-link" aria-label="Goto page 2">2</a>
+            </li>
+            <li>
+              <a class="pagination-link" aria-label="Goto page 3">3</a>
+            </li>
+          </ul>
+      </nav>
     </div>
     </div>
     )
