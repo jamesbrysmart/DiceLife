@@ -51,7 +51,6 @@ class Animation extends React.Component {
     }
   }
   render() {
-    console.log(this.state)
     return (
       <div className="animations">
         {this.state.showResults && <ResultsParent resetState={this.resetState}/>}
