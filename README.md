@@ -2,14 +2,20 @@
 
 ### A Project by James, Phuong, Guy, Edi and Hayden
 
-
+### Link to Heroku: [Link to Heroku:](https://dice-life.herokuapp.com/#/)
 
 # Information For The Team:
 
 
+### BUGS 
+
+Place to put bugs
+
+ - Doesn't show outcome when rolls 12
+
 ### TODOs:
 A place for me to remember what to
-* link to heroku
+
 * fill in blank spaces on this readme
 
 

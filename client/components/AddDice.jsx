@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Header from './Header'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { addNewDice } from './../actions/diceOutcomes'
 
 class AddDice extends React.Component {
@@ -19,69 +19,85 @@ class AddDice extends React.Component {
       dice_option_4: '',
       position_4: 4,
       dice_option_5: '',
-      position_5: 5
+      position_5: 5,
+      active: true
+    }
+    this.addDice = this.addDice.bind(this)
   }
-  this.addDice=this.addDice.bind(this)
- }  
   handleChange(e) {
     e.preventDefault();
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
-  addDice(){
+  addDice() {
     this.props.dispatch(addNewDice(this.state))
   }
 
-  componentWillMount(){
+  componentWillMount() {
   }
- 
-  render () {
+
+  render() {
     return (
-      <div> 
-        <div className="container">
+      <div>
+        <Header />
+        <div>
+          <h2 className="title is-4" id="makewhite">Create A Dice:</h2>
+          <br />
           <div className="columns">
             <span className="column is-3"></span>
-              <div className = 'field'>
-                <label className="label" id='makewhite'>Name of dice</label>
-                <div className="control">
-                  <input className="input"type='text' name='dice_name' placeholder='eg Friday Night' onChange={(e) => this.handleChange(e)}/>
-                </div>
+            <span className="column is-6">
+              <div className="columns">
+                <label className="label column is-6 is-bold" id='makewhite'>Dice name: </label>
+                <input className="input column is-6 is-pulled-right" type='text' name='dice_name' placeholder='eg Friday Night' onChange={(e) => this.handleChange(e)} />
               </div>
-              <div className = 'field'>
-                <label className = 'label' id='makewhite' for='dice_options'>What to do:</label>
-                <div className="control">
-                  <input className="input" type='text' name='dice_option_1' placeholder='eg Go out for dinner' onChange={(e) => this.handleChange(e)} /> 
-                </div>
-              </div>
-              <div className = 'field'>
-                <label className = 'label' id='makewhite' for='dice_options'>What to do:</label>
-                <div className="control">
-                  <input className="input" type='text' name='dice_option_2' placeholder='eg Go to a play'onChange={(e) => this.handleChange(e)} /> 
-                </div>
-              </div>
-              <div className = 'field'>
-                <label className = 'label' id='makewhite' for='dice_options'>What to do:</label>
-                <div className="control">
-                  <input className="input" type='text' name='dice_option_3' placeholder='eg Go to the zoo' onChange={(e) => this.handleChange(e)} /> 
-                </div>
-              </div>
-              <div className = 'field'>
-                <label className = 'label' id='makewhite' for='dice_options'>What to do:</label>
-                <div className="control">
-                  <input className="input" type='text' name='dice_option_4' placeholder='eg Buy tickets to the new show in town' onChange={(e) => this.handleChange(e)} /> 
-                </div>
-              </div>
-              <div className = 'field'>
-                <label className = 'label' id='makewhite' for='dice_options'>What to do:</label>
-                <div className="control">
-                  <input className="input" type='text' name='dice_option_5' placeholder='eg Spin the globe and buy a one way flight'onChange={(e) => this.handleChange(e)} /> 
-                </div>
-              </div>  
-              <Link to="/alldice" className='button-is-danger' onClick={this.addDice}>Add dice</Link>
+
+              <table className="table is-fullwidth" id="bgimg">
+                <thead id="makewhite">
+                  <tr id="makewhite">
+                    <th id="makewhite">Result</th>
+                    <th id="makewhite">Likelihood</th>
+                    <th id="makewhite">Option</th>
+                  </tr>
+                </thead>
+                <tbody id="makewhite">
+                  <tr>
+                    <td>7</td>
+                    <td>Most Likely</td>
+                    <td>Roll Again</td>
+                  </tr>
+                  <tr>
+                    <td>6 or 8</td>
+                    <td>Likely</td>
+                    <td><input className="input" type='text' name='dice_option_1' placeholder='eg Go out for dinner' onChange={(e) => this.handleChange(e)} /></td>
+                  </tr>
+                  <tr>
+                    <td>5 or 9</td>
+                    <td>Probable</td>
+                    <td><input className="input" type='text' name='dice_option_2' placeholder='eg Go to a play' onChange={(e) => this.handleChange(e)} /></td>
+                  </tr>
+                  <tr>
+                    <td>4 or 10</td>
+                    <td>Possible</td>
+                    <td><input className="input" type='text' name='dice_option_3' placeholder='eg Go to the zoo' onChange={(e) => this.handleChange(e)} /></td>
+                  </tr>
+                  <tr>
+                    <td>3 or 11</td>
+                    <td>Unlikely</td>
+                    <td><input className="input" type='text' name='dice_option_4' placeholder='eg Buy clothes' onChange={(e) => this.handleChange(e)} /></td>
+                  </tr>
+                  <tr>
+                    <td>2 or 12</td>
+                    <td>Rare...but not impossible</td>
+                    <td><input className="input" type='text' name='dice_option_5' placeholder='eg Spin the globe and buy a one way flight' onChange={(e) => this.handleChange(e)} /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <Link to="/alldice" className='button is-danger' onClick={this.addDice}>Add dice</Link>
+              <Link className="button" to="/alldice">Cancel</Link>
+            </span>
             <span className="column is-3"></span>
-          </div>  
-        </div>  
-        <Link className="button" to="/alldice">Cancel</Link> 
+          </div>
+        </div>
       </div>
     )
   }
@@ -89,8 +105,8 @@ class AddDice extends React.Component {
 
 const mapStateToProps = state => {
   return state
-  
-  
+
+
 }
 
 export default connect(mapStateToProps)(AddDice)

@@ -17,7 +17,7 @@ class EditDice extends React.Component {
         })
         this.state = {
             dice_name: diceNames,
-            user_id: 3,
+            user_id: this.props.userID,
             dice_option_1: specificDiceOptions[0].dice_option,
             position_1: 1,
             dice_option_2: specificDiceOptions[1].dice_option,
