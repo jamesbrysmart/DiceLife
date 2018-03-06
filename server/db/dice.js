@@ -30,10 +30,10 @@ function addNewDiceOptions(result, data, testDb) {
             {'dice_option': data.body.dice_option_5,'position': data.body.position_5, 'dice_names_id': result[0]}])
 }
 
-function inactiveDice(data, testDb) {
+function inactiveDice(id, testDb) {
   const db = testDb || connection
   return db('dice_names')
-  .where('id', data.dice_names_id)
+  .where('id', id)
   .update({'active': false})
 }
 
