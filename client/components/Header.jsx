@@ -16,7 +16,6 @@ class Header extends React.Component {
   componentWillMount() {
     this.timer()
     }
-  }
 
   timer() {
     this.interval = setInterval(this.printTime, 1500)
