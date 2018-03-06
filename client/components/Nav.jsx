@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logoutUser} from '../actions/logout'
 
+
 class Nav extends React.Component {
   constructor(props) {
     super(props)
@@ -14,6 +15,9 @@ class Nav extends React.Component {
   toggleBurger() {
     this.setState({showBurger: !this.state.showBurger})
   }
+
+  
+
   render() {
     const {auth, logout} = this.props
     const {showBurger} = this.state
@@ -36,6 +40,9 @@ class Nav extends React.Component {
                   </div>
                   <div className = 'nav2'>
                     <Link className="navbar-item" to= '/howto'> How To Play? </Link>
+                  </div>
+                  <div className = 'nav2'>
+                    <Link className="navbar-item" to= '/history'> Show History Dices </Link>
                   </div>
                 </div>
               

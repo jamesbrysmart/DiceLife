@@ -7,6 +7,7 @@ import diceRolls from './diceRolls'
 import diceID from './diceID'
 import users from './users'
 import userID from './userID'
+import diceHistory from './diceHistory'
 
 export default combineReducers({
   auth,
@@ -15,5 +16,6 @@ export default combineReducers({
   diceRolls, 
   diceID,
   users,
-  userID
+  userID,
+  diceHistory
 })
