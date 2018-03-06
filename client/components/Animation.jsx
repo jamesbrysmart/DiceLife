@@ -16,7 +16,7 @@ class Animation extends React.Component {
   resetState(){
     console.log('resetting state')
     this.setState({
-      time: 0, 
+      time: 0,
       showResults: false
     })
     document.getElementById('animation1').style.display = "inline"
@@ -55,8 +55,8 @@ class Animation extends React.Component {
     return (
       <div className="animations">
         {this.state.showResults && <ResultsParent resetState={this.resetState}/>}
-        <img id="animation1" src="/images/loading.gif" alt="" />
-        <img id="animation2" src="/images/loading.gif" alt="" />
+        <img id="animation1" src="/images/dice-basic-random-slow.gif" alt="" />
+        <img id="animation2" src="/images/dice-basic-slow.gif" alt="" />
       </div>
     )
   }
