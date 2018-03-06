@@ -67,10 +67,9 @@ componentDidMount() {
     </div>
   
        {auth.isAuthenticated 
-        ? this.state.showHowTo && [
-            <HowTo toggleHowTo = {this.toggleHowTo}/>,
-        ]
-        : <HomeButtons handleButton= {this.handleButton}/>
+        ? this.state.showHowTo && 
+            <HowTo toggleHowTo={this.toggleHowTo}/>
+        : <HomeButtons handleButton={this.handleButton}/>
       }
             </div>
         </div>
