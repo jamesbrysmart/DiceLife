@@ -76,6 +76,35 @@ h1, h2, p, a {
     padding-top: 20vh;
 }
 
+/* Add space between buttons */
+.button.is-danger {
+  margin-right: 1em;
+}
+
+/* Make create dice link visible on hover */
+a.create:hover {
+  color: #FFF;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  background-color: #292929;
+}
+
+/* Move create dice link off bottom of page */
+div.alldice, div.animations {
+  margin-bottom: 2em;
+}
+
+/* Text on if 7 roll again screen */
+div.roll_again p {
+  font-size: 1.4em;
+  margin-top: 1em;
+}
+
+/* Target HowTo text */
+.HowTo p {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+
 
 div.button.is-danger {
     margin-right: 1em;
@@ -108,5 +137,6 @@ div.dice_images img {
   } 100% {
     transform: scale(1.2);
   }
+
 
 }
