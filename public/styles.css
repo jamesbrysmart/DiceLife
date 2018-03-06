@@ -105,4 +105,38 @@ div.roll_again p {
   font-size: 1.4em;
   margin-bottom: 1em;
 
+
+div.button.is-danger {
+    margin-right: 1em;
+}
+
+img#animation1, img#animation2 {
+  width: 120px;
+  padding-right: 1em;
+  animation: bounce 1s infinite;
+}
+
+div.dice_images img {
+  width: 120px;
+  padding-right: 2em;
+  animation: pulse 1s;
+  animation-fill-mode: forwards
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(0, 0)
+  } 50% {
+    transform: translate(0, 20px)
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+  } 100% {
+    transform: scale(1.2);
+  }
+
+
 }
