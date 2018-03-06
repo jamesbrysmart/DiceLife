@@ -41,7 +41,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="is-bold">
-        <section className="hero is-medium is-dark is-bold" id="heroimg">
+        <section className="hero is-medium is-dark is-bold" id="headerimg">
           <div className="hero-body">
             <div className="container">
               <h1 className="title ">
