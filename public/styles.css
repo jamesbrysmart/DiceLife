@@ -10,6 +10,10 @@ h1, h2, p, a {
  background-color: #393939;
 }
 
+#howtoboxcolor {
+    background-color: #D37984;
+   }
+
 #heroimg {
 
     background-image: url("./images/sihouette.svg") ;
@@ -138,3 +142,10 @@ div.dice_images img {
     transform: scale(1.2);
   }
 }
+
+#howto-overlay {
+   
+background-color: #393939af;
+   
+}
+
