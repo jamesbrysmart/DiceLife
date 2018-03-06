@@ -69,6 +69,10 @@ h1, h2, p, a {
     height: 70vh;
 }
 
+#login {
+    padding-top: 50em;
+}
+
 #homebuttons {
     height: 15vh;
 }
