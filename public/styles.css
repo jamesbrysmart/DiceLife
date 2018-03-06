@@ -76,18 +76,19 @@ h1, h2, p, a {
     padding-top: 20vh;
 }
 
+
+div.button.is-danger {
+    margin-right: 1em;
+}
+
 img#animation1, img#animation2 {
-  width: 150px;
+  width: 120px;
   padding-right: 1em;
   animation: bounce 1s infinite;
 }
 
-.button.is-danger {
-    padding-right: 1em;
-}
-
 div.dice_images img {
-  width: 150px;
+  width: 120px;
   padding-right: 2em;
   animation: pulse 1s;
   animation-fill-mode: forwards
@@ -105,7 +106,7 @@ div.dice_images img {
   0% {
     transform: scale(0.5);
   } 100% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 
 }
