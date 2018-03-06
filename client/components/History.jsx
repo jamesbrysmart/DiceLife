@@ -6,6 +6,7 @@ import Header from './Header'
 class History extends React.Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.state = {
           userDiceRolls:[],
           rollsWithInfo:[]
@@ -15,7 +16,8 @@ class History extends React.Component {
     }
 
     filterRollsByUser() {
-      let userId = this.props.userID 
+      let userId = this.props.userID
+      console.log(userId)
       let allRolls = this.props.diceHistory.dice
       console.log(allRolls)  
       let rollsByUser= allRolls.filter(roll => roll.user_id == userId)
