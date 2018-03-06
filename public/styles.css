@@ -11,7 +11,7 @@ h1, h2, p, a {
 }
 
 #howtoboxcolor {
-    background-color: #f34e4e;
+    background-color: #D37984;
    }
 
 #heroimg {
@@ -108,7 +108,7 @@ div.roll_again p {
 .HowTo p {
   font-size: 1.4em;
   margin-bottom: 1em;
-
+}
 
 div.button.is-danger {
     margin-right: 1em;
@@ -144,3 +144,10 @@ div.dice_images img {
 
 
 }
+
+#howto-overlay {
+   
+background-color: #393939af;
+   
+}
+
