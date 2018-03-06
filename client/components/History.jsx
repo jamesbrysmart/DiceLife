@@ -29,7 +29,7 @@ class History extends React.Component {
       let userRolls = this.state.userDiceRolls
       console.log(userRolls)
       userRolls.map(roll =>{
-        const foundOutcome = diceOutcomes.dice.find(outcome=>outcome.id==roll.dice_option_id)
+        const foundOutcome = this.props.diceOutcomes.find(outcome=>outcome.id==roll.dice_option_id)
         foundOutcome.dice_name=outcome.dice_name
         foundOutcome.outcome=outcome.dice_option
         arrayOfRolls.push(foundOutcome)
