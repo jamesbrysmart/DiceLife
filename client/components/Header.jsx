@@ -13,7 +13,6 @@ class Header extends React.Component {
     this.resetTimer = this.resetTimer.bind(this)
   }
   componentWillMount() {
-    this.resetTimer()
     this.timer()
   }
   timer() {
@@ -32,7 +31,9 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
-    clearInterval(this.timer)
+  }
+  componentWillUnmount(){
+    clearInterval(this.interval)
   }
   render() {
     return (
