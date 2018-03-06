@@ -13,9 +13,12 @@ class Header extends React.Component {
     this.printTime = this.printTime.bind(this)
     this.resetTimer = this.resetTimer.bind(this)
   }
-  componentDidMount() {
+  componentWillMount() {
+    console.log(this.props)
     this.props.dispatch(setHeaderToMounted())
+    if(!this.props.HeaderIsMount){
     this.timer()
+    }
   }
 
   timer() {
@@ -34,6 +37,7 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
+
   }
 
   render() {

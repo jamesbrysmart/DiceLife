@@ -38,7 +38,6 @@ class AddDice extends React.Component {
   render () {
     return (
       <div> 
-        <Header />  
         <div className="container">
           <div className="columns">
             <span className="column is-3"></span>
