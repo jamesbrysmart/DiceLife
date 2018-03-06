@@ -19,7 +19,8 @@ class AddDice extends React.Component {
       dice_option_4: '',
       position_4: 4,
       dice_option_5: '',
-      position_5: 5
+      position_5: 5,
+      active: true
   }
   this.addDice=this.addDice.bind(this)
  }  

@@ -14,6 +14,7 @@ function receiveDiceOutcomes(outcomes) {
 }
 
 function addDiceOutcome(outcome) {
+
   return {
     type:'ADD_DICE_OUTCOME',
     outcome
@@ -51,6 +52,7 @@ export function getDiceOutcomes () {
 export function addNewDice (dice) {
   return (dispatch) => {
     request('post', 'diceOptions', dice)
+
       .then(res => dispatch(addDiceOutcome(res.body)))
       .catch(err => console.log({err}))
   }
