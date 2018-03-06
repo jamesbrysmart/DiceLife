@@ -8,14 +8,30 @@ class SpecificButtons extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            showDelete: true
         }
+        this.toggleDelete = this.toggleDelete.bind(this)
     }
-
+    toggleDelete(){
+    var currentActivity = this.props.diceNames.filter((activity)=>{
+        return activity.id == this.props.diceID
+    })
+    console.log(currentActivity[0])
+    if(currentActivity[0].user_id == null){
+        console.log('hello')
+       this.setState({
+           showDelete: false
+       })
+    }
+    }
+    componentWillMount(){
+        this.toggleDelete()
+    }
     render(){
         return (
         <div>
            <RollDiceButton rollTheDice={this.props.rollTheDice} />
-           <DeleteButton diceID = {this.props.diceID} />
+          {this.state.showDelete && <DeleteButton diceID = {this.props.diceID} />} 
            <div className='button is-danger'>
              <Link to={`/edit/${this.props.diceID}`}>Edit dice options</Link>
            </div>

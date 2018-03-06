@@ -27,11 +27,10 @@ class SpecificDice extends React.Component {
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.dispatch(addDiceID(this.props.match.params.id))
   }
   render() {
-    console.log('props: ', this.props)
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
@@ -105,7 +104,7 @@ class SpecificDice extends React.Component {
 
         <div className="hero-foot">
           <span className="specificDiceFooter">
-            <SpecificButtons diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+            <SpecificButtons rollTheDice={this.rollTheDice} />
           </span>
         </div>
       </div>
