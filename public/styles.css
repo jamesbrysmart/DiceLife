@@ -104,7 +104,7 @@ div.roll_again p {
 .HowTo p {
   font-size: 1.4em;
   margin-bottom: 1em;
-
+}
 
 div.button.is-danger {
     margin-right: 1em;
@@ -137,6 +137,4 @@ div.dice_images img {
   } 100% {
     transform: scale(1.2);
   }
-
-
 }
