@@ -6,17 +6,32 @@ import Header from './Header'
 class NewHistory extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      active: true
+    }
   }
 
   render() {
-    // console.log(this.props)
-    // let userId = this.props.userID
-    // let allRolls = this.props.diceHistory.dice
-    // let rollsByUser = allRolls.filter(roll => roll.user_id == userId)
+    console.log(this.props)
+    let userId = this.props.userID
+    let allRolls = this.props.diceHistory.dice
+    let rollsByUser = allRolls.filter(roll => roll.user_id == userId)
+    console.log(userId)
+    console.log(allRolls)
+    console.log(rollsByUser)
+
+    let historyDiceNameIDs = rollsByUser.map(roll => roll.dice_name_id)
+    let historyRollScores = rollsByUser.map(roll => roll.roll_score)
+    let historyRollOptionResultIDs = rollsByUser.map(roll => roll.dice_option_id)
+    console.log(historyDiceNameIDs)
+    console.log(historyRollScores)
+    console.log(historyRollOptionResultIDs)
+
+    
 
     // let arrayOfRolls = []
     // rollsByUser.map(roll => {
-    //   const foundOutcome = this.props.diceOutcomes.find(outcome => outcome.id == roll.dice_option_id)
+    //   const foundOutcome = this.props.diceOutcomes.find(outcome => outcome.id == roll.dice_option_id ID ROLL.DICE_OPTION_ID UNIQUE???)
     //   foundOutcome.dice_name = outcome.dice_name
     //   foundOutcome.outcome = outcome.dice_option
     //   console.log(foundOutcome)
@@ -27,7 +42,7 @@ class NewHistory extends React.Component {
 
         return (
       <div>
-        Hello World!
+        <p>Hello World!</p>
         {/* <Header />
         hello world */}
                 {/* <br />
@@ -53,7 +68,7 @@ class NewHistory extends React.Component {
 }
 
 
-function mapStateToProps(state) {
+const mapStateToProps = (state)=> {
   console.log(state)
   return {
     names: state.diceNames,
