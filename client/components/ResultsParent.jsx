@@ -14,7 +14,7 @@ class ResultsParent extends React.Component {
         }
     }
     componentWillMount(props){
-        if(this.props.dice[2] > 7){
+        if(this.props.dice[2] == 7){
             this.setState({
                 dice: true
             })

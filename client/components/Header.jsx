@@ -31,7 +31,6 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
-    clearInterval(this.interval)
   }
   componentWillUnmount(){
     clearInterval(this.interval)
