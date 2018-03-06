@@ -16,7 +16,6 @@ class Header extends React.Component {
     this.timer()
   }
   timer() {
-    console.log('timer called')
     this.interval = setInterval(this.printTime, 1500)
   }
   printTime() {

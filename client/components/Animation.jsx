@@ -7,16 +7,27 @@ class Animation extends React.Component {
     super(props)
     this.state = {
       time: 0,
-      showResults: false
+      showResults: false,
     }
     this.playAnimation = this.playAnimation.bind(this)
     this.addTime = this.addTime.bind(this)
-
+    this.resetState = this.resetState.bind(this)
+  }
+  resetState(){
+    console.log('resetting state')
+    this.setState({
+      time: 0, 
+      showResults: false
+    })
+    document.getElementById('animation1').style.display = "inline"
+    document.getElementById('animation2').style.display = "inline"
+    this.playAnimation()
   }
   componentDidMount() {
     this.playAnimation()
   }
-  toggleResults(){
+
+  showResults(){
     this.setState({
       time:5,
       showResults: true
@@ -32,7 +43,7 @@ class Animation extends React.Component {
       time: this.state.time +=1 ,
     })
     if (this.state.time >= 3) {
-      this.toggleResults()
+      this.showResults()
       clearInterval(this.state.intervalHandle)
 
       document.getElementById('animation1').style.display = "none"
@@ -40,9 +51,10 @@ class Animation extends React.Component {
     }
   }
   render() {
+    console.log(this.state)
     return (
       <div className="animations">
-        {this.state.showResults && <ResultsParent/>}
+        {this.state.showResults && <ResultsParent resetState={this.resetState}/>}
         <img id="animation1" src="/images/loading.gif" alt="" />
         <img id="animation2" src="/images/loading.gif" alt="" />
       </div>
