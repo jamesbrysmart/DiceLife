@@ -6,8 +6,7 @@ function requestDiceHistory() {
     }
 }
   
-function receiveDiceHistory(history) {
-  console.log(history)
+function receiveDiceHistory(history) { 
 return {
     type:'RECEIVE_DICE_HISTORY',
     history

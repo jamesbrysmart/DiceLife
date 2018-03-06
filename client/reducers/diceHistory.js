@@ -1,5 +1,5 @@
 
-function diceHistory(state=[], action) {
+function diceHistory(state={dice: []}, action) {
   
   switch(action.type) {
     case 'RECEIVE_DICE_HISTORY':

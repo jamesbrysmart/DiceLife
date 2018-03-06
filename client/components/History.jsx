@@ -6,33 +6,49 @@ import Header from './Header'
 class History extends React.Component {
     constructor(props) {
         super(props)
-        this.findHistory=this.findHistory.bind(this)
+        this.state = {
+          userDiceRolls:[],
+          rollsWithInfo:[]
+        }
+        this.findDiceDetails=this.findDiceDetails.bind(this)
+        this.filterRollsByUser=this.filterRollsByUser.bind(this)
     }
 
-    
-
-
-
-    findHistory() {
-        let userId = this.props.userID
-        console.log(this.props.previousRolls)
-        let allRolls = this.props.previousRolls.dice
-        console.log(allRolls)
-        let rollsByUser= allRolls.filter(roll => roll.user_id == userId)
-        console.log(rollsbyUser)
-        this.props.names 
-        
+    filterRollsByUser() {
+      let userId = this.props.userID 
+      let allRolls = this.props.diceHistory.dice
+      console.log(allRolls)  
+      let rollsByUser= allRolls.filter(roll => roll.user_id == userId)
+      this.setState({userDiceRolls:rollsByUser})
     }
+
+
+
+    findDiceDetails() {
+      let arrayOfRolls = []
+      let userRolls = this.state.userDiceRolls
+      console.log(userRolls)
+      userRolls.map(roll =>{
+        const foundOutcome = diceOutcomes.dice.find(outcome=>outcome.id==roll.dice_option_id)
+        foundOutcome.dice_name=outcome.dice_name
+        foundOutcome.outcome=outcome.dice_option
+        arrayOfRolls.push(foundOutcome)
+      })
+      this.setState({rollsWithInfo:arrayOfRolls})
+    }
+
+
+
     componentWillMount() {
-        
+      this.props.dispatch(getDiceHistory())
+      
         
     }
 
     componentDidMount() {
-        this.props.dispatch(getDiceHistory())
-        // this.findHistory()
-        
-        
+      console.log(this.props)
+      this.filterRollsByUser()
+        this.findDiceDetails()
     }
 
     render() {
@@ -42,12 +58,18 @@ class History extends React.Component {
                 <Header />
                 hello world
                 <br/>
-                {this.props.previousRolls && this.props.previousRolls.dice && this.props.previousRolls.dice.map((dice)=>{
+                { this.props.diceHistory.dice.map((dice)=>{
                     return (
-                        <p>{dice.roll_score}</p>
-                    )
+                        <p>dice roll scores{dice.roll_score}</p>
+                    )     
                 })}
-                
+                                
+                {this.state.rollsWithInfo.map(rolls => {
+                  return (
+                    <p> rollswithdicename{rolls.dice_name}, rollswithoption{rolls.dice_option} </p>
+                  )
+                })}
+
             </div>
         )
 
@@ -56,13 +78,12 @@ class History extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state)
     return {
         names: state.diceNames,
         diceID: state.diceID,
         outcomes: state.diceOutcomes,
         userID: state.userID,
-        previousRolls: state.diceHistory
+        diceHistory: state.diceHistory
     }
 }
 
