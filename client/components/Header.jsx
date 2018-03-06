@@ -13,11 +13,10 @@ class Header extends React.Component {
     this.resetTimer = this.resetTimer.bind(this)
   }
   componentWillMount() {
-    this.resetTimer()
     this.timer()
   }
   timer() {
-    setInterval(this.printTime, 1500, clearInterval(this.timer))
+    this.interval = setInterval(this.printTime, 1500)
   }
   printTime() {
     document.getElementById('changingWord').innerHTML = this.state.words[this.state.time]
@@ -32,7 +31,9 @@ class Header extends React.Component {
     this.setState({
       time: 0
     })
-    clearInterval(this.timer)
+  }
+  componentWillUnmount(){
+    clearInterval(this.interval)
   }
   render() {
     return (

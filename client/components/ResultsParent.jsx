@@ -27,14 +27,12 @@ class ResultsParent extends React.Component {
     
     }
     render(){
-        console.log(this.state.dice)
-        console.log(this.props.dice[2])
         return (
 
         <Router>
             <div>
         {!this.state.dice && <Results/>}
-        {this.state.dice && <ResultsIf7/>}
+        {this.state.dice && <ResultsIf7 resetState={this.props.resetState}/>}
           </div>
           </Router>
         )
