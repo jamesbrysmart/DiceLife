@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import addDiceID from '../actions/diceID'
 import Header from './Header'
+import SpecificButtons from './SpecificButtons'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -31,6 +31,7 @@ class SpecificDice extends React.Component {
     this.props.dispatch(addDiceID(this.props.match.params.id))
   }
   render() {
+    console.log('props: ', this.props)
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
@@ -104,7 +105,7 @@ class SpecificDice extends React.Component {
 
         <div className="hero-foot">
           <span className="specificDiceFooter">
-            <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+            <SpecificButtons diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
           </span>
         </div>
       </div>
