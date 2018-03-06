@@ -39,7 +39,7 @@ class Nav extends React.Component {
                   </div>
                 </div>
               : 
-               'hello'
+             
               
             }
           </div>
