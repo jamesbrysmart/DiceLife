@@ -17,7 +17,7 @@ class EditDice extends React.Component {
         })
         this.state = {
             dice_name: diceNames,
-            user_id: 3,
+            user_id: this.props.userID,
             dice_option_1: specificDiceOptions[0].dice_option,
             position_1: 1,
             dice_option_2: specificDiceOptions[1].dice_option,
@@ -73,7 +73,6 @@ class EditDice extends React.Component {
         const diceNames = this.props.diceNames[diceId-1]['dice_name']
         const specificDiceOptions = diceOutcomes.filter((dice, i) => {
             if (dice.dice_name == diceNames && dice.id === this.props.match.params.id) {
-                console.log(diceOutcomes)
                 return dice
             }
         })

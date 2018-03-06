@@ -27,8 +27,6 @@ class ResultsParent extends React.Component {
     
     }
     render(){
-        console.log(this.state.dice)
-        console.log(this.props.dice[2])
         return (
 
         <Router>
