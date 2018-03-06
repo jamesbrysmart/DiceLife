@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Register from './Register'
-import Nav from './Nav'
 import Home from './Home'
 import Login from './Login'
 import HowTo from './HowTo'
@@ -16,7 +15,6 @@ import Animation from './Animation'
 import ResultsParent from './ResultsParent'
 import EditDice from './EditDice'
 import NEwEdit from './NEwEdit'
-
 
 const App = ({ auth }) => (
   <Router>
