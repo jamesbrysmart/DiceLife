@@ -53,8 +53,9 @@ componentDidMount() {
         <div className="columns">
        
        <span className="column is-3"> </span>
-       
-       
+       <br/>
+       <br/>
+       <img src="images/smalldice.png"></img>
          <span className="column is-3"> </span>
     </div>
     </div>
