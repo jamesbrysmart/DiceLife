@@ -36,7 +36,6 @@ class SpecificDice extends React.Component {
     const diceId = this.props.match.params.id
     const diceNames = this.props.diceNames[diceId - 1]['dice_name']
 
-
     // Filter the diceOutcomes by the specific dice name
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
       if (dice.dice_name == diceNames) {
