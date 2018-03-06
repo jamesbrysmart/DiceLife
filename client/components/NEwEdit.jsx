@@ -27,7 +27,8 @@ class NEwEdit extends React.Component {
             dice_option_4: specificDiceOptions[3].dice_option,
             position_4: 4,
             dice_option_5: specificDiceOptions[4].dice_option,
-            position_5: 5
+            position_5: 5,
+            active: true
 
         }
 
