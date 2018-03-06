@@ -16,9 +16,7 @@ class SpecificButtons extends React.Component {
     var currentActivity = this.props.diceNames.filter((activity)=>{
         return activity.id == this.props.diceID
     })
-    console.log(currentActivity[0])
     if(currentActivity[0].user_id == null){
-        console.log('hello')
        this.setState({
            showDelete: false
        })
@@ -48,15 +46,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(SpecificButtons)
-
-//diceID={this.props.match.params.id} rollTheDice={this.rollTheDice}
-
-
-{/* <div className='button is-danger'>
-<Link to={`/edit/${props.diceID}`}>Edit dice options</Link>
-</div>
-<div className='button is-danger'>
-<Link to='/alldice' onClick={inactiveDice(props.diceID)}>Delete dice </Link>
-</div>
-<div className='button is-danger'>
-<Link to='/allDice'> Back </Link> */}

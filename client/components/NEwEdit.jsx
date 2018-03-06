@@ -43,7 +43,7 @@ class NEwEdit extends React.Component {
     addDice() {
 
         this.props.dispatch(addNewDice(this.state))
-        this.props.dispatch(inactiveDice(this.props.match.params.id))
+        //this.props.dispatch(inactiveDice(this.props.match.params.id))
     }   
 
 

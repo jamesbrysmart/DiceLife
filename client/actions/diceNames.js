@@ -1,7 +1,6 @@
 import request from '../utils/api'
 import { isError } from 'util';
 
-
 function requestDiceNames() {
   return {
     type: 'REQUEST_DICE_NAMES'
@@ -54,7 +53,6 @@ export function getDiceNames() {
 }
 
 export function inactiveDice(id) {
-  console.log(id)
   return function(dispatch) {
     request('put', 'diceNames/'+ id)
     .then(res => {
