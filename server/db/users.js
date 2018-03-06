@@ -27,17 +27,16 @@ function getUserByName (user_name, db) {
     .first()
 }
 
-function setUpUsersDefaultDice(uid) {
-  console.log(`I am running the SetUsersDefaultTable`)
-  return db('dice_names')
-    .insert([{dice_name: 'Friday Night', user_id: uid},
-            {dice_name: 'Weekend Plans', user_id: uid},
-            {dice_name: 'Dinner Plans', user_id: uid}])
-}
+// function setUpUsersDefaultDice(uid) {
+//   console.log(`I am running the SetUsersDefaultTable`)
+//   return db('dice_names')
+//     .insert([{dice_name: 'Friday Night', user_id: uid},
+//             {dice_name: 'Weekend Plans', user_id: uid},
+//             {dice_name: 'Dinner Plans', user_id: uid}])
+// }
 
 module.exports = {
   createUser,
   userExists,
-  getUserByName,
-  setUpUsersDefaultDice
+  getUserByName
 }

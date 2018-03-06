@@ -33,9 +33,38 @@ function addNewDiceOptions(result, data, testDb) {
 
 function updateDice(data, testDb) {
   const db = testDb || connection
-  return db('dice_options')
-  .where('dice_names_id', data.id)
+  return db('dice_names')
+  .where('id', data.dice_names_id)
+  .update({'dice_name': data.dice_name})
 }
+
+function updateDiceOptions(data, testDb) {
+  const db = testDb || connection
+  return db('dice_options')
+  .where('dice_names_id', data.dice_names_id)
+
+
+  // const arr = Promise.all((data)=> {
+  //   const db = testDb || connection
+  //   return db('dice_options')
+  //     .where('dice_names_id', data.dice_names_id)
+  // })
+
+  // Promise.all(data.map((dice_option, i)=>{
+  //   return db('dice_options')
+  //     .where('id', dice_option.id)
+  //     .update({'dice_option': dice_option.dice_option_1,'position': dice_option.position_1, 'dice_names_id': dice_option.dice_name_id})
+  // }))
+}
+// Thinking through the problem with Ross
+// Promise.all(data.map((dice_option, i)=>{
+//   return db('dice_options')
+//   .where('id', dice_option.id)
+//   .update({'dice_option': dice_option.dice_option_1,'position': dice_option.position_1, 'dice_names_id': dice_option.dice_name_id})
+// }))
+// return db('dice_options')
+// .where('dice_names_id', data.dice_name_id)
+// .update({'dice_option': data.dice_option_1,'position': data.position_1, 'dice_names_id': data.dice_name_id})
 
 function getUsers (testDb) {
   const db = testDb || connection
@@ -50,5 +79,6 @@ module.exports = {
   addNewDiceOptions,
   connection,
   updateDice,
+  updateDiceOptions,
   getUsers
 }

@@ -27,4 +27,19 @@ router.post('/', decode, (req, res) => {
   })
 })
 
+
+router.put('/', decode, (req, res) => {
+  db.updateDice(req.body)
+  .then(result => {
+    // db.updateDiceOptions(req.body)
+    // .then(records => {
+      res.json({result})
+    // })
+  })
+  .catch(err => {
+    res.status(500).send('DATABASE_ERROR: ' + err.message)
+  })
+
+})
+
 module.exports = router
