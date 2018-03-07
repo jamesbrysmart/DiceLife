@@ -92,7 +92,7 @@ class AddDice extends React.Component {
                   </tr>
                 </tbody>
               </table>
-              <Link to="/alldice" className='button is-danger' onClick={this.addDice}>Add dice</Link>
+              <Link to={`/diceadded`} className='button is-danger' onClick={this.addDice}>Add dice</Link>
               <Link className="button" to="/alldice">Cancel</Link>
             </span>
             <span className="column is-3"></span>
