@@ -14,6 +14,8 @@ import AddDice from './AddDice'
 import Animation from './Animation'
 import ResultsParent from './ResultsParent'
 import NEwEdit from './NEwEdit'
+import NewHistory from './NewHistory'
+
 
 const App = ({ auth }) => (
   <Router>
@@ -21,13 +23,12 @@ const App = ({ auth }) => (
           <Link to='/howTo' className="">
             
           </Link>
-          
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/addDice" component={AddDice} />
           <Route path="/register" component={Register} />
           <Route path="/howto" component={HowTo} />
-          <Route path="/history" component={History} />
+          <Route path="/history" component={NewHistory} />
           <Route exact path="/alldice" component={AllDice} />
           <Route exact path="/alldice/:id" component={SpecificDice} />
           <Route path="/results" component={Results} />
