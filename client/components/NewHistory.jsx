@@ -4,7 +4,6 @@ import { getDiceHistory } from '../actions/diceHistory'
 import { getDiceOutcomes } from '../actions/diceOutcomes'
 import { getDiceNames } from '../actions/diceNames'
 import { getUsers } from '../actions/users'
-
 import Header from './Header'
 
 class NewHistory extends React.Component {
@@ -65,84 +64,47 @@ class NewHistory extends React.Component {
 
     return (
       <div>
-        <div className="timeline">
-          <header className="timeline-header">
-            <span className="tag is-medium is-danger">Start</span>
-          </header>
-          <div className="timeline-item">
-            <div className="timeline-marker is-danger"></div>
-            <div className="timeline-content">
-              <p className="heading">January 2016</p>
-              <p>Timeline content - Can include any HTML element</p>
-            </div>
-          </div>
-          <div className="timeline-item">
-            <div className="timeline-marker is-warning is-image is-32x32">
-              <img src="http://bulma.io/images/placeholders/32x32.png"/>
-            </div>
-              <div className="timeline-content">
-                <p className="heading">February 2016</p>
-                <p>Timeline content - Can include any HTML element</p>
-              </div>
-            </div>
+        <Header />
+        <div className="spacing">
+          <div className="timeline is-centered">
             <header className="timeline-header">
-              <span className="tag is-danger">2017</span>
+              <span className="tag is-large is-danger">Latest dices</span>
             </header>
-            <div className="timeline-item">
-              <div className="timeline-marker is-danger is-icon">
-                <i className="fa fa-flag"></i>
-              </div>
-              <div className="timeline-content">
-                <p className="heading">March 2017</p>
-                <p>Timeline content - Can include any HTML element</p>
-              </div>
-            </div>
-            <header className="timeline-header">
-              <span className="tag is-medium is-danger">End</span>
-            </header>
-          </div>
-          <p>Hello World!</p>
-          <div className="timeline">
-            <header className="timeline-header">
-              <span className="tag is-medium is-danger">Start</span>
-            </header>
-            {arrayOfRolls.map((roll) => {
+            {arrayOfRolls.slice(0).reverse().map((roll) => {
               return <div className="timeline-item">
-                <div className="timeline-marker"></div>
+                <div className="timeline-marker is-danger"></div>
                 <div className="timeline-content">
-                  <p className="heading">{roll.dice_name}</p>
-                  <p>{roll.outcome}</p>
-                  <p>{roll.roll_score}</p>
-                  <p>{new Date(roll.rolled_on).toDateString()}</p>
-                  {/* {this.state.userInput.map((input, i) => <p>input</p>)}
-            <input type="text" onChange={this.handleUserInput.bind(this)} placeholder="Did you commit the dice's suggestion?"/> */}
+                  <p className="title is-5" id="makewhite">{roll.dice_name}</p>
+                  <p className="title is-4" id="makewhite">{roll.outcome}</p>
+                  <p>You rolled {roll.roll_score}</p>
+                  <p>on {new Date(roll.rolled_on).toDateString()}</p>
                 </div>
               </div>
 
             })}
             <div className="timeline-header">
-              <span className="tag is-medium is-danger">End</span>
+              <span className="tag is-large is-danger">Older dices</span>
             </div>
           </div>
-
-
         </div>
-        )
-      }
-
-    }
 
 
-const mapStateToProps = (state)=> {
-          console.log(state)
-  return {
-          names: state.diceNames,
-      diceID: state.diceID,
-      outcomes: state.diceOutcomes,
-      userID: state.userID,
-      diceHistory: state.diceHistory,
-      auth: state.auth
-    }
+      </div>
+    )
   }
-  
+
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    names: state.diceNames,
+    diceID: state.diceID,
+    outcomes: state.diceOutcomes,
+    userID: state.userID,
+    diceHistory: state.diceHistory,
+    auth: state.auth
+  }
+}
+
 export default connect(mapStateToProps)(NewHistory)

@@ -187,3 +187,8 @@ background-color: #393939af;
     font-family: 'Gloria Hallelujah', cursive;
 }
 
+.spacing {
+    margin: 80px;
+    padding: auto;
+}
+
