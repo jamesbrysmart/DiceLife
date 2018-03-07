@@ -16,7 +16,6 @@ import ResultsParent from './ResultsParent'
 import NEwEdit from './NEwEdit'
 import NewHistory from './NewHistory'
 
-
 const App = ({ auth }) => (
   <Router>
     <div className="has-text-centered">
