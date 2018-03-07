@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import addDiceID from '../actions/diceID'
 import Header from './Header'
+import SpecificButtons from './SpecificButtons'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class SpecificDice extends React.Component {
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.dispatch(addDiceID(this.props.match.params.id))
   }
   render() {
@@ -104,7 +104,7 @@ class SpecificDice extends React.Component {
 
         <div className="hero-foot">
           <span className="specificDiceFooter">
-            <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+            <SpecificButtons rollTheDice={this.rollTheDice} />
           </span>
         </div>
       </div>

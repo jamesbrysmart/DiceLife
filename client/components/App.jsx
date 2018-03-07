@@ -13,7 +13,6 @@ import Header from './Header'
 import AddDice from './AddDice'
 import Animation from './Animation'
 import ResultsParent from './ResultsParent'
-import EditDice from './EditDice'
 import NEwEdit from './NEwEdit'
 
 const App = ({ auth }) => (
