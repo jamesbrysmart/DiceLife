@@ -75,7 +75,7 @@ class NewHistory extends React.Component {
                 <div className="timeline-marker is-danger"></div>
                 <div className="timeline-content">
                   <p className="title is-5" id="makewhite">{roll.dice_name}</p>
-                  <p className="title is-4" id="makewhite">{roll.outcome}</p>
+                  <p className="title is-4" id="makepink">{roll.outcome}</p>
                   <p>You rolled {roll.roll_score}</p>
                   <p>on {new Date(roll.rolled_on).toDateString()}</p>
                 </div>
