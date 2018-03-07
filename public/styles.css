@@ -6,6 +6,10 @@ h1, h2, p, a {
     color:white;
 }
 
+#makepink {
+    color: rgb(252, 215, 221);
+}
+
 #bgimg {
  background-color: #393939;
 }
@@ -206,4 +210,9 @@ div#rolldicebuttonstyling {
 
 div#rolldicebuttonstyling, .delete-button , div.specificDiceFooter, div.action-buttons{
   margin-bottom: 1em;
+}
+
+.spacing {
+    margin: 80px;
+    padding: auto;
 }
