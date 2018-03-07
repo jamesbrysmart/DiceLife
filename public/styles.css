@@ -14,6 +14,10 @@ h1, h2, p, a {
     background-color: #D37984;
    }
 
+#diceRed {
+    background-color: rgb(207, 14, 0)
+    }
+
 #heroimg {
 
     background-image: url("./images/diceLifeText.svg") ;
@@ -89,6 +93,8 @@ h1, h2, p, a {
     padding-bottom: 3em;
 }
 
+
+
 .greybg {
     background-color: #393939;
 }
@@ -114,8 +120,9 @@ a.create:hover {
 }
 
 /* Move create dice link off bottom of page */
-div.alldice, div.animations {
-  margin-bottom: 2em;
+div.alldice, div.animations, div.addDice {
+ margin: 7em   
+
 }
 
 /* Text on if 7 roll again screen */
@@ -167,5 +174,9 @@ div.dice_images img {
    
 background-color: #393939af;
    
+}
+
+#rotatingWord {
+    font-family: 'Gloria Hallelujah', cursive;
 }
 

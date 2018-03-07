@@ -44,9 +44,6 @@ class Home extends React.Component {
                     <section className="hero is-dark is-fullheight" id="heroimg">
                         <div className="hero-body">
                             <div className="container">
-                                <h1 className="title">
-                                    <Nav />
-                                </h1>
 
                                 <div className="homeview">
                                     <div id="homebuttons">

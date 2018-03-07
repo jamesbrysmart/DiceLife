@@ -42,7 +42,7 @@ class AddDice extends React.Component {
     return (
       <div>
         <Header />
-        <div>
+        <div className='addDice'>
           <h2 className="title is-4" id="makewhite">Create A Dice:</h2>
           <br />
           <div className="columns">

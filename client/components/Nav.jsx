@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logoutUser} from '../actions/logout'
+import ChangingWord from './ChangingWord'
 
 
 class Nav extends React.Component {
@@ -21,38 +22,41 @@ class Nav extends React.Component {
   render() {
     const {auth, logout} = this.props
     const {showBurger} = this.state
-    return <nav className="navbar">
-      <div className="container">
-        <div className="navbar-brand">
-          <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
-          <div className="navbar-end">
-            {auth.isAuthenticated
-              &&
-                <div>
-                  <div className = 'nav1'> 
-                    <a className="navbar-item" onClick={() => logout()}>Logout</a>
-                  </div>
-                  <div className = 'nav2'>
-                    <Link className="navbar-item" to= '/howto'> How To Play? </Link>
-                  </div>
-                  <div className = 'nav2'>
-                    <Link className="navbar-item" to= '/history'> Show History Dices </Link>
-                  </div>
+    return (
+          <nav className="navbar">
+            <div className="container">
+              <div className="navbar-brand">
+                <a className="navbar-item">
+                  <img src ="/images/logo-white.svg" alt="Logo" />
+                </a>
+                <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div className="hero-body container has-text-centered">     
+                <ChangingWord />
+              </div>
+              <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
+                <div className="navbar-end">
+                  {auth.isAuthenticated
+                    &&
+                      <div>
+                        <div className = 'nav1'> 
+                          <a className="navbar-item" onClick={() => logout()}>Logout</a>
+                        </div>
+                        <div className = 'nav2'>
+                          <Link className="navbar-item" to= '/howto'><h3> How To Play? </h3> </Link>
+                        </div>
+                      </div>
+                  }
                 </div>
-              
-            }
-          </div>
-        </div>
-      </div>
-    </nav>
-  }
-}
+              </div>
+            </div>
+          </nav>
+        )}
+      }
 
 const mapDispatchToProps = (dispatch) => {
   return {
