@@ -1,7 +1,7 @@
 import reducer from '../../../client/reducers/diceHistory'
 
 test('diceHistory inital state', () => {
-  expect(reducer(undefined, {})).toEqual([])
+  expect(reducer(undefined, {})).toEqual({"dice": []})
 })
 
 test('RECEIVE_DICE_HISTORY', () => {

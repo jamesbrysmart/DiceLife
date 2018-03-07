@@ -1,4 +1,4 @@
-import reducer from '../../../client/reducers/diceId'
+import reducer from '../../../client/reducers/diceID'
 
 
 test('diceId inital state', () => {

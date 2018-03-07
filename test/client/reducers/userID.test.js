@@ -1,7 +1,7 @@
-import reducer from '../../../client/reducers/userId'
+import reducer from '../../../client/reducers/userID'
 
 test('userID inital state', () => {
-  expect(reducer(undefined, {})).toEqual([])
+  expect(reducer(undefined, {})).toEqual(null)
 })
 
 test('ADD_USER_ID', () => {
