@@ -149,3 +149,10 @@ background-color: #393939af;
    
 }
 
+#rolldicebuttonstyling {
+    margin-bottom: 1em;
+}
+
+.hero-body.lessbottompadding {
+    padding-bottom: 1em !important; 
+}
