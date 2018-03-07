@@ -15,14 +15,15 @@ import Animation from './Animation'
 import ResultsParent from './ResultsParent'
 import EditDice from './EditDice'
 import NEwEdit from './NEwEdit'
+import DiceAdded from './DiceAdded'
 
 const App = ({ auth }) => (
   <Router>
     <div className="has-text-centered">
           <Link to='/howTo' className="">
-            
+
           </Link>
-          
+
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/addDice" component={AddDice} />
@@ -36,6 +37,7 @@ const App = ({ auth }) => (
           <Route exact path="/animation" component={Animation} />
           <Route path="/resultsparent" component={ResultsParent} />
           <Route path="/edit/:id" component={NEwEdit} />
+          <Route exact path="/diceadded" component={DiceAdded} />
     </div>
   </Router>
 )
