@@ -143,13 +143,11 @@ a.create:hover {
   color: #FFF;
   font-weight: bold;
   padding: .5rem 1rem;
-  background-color: #292929;
 }
 
 /* Move create dice link off bottom of page */
 div.alldice, div.animations, div.addDice {
  margin: 7em
-
 }
 
 /* Text on if 7 roll again screen */
