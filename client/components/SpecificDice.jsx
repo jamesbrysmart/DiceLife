@@ -4,6 +4,8 @@ import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import addDiceID from '../actions/diceID'
 import Header from './Header'
+import {getDiceOutcomes} from '../actions/diceOutcomes'
+import {getDiceNames} from '../actions/diceNames'
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -12,8 +14,7 @@ class SpecificDice extends React.Component {
     this.rollTheDice = this.rollTheDice.bind(this)
     this.diceRoll = this.diceRoll.bind(this)
   }
-
-
+  
   diceRoll() {
     return Math.floor(Math.random() * 6) + 1
   }
@@ -26,11 +27,17 @@ class SpecificDice extends React.Component {
     this.props.dispatch(diceRolls(arr))
   }
 
-
   componentDidMount() {
     this.props.dispatch(addDiceID(this.props.match.params.id))
+    this.props.dispatch(getDiceOutcomes())
+    this.props.dispatch(getDiceNames())
+    
   }
   render() {
+
+    let ready = this.props.diceOutcomes.dice && this.props.diceOutcomes.dice.length > 1
+
+    if (ready) {
     // getting the name of the selected dice to filter options
     const diceOutcomes = this.props.diceOutcomes.dice
     const diceId = this.props.match.params.id
@@ -50,6 +57,7 @@ class SpecificDice extends React.Component {
     const option3 = specificDiceOptions[2].dice_option
     const option4 = specificDiceOptions[3].dice_option
     const option5 = specificDiceOptions[4].dice_option
+
     return (
       <div className="hero is-dark is-fullheight">
         <div className="hero-head">
@@ -109,6 +117,10 @@ class SpecificDice extends React.Component {
         </div>
       </div>
     )
+
+    } else {
+      return <p>Loading</p>
+    }
   }
 }
 
@@ -120,6 +132,7 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(SpecificDice)
+
 
 
 

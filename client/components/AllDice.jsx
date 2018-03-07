@@ -28,12 +28,17 @@ class AllDice extends React.Component {
     this.props.dispatch(getDiceOutcomes())
     this.props.dispatch(getDiceNames())
     this.props.dispatch(getUsers())
+    console.log('componentWillMount')
   }
   componentDidMount(){
     this.props.dispatch(addUserID(this.findUserId()))
+    console.log('componentDidMount')
   }
+
   render() {
     const specificDice = this.props.diceNames
+    const diceOutcomes = this.props
+    console.log(this.props)
     return (
 
       <div>
