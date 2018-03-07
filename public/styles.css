@@ -130,7 +130,7 @@ h1, h2, p, a {
     padding-top: 8vh;
 }
 .animations{
-    padding-top: 20vh;
+    padding-top: 10vh;
 }
 
 /* Add space between buttons */
@@ -197,7 +197,9 @@ div.dice_images img {
 
 #howto-overlay {
 
-background-color: #393939d3;
+background-color: #393939e5;
+margin-right:15em;
+margin-left:15em
 
 }
 
@@ -212,6 +214,7 @@ background-color: #393939d3;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
+    padding-left:12em
 }
 
 
