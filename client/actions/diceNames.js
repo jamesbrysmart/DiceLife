@@ -22,7 +22,6 @@ export function addDiceName(name) {
 }
 
 function removeDiceName(id) {
-  console.log(id)
   return {
     type: 'REMOVE_DICE_NAME',
     id
@@ -56,7 +55,6 @@ export function inactiveDice(id) {
   return function(dispatch) {
     request('put', 'diceNames/'+ id)
     .then(res => {
-      console.log(res)
       dispatch(removeDiceName(id))
     })
       .catch(err => {
