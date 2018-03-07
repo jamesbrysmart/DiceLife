@@ -4,7 +4,7 @@ class ChangingWord extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      words: ['Hunt', 'Bungy jump', 'Ski', 'Eat the Hottest Chilli', 'Ice Swim', 'Nap', 'Ibiza'],
+      words: ['bungee', 'skydive', 'ski', 'party', 'swim', 'dance', 'travel'],
       time: 0
     }
     this.timer = this.timer.bind(this)
@@ -38,7 +38,7 @@ class ChangingWord extends React.Component {
     return (
       <div id='rotatingWord'>
        <h2 className="subtitle is-3">
-        <p> Eat,play, <span id="changingWord">Karaoke</span></p>
+        <p> Eat, play,</p> <p><span id="changingWord">Karaoke</span></p>
         </h2>
       </div>
     )

@@ -61,7 +61,9 @@ class SpecificDice extends React.Component {
     const option5 = specificDiceOptions[4].dice_option
 
     return (
+      
       <div className="hero is-dark is-fullheight">
+      <Header />
         <div className="hero-head">
           <h2 className="title is-2 specificDiceTitle" id="makewhite">{diceNames}</h2>
         </div>

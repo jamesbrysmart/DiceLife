@@ -1,6 +1,7 @@
 import React from 'react'
 import setHeaderToMounted from '../actions/header' 
 import {connect} from 'react-redux'
+import Nav from './Nav'
 
 
 class Header extends React.Component {
