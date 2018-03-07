@@ -13,9 +13,8 @@ class HowTo extends React.Component {
         {this.props.showHeader && <Header />}
         <div className="HowTo" >
           < br />
-          <div className="columns">
-            <span className="column is-3"></span>
-            <div className="column is-6">
+          <div className="container">
+            
               
                 <div className="box" id="howto-overlay"  >
                 <h2 className="title is-2" id="makewhite">
@@ -38,7 +37,6 @@ class HowTo extends React.Component {
 
                     <OKButton toggleHowTo={this.props.toggleHowTo} />
                   </div>
-                </div>
               </div>
             </div>
           </div>

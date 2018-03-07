@@ -35,7 +35,7 @@ class Nav extends React.Component {
                   <span></span>
                 </span>
               </div>
-              <div className="container has-text-centered">     
+              <div id = ''className="container has-text-centered">     
                 <ChangingWord />
               </div>
               <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>

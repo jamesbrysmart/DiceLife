@@ -51,10 +51,13 @@ class Animation extends React.Component {
   }
   render() {
     return (
-      <div className="animations">
-        {this.state.showResults && <ResultsParent resetState={this.resetState}/>}
-        <img id="animation1" src="/images/dice-basic-random-slow.gif" alt="" />
-        <img id="animation2" src="/images/dice-basic-slow.gif" alt="" />
+      <div>
+        <Header />
+        <div className="animations">
+          {this.state.showResults && <ResultsParent resetState={this.resetState}/>}
+          <img id="animation1" src="/images/dice-basic-random-slow.gif" alt="" />
+          <img id="animation2" src="/images/dice-basic-slow.gif" alt="" />
+        </div>
       </div>
     )
   }

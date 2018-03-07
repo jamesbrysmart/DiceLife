@@ -68,7 +68,7 @@ class NewHistory extends React.Component {
         <div className="spacing">
           <div className="timeline is-centered">
             <header className="timeline-header">
-              <span className="tag is-large is-danger">Latest dices</span>
+              <span className="tag is-large is-danger">Latest dice</span>
             </header>
             {arrayOfRolls.slice(0).reverse().map((roll) => {
               return <div className="timeline-item">
@@ -83,7 +83,7 @@ class NewHistory extends React.Component {
 
             })}
             <div className="timeline-header">
-              <span className="tag is-large is-danger">Older dices</span>
+              <span className="tag is-large is-danger">Older dice</span>
             </div>
           </div>
         </div>
