@@ -113,7 +113,7 @@ class NewHistory extends React.Component {
                   <p className="heading">{roll.dice_name}</p>
                   <p>{roll.outcome}</p>
                   <p>{roll.roll_score}</p>
-                  <p>{roll.rolled_on}</p>
+                  <p>{new Date(roll.rolled_on).toDateString()}</p>
                   {/* {this.state.userInput.map((input, i) => <p>input</p>)}
             <input type="text" onChange={this.handleUserInput.bind(this)} placeholder="Did you commit the dice's suggestion?"/> */}
                 </div>
