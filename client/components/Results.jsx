@@ -13,23 +13,20 @@ constructor(){
 }
    MapSumToPosition(sum){
     if (sum == 2 || sum ==  12) {
-      return 6
+      return 5
     }
     else if (sum == 3 || sum == 11) {
-    return 5
+    return 4
     }
     else if (sum == 4 || sum == 10) {
-    return 4
+    return 3
     }  
     else if (sum == 5 || sum == 9) {
-    return 3
-    }
-    else if (sum == 6 || sum == 8) {
     return 2
     }
-    else if (sum == 7) {
+    else if (sum == 6 || sum == 8) {
     return 1
-    }    
+    }
     }
 
   componentDidMount(){
@@ -43,6 +40,8 @@ constructor(){
     })
 
     var OutCome = currentOutComes.filter((outcome) => {
+      console.log(currentOutComes)
+      console.log(this.MapSumToPosition(diceSum))
       return outcome.position == this.MapSumToPosition(diceSum)
     })
     this.setState({

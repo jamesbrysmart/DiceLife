@@ -37,8 +37,13 @@ class AllDice extends React.Component {
 
   render() {
     const specificDice = this.props.diceNames
+
     const diceOutcomes = this.props
-    console.log(this.props)
+
+    const activeDice = specificDice.filter((dice)=>{
+      return dice.active == 1
+    })
+
     return (
 
       <div>
@@ -48,7 +53,7 @@ class AllDice extends React.Component {
       <h2 className="title is-3" id="makewhite">Select a dice</h2>
       <div className="columns">
       <span className="column is-3"></span>
-      {specificDice.map((dice, i) => {
+      {activeDice.map((dice, i) => {
         return <div className="column" key={i}>
           <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>
           {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>

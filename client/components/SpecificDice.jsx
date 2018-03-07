@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import RollDiceButton from './RollDiceButton'
 import diceRolls from '../actions/diceRolls'
 import addDiceID from '../actions/diceID'
 import Header from './Header'
 import {getDiceOutcomes} from '../actions/diceOutcomes'
 import {getDiceNames} from '../actions/diceNames'
+import SpecificButtons from './SpecificButtons'
+
 
 class SpecificDice extends React.Component {
   constructor(props) {
@@ -27,7 +28,8 @@ class SpecificDice extends React.Component {
     this.props.dispatch(diceRolls(arr))
   }
 
-  componentDidMount() {
+  componentWillMount() {
+
     this.props.dispatch(addDiceID(this.props.match.params.id))
     this.props.dispatch(getDiceOutcomes())
     this.props.dispatch(getDiceNames())
@@ -45,7 +47,7 @@ class SpecificDice extends React.Component {
 
     // Filter the diceOutcomes by the specific dice name
     const specificDiceOptions = diceOutcomes.filter((dice, i) => {
-      if (dice.dice_name == diceNames) {
+      if (dice.dice_names_id == diceId) {
         return dice
       }
     })
@@ -112,7 +114,7 @@ class SpecificDice extends React.Component {
 
         <div className="hero-foot">
           <span className="specificDiceFooter">
-            <RollDiceButton diceID={this.props.match.params.id} rollTheDice={this.rollTheDice} />
+            <SpecificButtons rollTheDice={this.rollTheDice} />
           </span>
         </div>
       </div>
