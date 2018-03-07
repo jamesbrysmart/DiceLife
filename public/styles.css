@@ -97,7 +97,7 @@ h1, h2, p, a {
 
 #homebuttons {
     height: 10vh;
-    
+
 }
 
 .HomeButtons {
@@ -205,7 +205,7 @@ background-color: #393939d3;
 
 #rolldicebuttonstyling {
     margin-bottom: 1em;
-   
+
     background-color: #393939d3;
     padding-top:5em
 }
@@ -215,16 +215,9 @@ background-color: #393939d3;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
-    
+
 }
 
-div#rolldicebuttonstyling {
-  font-size: 1.8rem;
-  font-family: 'Gloria Hallelujah', cursive;
-  background-color: #a71106;
-  font-weight: bold;
-  text-shadow: 2px 2px #111;
-}
 
 div#rolldicebuttonstyling, .delete-button , div.specificDiceFooter, div.action-buttons{
   margin-bottom: 1em;
