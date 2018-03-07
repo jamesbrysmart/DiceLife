@@ -23,7 +23,7 @@ h1, h2, p, a {
     }
 
 .diceImg {
-    padding-top:20em;
+    padding-top:22em;
     width:250px;
     height:auto;
     margin: 0 auto
@@ -61,10 +61,11 @@ h1, h2, p, a {
 
 #headerimg {
 
-    background-image: url("./images/sihouette.svg") ;
+    background-image: url("./images/dicelife-xsm.svg") ;
     background-color: #393939;
   background-repeat: no-repeat;
-  height:200% !important;
+  background-size:cover;
+  height: 300% !important;
 
 
 }
@@ -79,7 +80,11 @@ h1, h2, p, a {
 }
 
 .hero-head, .hero-foot {
-    height: 15vh;
+    height: 22vh;
+}
+
+.page-head {
+    height: 12vh;
 }
 
 .hero-bod {
@@ -91,8 +96,15 @@ h1, h2, p, a {
 }
 
 #homebuttons {
-    height: 15vh;
+    height: 10vh;
+    
 }
+
+.HomeButtons {
+    padding-top: 10em
+}
+
+
 
 #makeblack {
     color:black;
@@ -106,14 +118,16 @@ h1, h2, p, a {
     padding-bottom: 3em;
 }
 
-
+#allDice{
+    padding-top:3em
+}
 
 .greybg {
     background-color: #393939;
 }
 
 .specificDiceTitle {
-    padding-top: 15vh;
+    padding-top: 8vh;
 }
 .animations{
     padding-top: 20vh;
@@ -191,6 +205,9 @@ background-color: #393939d3;
 
 #rolldicebuttonstyling {
     margin-bottom: 1em;
+   
+    background-color: #393939d3;
+    padding-top:5em
 }
 
 .hero-body.lessbottompadding {
@@ -198,6 +215,7 @@ background-color: #393939d3;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
+    
 }
 
 div#rolldicebuttonstyling {

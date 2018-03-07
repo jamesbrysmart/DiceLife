@@ -64,7 +64,7 @@ class SpecificDice extends React.Component {
       
       <div className="hero is-dark is-fullheight">
       <Header />
-        <div className="hero-head">
+        <div className="page-head">
           <h2 className="title is-2 specificDiceTitle" id="makewhite">{diceNames}</h2>
         </div>
 

@@ -24,11 +24,11 @@ class Nav extends React.Component {
     const {showBurger} = this.state
     return (
           <nav className="navbar">
-            <div className="container" style={{paddingTop: '4vh'}}>
+            <div className="container" style={{paddingTop: '7vh'}}>
               <div className="navbar-brand">
-                <a className="navbar-item">
+                <Link className="navbar-item" to='/allDice'>
                   <img src ="/images/logo-white.svg" alt="Logo" />
-                </a>
+                </Link>
                 <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
                   <span></span>
                   <span></span>
@@ -42,11 +42,11 @@ class Nav extends React.Component {
                   {auth.isAuthenticated
                     &&
                       <div className="navbar-end">
-                        <div className="navbar-item" className = 'nav1'>
+                        <div className="navbar-item" className = 'nav1'style={{fontSize:20}} >
                           <a className="navbar-item" onClick={() => logout()}>Logout</a>
                         </div>
                         <div className = 'nav2'>
-                          <Link className="navbar-item" to= '/howto'><a> How To Play? </a> </Link>
+                          <Link className="navbar-item" to= '/howto'><a style={{fontSize:20}}> How To Play? </a> </Link>
                         </div>
                         <div className="nav2">
                           <Link className="navbar-item" to= '/history'><a> History </a> </Link>
