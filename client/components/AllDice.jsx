@@ -71,7 +71,9 @@ class AllDice extends React.Component {
       <span className="column is-3"></span>
 
       </div>
-      <p><Link to="/create" className="create">Create your own dice</Link></p>
+      <div className='button is-danger'>
+        <Link to="/create" className="create">Create your own dice</Link>
+      </div>
     </div>
     </div>
     )

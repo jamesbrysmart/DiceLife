@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Home from './Home'
 import OKButton from './OKButton'
+import Header from './Header'
 
 
 class HowTo extends React.Component {
@@ -9,6 +10,7 @@ class HowTo extends React.Component {
   render() {
     return (
       <div className="HowTo" >
+        {this.props.showHeader && <Header />}
         < br />
         <div className="columns">
           <span className="column is-3"></span>
