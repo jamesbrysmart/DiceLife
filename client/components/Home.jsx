@@ -68,7 +68,7 @@ class Home extends React.Component {
 
                                     {auth.isAuthenticated
                                         ? this.state.showHowTo && [
-                                            <HowTo showHeader={false} oggleHowTo={this.toggleHowTo} />,
+                                            <HowTo showHeader={false} toggleHowTo={this.toggleHowTo} />,
                                         ]
                                         : <HomeButtons handleButton={this.handleButton} />
                                     }
