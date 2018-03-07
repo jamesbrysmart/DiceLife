@@ -27,7 +27,7 @@ h1, h2, p, a {
     width:250px;
     height:auto;
     margin: 0 auto
-}    
+}
 
 
 
@@ -134,7 +134,7 @@ a.create:hover {
 
 /* Move create dice link off bottom of page */
 div.alldice, div.animations, div.addDice {
- margin: 7em   
+ margin: 7em
 
 }
 
@@ -184,9 +184,9 @@ div.dice_images img {
 }
 
 #howto-overlay {
-   
+
 background-color: #393939d3;
-   
+
 }
 
 #rolldicebuttonstyling {
@@ -194,14 +194,25 @@ background-color: #393939d3;
 }
 
 .hero-body.lessbottompadding {
-    padding-bottom: 1em !important; 
+    padding-bottom: 1em !important;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
+}
+
+div#rolldicebuttonstyling {
+  font-size: 1.8rem;
+  font-family: 'Gloria Hallelujah', cursive;
+  background-color: #a71106;
+  font-weight: bold;
+  text-shadow: 2px 2px #111;
+}
+
+div#rolldicebuttonstyling, .delete-button , div.specificDiceFooter, div.action-buttons{
+  margin-bottom: 1em;
 }
 
 .spacing {
     margin: 80px;
     padding: auto;
 }
-

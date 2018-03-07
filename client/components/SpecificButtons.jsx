@@ -27,9 +27,9 @@ class SpecificButtons extends React.Component {
     }
     render(){
         return (
-        <div>
+        <div className="action-buttons">
            <RollDiceButton rollTheDice={this.props.rollTheDice} />
-          {this.state.showDelete && <DeleteButton diceID = {this.props.diceID} />} 
+          {this.state.showDelete && <DeleteButton diceID = {this.props.diceID} />}
            <div className='button is-danger'>
              <Link to={`/edit/${this.props.diceID}`}>Edit dice options</Link>
            </div>
