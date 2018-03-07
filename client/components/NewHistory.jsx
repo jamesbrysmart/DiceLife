@@ -67,10 +67,10 @@ class NewHistory extends React.Component {
       <div>
         <div className="timeline">
           <header className="timeline-header">
-            <span className="tag is-medium is-primary">Start</span>
+            <span className="tag is-medium is-danger">Start</span>
           </header>
           <div className="timeline-item">
-            <div className="timeline-marker is-primary"></div>
+            <div className="timeline-marker is-danger"></div>
             <div className="timeline-content">
               <p className="heading">January 2016</p>
               <p>Timeline content - Can include any HTML element</p>
@@ -86,7 +86,7 @@ class NewHistory extends React.Component {
               </div>
             </div>
             <header className="timeline-header">
-              <span className="tag is-primary">2017</span>
+              <span className="tag is-danger">2017</span>
             </header>
             <div className="timeline-item">
               <div className="timeline-marker is-danger is-icon">
@@ -98,13 +98,13 @@ class NewHistory extends React.Component {
               </div>
             </div>
             <header className="timeline-header">
-              <span className="tag is-medium is-primary">End</span>
+              <span className="tag is-medium is-danger">End</span>
             </header>
           </div>
           <p>Hello World!</p>
           <div className="timeline">
             <header className="timeline-header">
-              <span className="tag is-medium is-primary">Start</span>
+              <span className="tag is-medium is-danger">Start</span>
             </header>
             {arrayOfRolls.map((roll) => {
               return <div className="timeline-item">
@@ -121,7 +121,7 @@ class NewHistory extends React.Component {
 
             })}
             <div className="timeline-header">
-              <span className="tag is-medium is-primary">End</span>
+              <span className="tag is-medium is-danger">End</span>
             </div>
           </div>
 
