@@ -21,7 +21,7 @@ function requestUsers() {
             dispatch(receiveUsers(res.body))
         })
         .catch(err => {
-        dispatch(showError(err.message))
+         console.log(err.message)
         })
     }
     }

@@ -14,7 +14,6 @@ class Animation extends React.Component {
     this.resetState = this.resetState.bind(this)
   }
   resetState(){
-    console.log('resetting state')
     this.setState({
       time: 0, 
       showResults: false
@@ -51,7 +50,6 @@ class Animation extends React.Component {
     }
   }
   render() {
-    console.log(this.state)
     return (
       <div className="animations">
         {this.state.showResults && <ResultsParent resetState={this.resetState}/>}

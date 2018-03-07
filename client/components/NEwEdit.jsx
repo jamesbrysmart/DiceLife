@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addNewDice } from './../actions/diceOutcomes'
 import { inactiveDice } from './../actions/diceNames'
 import Header from './Header'
+import {Link} from 'react-router-dom'
 
 class NEwEdit extends React.Component {
     constructor(props) {
@@ -29,9 +30,10 @@ class NEwEdit extends React.Component {
             position_4: 4,
             dice_option_5: specificDiceOptions[4].dice_option,
             position_5: 5,
-
+            active: 1
         }
-
+      this.handleClick = this.handleClick.bind(this)
+      this.addDice = this.addDice.bind(this)
     }
    
     handleEdit(e) {
@@ -41,12 +43,15 @@ class NEwEdit extends React.Component {
     }
 
     addDice() {
-
+        console.log(this.state)
         this.props.dispatch(addNewDice(this.state))
-        //this.props.dispatch(inactiveDice(this.props.match.params.id))
+        
     }   
-
-
+   
+    handleClick(){
+        this.addDice()
+        this.props.dispatch(inactiveDice(this.props.match.params.id))
+    }
 
 
 render() {
@@ -57,6 +62,7 @@ render() {
         if (dice.dice_name == diceNames && dice.id === this.props.match.params.id) {
             return dice
         }
+
     })
         return (
             <div>
@@ -107,7 +113,7 @@ render() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <button className="button is-danger" onClick={this.addDice.bind(this)}>Save changes</button>
+                            <Link to='/alldice' className="button is-danger" onClick={this.handleClick}>Save changes</Link>
 
                         </span>
                         <span className="column is-3"></span>

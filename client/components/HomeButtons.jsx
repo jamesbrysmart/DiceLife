@@ -15,9 +15,6 @@ function HomeButtons (props) {
         </div>  
       
     </div>
-    
-
-
       </div>
 
   )
