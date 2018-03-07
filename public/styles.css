@@ -6,6 +6,10 @@ h1, h2, p, a {
     color:white;
 }
 
+#makepink {
+    color: rgb(252, 215, 221);
+}
+
 #bgimg {
  background-color: #393939;
 }
@@ -194,5 +198,10 @@ background-color: #393939d3;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
+}
+
+.spacing {
+    margin: 80px;
+    padding: auto;
 }
 
