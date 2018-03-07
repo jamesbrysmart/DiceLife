@@ -35,7 +35,7 @@ class Nav extends React.Component {
                   <span></span>
                 </span>
               </div>
-              <div className="container has-text-centered">     
+              <div id = ''className="container has-text-centered">     
                 <ChangingWord />
               </div>
               <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
@@ -49,7 +49,7 @@ class Nav extends React.Component {
                           <Link className="navbar-item" to= '/howto'><a style={{fontSize:20}}> How To Play? </a> </Link>
                         </div>
                         <div className="nav2">
-                          <Link className="navbar-item" to= '/history'><a> History </a> </Link>
+                          <Link className="navbar-item" to= '/history'><a style={{fontSize:20}}> History </a> </Link>
                         </div>
                       </div>
                   }

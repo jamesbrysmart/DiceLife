@@ -43,7 +43,7 @@ class Home extends React.Component {
                 <div id="home">
                     <section className="hero is-dark is-fullheight" id="heroimg">
                         <div className="hero-body">
-                            <div className="container">
+                            <div className='container'>
 
                                 <div className="homeview">
                                     <div id="homebuttons">
@@ -51,7 +51,7 @@ class Home extends React.Component {
 
                                             <span className="column is-3"> </span>
                                             <div className='diceImg'>
-                                                <img src='/images/dice-25637_640.png'/>
+                                                <img src='./images/dice-25637_640.png'/>
                                             </div>
 
 
@@ -68,7 +68,7 @@ class Home extends React.Component {
 
                                     {auth.isAuthenticated
                                         ? this.state.showHowTo && [
-                                            <HowTo showHeader={false} oggleHowTo={this.toggleHowTo} />,
+                                            <HowTo showHeader={false} toggleHowTo={this.toggleHowTo} />,
                                         ]
                                         : <HomeButtons handleButton={this.handleButton} />
                                     }
