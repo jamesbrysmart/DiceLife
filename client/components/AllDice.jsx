@@ -10,8 +10,7 @@ import {addUserID} from '../actions/userID'
 class AllDice extends React.Component {
   constructor(props){
   super(props)
-  this.state = {
-
+  this.state = { 
   }
   this.findUserId = this.findUserId.bind(this)
 
@@ -28,11 +27,8 @@ class AllDice extends React.Component {
     this.props.dispatch(getDiceOutcomes())
     this.props.dispatch(getDiceNames())
     this.props.dispatch(getUsers())
-    console.log('componentWillMount')
-  }
-  componentDidMount(){
     this.props.dispatch(addUserID(this.findUserId()))
-    console.log('componentDidMount')
+
   }
 
   render() {
@@ -43,7 +39,11 @@ class AllDice extends React.Component {
     const activeDice = specificDice.filter((dice)=>{
       return dice.active == 1
     })
-
+    const userDice = activeDice.filter((dice)=> {
+      if(dice.user_id == this.findUserId() || dice.user_id == null) {
+        return dice
+      }
+    })
     return (
 
       <div>
@@ -53,7 +53,7 @@ class AllDice extends React.Component {
       <h2 className="title is-3" id="makewhite">Select a dice</h2>
       <div className="columns">
       <span className="column is-3"></span>
-      {activeDice.map((dice, i) => {
+      {userDice.map((dice, i) => {
         return <div className="column" key={i}>
           <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>
           {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>
