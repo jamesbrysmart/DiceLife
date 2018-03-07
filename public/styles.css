@@ -18,6 +18,15 @@ h1, h2, p, a {
     background-color: rgb(167, 17, 6)
     }
 
+.diceImg {
+    padding-top:20em;
+    width:250px;
+    height:auto;
+    margin: 0 auto
+}    
+
+
+
 #heroimg {
 
     background-image: url("./images/diceLifeText.svg") ;
@@ -172,7 +181,7 @@ div.dice_images img {
 
 #howto-overlay {
    
-background-color: #393939af;
+background-color: #393939d3;
    
 }
 

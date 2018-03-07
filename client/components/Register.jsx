@@ -33,10 +33,10 @@ class Register extends React.Component {
     const {auth} = this.props
     return (
 
-      <section className="hero is-dark is-fullheight">
+      <section className="hero is-dark is-fullheight" id="heroimg">
        <div className="hero-body">
-       <div className="container">
-      <form className="Register form "onSubmit={this.submit}>
+        <div className="container">
+          <form className="Register form" id="howto-overlay" onSubmit={this.submit}>
         <h1 className="title is-2" id="makewhite">Register</h1>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
