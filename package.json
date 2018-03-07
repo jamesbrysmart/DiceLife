@@ -8,7 +8,7 @@
     "postinstall": "webpack",
     "dev": "nodemon --watch server server/index & webpack --watch",
     "start": "node server/index",
-    "test": "ava  -v  --serial 'test/**/*.test.js'",
+    "test": "jest --watchAll",
     "watch": "nodemon -e js,jsx -x npm test",
     "h:deploy": "git push heroku master",
     "h:migrate": "heroku run knex migrate:latest",
@@ -30,8 +30,8 @@
   "author": "EDA",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.19.1",
     "enzyme": "^2.8.2",
+    "enzyme-adapter-react-16": "^1.1.1",
     "nodemon": "^1.11.0",
     "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
@@ -49,6 +49,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "express-jwt": "^5.3.0",
+    "jest": "^22.4.2",
     "jsdom": "^11.0.0",
     "jsonwebtoken": "^7.4.3",
     "jsx-loader": "^0.13.2",

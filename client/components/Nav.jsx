@@ -29,15 +29,16 @@ class Nav extends React.Component {
         <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
           <div className="navbar-end">
             {auth.isAuthenticated
-              ? [
-                <Link onClick={this.toggleBurger} className="navbar-item" to="/meeting">Start Meeting</Link>,
-                <Link onClick={this.toggleBurger} className="navbar-item" to="/history">Meeting History</Link>,
-                <a className="navbar-item" onClick={() => logout()}>Logout</a>
-              ]
-              : [
-                <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>,
-                <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
-              ]
+              &&
+                <div>
+                  <div className = 'nav1'> 
+                    <a className="navbar-item" onClick={() => logout()}>Logout</a>
+                  </div>
+                  <div className = 'nav2'>
+                    <Link className="navbar-item" to= '/howto'> How To Play? </Link>
+                  </div>
+                </div>
+              
             }
           </div>
         </div>

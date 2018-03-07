@@ -2,16 +2,20 @@
 
 ### A Project by James, Phuong, Guy, Edi and Hayden
 
-
+### Link to Heroku: [Link to Heroku:](https://dice-life.herokuapp.com/#/)
 
 # Information For The Team:
 
 
+### BUGS 
+
+Place to put bugs
+
+ - Doesn't show outcome when rolls 12
+
 ### TODOs:
-A place for me to remember what to 
-* link to heroku
-* slack chat group
-* roster that shows when certain things are (code freeze, etc.)
+A place for me to remember what to
+
 * fill in blank spaces on this readme
 
 
@@ -37,7 +41,7 @@ A place for me to remember what to
  * already taken a break
  * already had a chat with someone face to face
  * talk to Project manager to initiate a conversation where a mediator is present.
- * If needed, a full team meeting 
+ * If needed, a full team meeting
  * A team bonding activity to clear the air.
  * It is ok to take a break. Even a big break.
 
@@ -99,7 +103,7 @@ As a user:
   * I want to see a list of what will happen if I roll a certain number.
   * I want to be able to click on a button that will roll a dice, resulting in a number between 2 and 12.
   * I want to see an outcome based on my roll that will tell me what to do with my Friday Night.
-  
+
 
 ### Stretch
   * I want to be able to pick a different category to roll for. One for meals, one for weekends, and one for a night out.
@@ -113,6 +117,7 @@ As a user:
 ## Views (Client Side)
   | name | purpose |
   | --- | --- |
+  | Home | Brief description of the app, also has a login and register button. |
   | Login | View for user to enter their login credentials |
   | Register | View for user to sign up for the app. |
   | HowTo | View to explain to user how the app works. |
@@ -126,75 +131,83 @@ As a user:
   | name | purpose |
   | --- | --- |
   | auth | Store information regarding user logins, auth status and auth errors |
-  | dice | Gets all the dice, maps the options to the dice. Each dice, map through the options and filter it to match the options. |
-  
-  
+  | diceNames | handle the individual dice names |
+  | diceOutcomes | Handle dice options and add them to store |
+
  ## Actions
- 
- ### dice
- 
- | type | data | purpose | 
- | --- | --- | --- | 
- | 1 | ? | ? | 
- | 2 | ? | ? | 
- 
- ### users 
+
+ ### login
+
  | type | data | purpose |
  | --- | --- | --- |
- | 1 | ? | ? | 
- 
- ### options
-  | type | data | purpose | 
-| --- | --- | --- | 
-| 1 | ? | ? | 
-| 2 | ? | ? |  
-| 3 | ? | ? | 
-| 4 | ? | ? | 
+ | LOGIN_REQUEST | none | Requests info  about user |
+ | LOGIN_SUCCESS | user | Authenticates the user |
+ | LOGIN_FAILURE | message | displays an error message. |
 
+ ### logout
+ | type | data | purpose |
+ | --- | --- | --- |
+ | LOGOUT_REQUEST | none | sends the request to remove the user. |
+ | LOGOUT_SUCCESS | none | reverts the user to having no authentication (being logged out) |
 
+ ### diceOutcomes
+  | type | data | purpose |
+| --- | --- | --- |
+| REQUEST_DICE_OUTCOME | dice options and dice | Request all the dice names |
+| RECEIVE_DICE_OUTCOME | dice options and dice | Add all dice options with the respective name to store |  
+| ADD_DICE_OUTCOME | ? | ? |
+| EDIT_DICE_OUTCOME | ? | ? |
+| SHOW_ERROR | ? | ? |
+
+### diceNames
+| type | data | purpose |
+| --- | --- | --- |
+| REQUEST_DICE_NAMES | dice_names | Request all the dice names |
+| RECEIVE_DICE_NAMES | dice_names |Add individual dice objects to store |
+| SHOW_ERROR | | Display an error |
 
 ## API (Client - Server)
 
 | Method | Endpoint | Protected | Usage | Response |
 | --- | --- | --- | --- | --- |
-| Post | /api/auth/login | Yes | Log In a User | The Users JWT Token |
-| Post | /api/auth/register | Yes | Register a User | The Users JWT Token |
-| Get | /api/dice | Yes | ? | ? |
+| POST | /api/auth/login | Yes | Log In a User | The Users JWT Token |
+| POST | /api/auth/register | Yes | Register a User | The Users JWT Token |
+| GET | /api/diceoptions | Yes | Request all dices and all options for each dice | An object containing an array of dice option objects |
+| GET | /api/diceoptions | Yes | Add a new dice object | Send back id of the new dice |
+| GET | /api/dicenames | YES | Request all dice names | Send back an array of dice objects |
 
 
 ## DB (Server Side)
   There should be three tables for MVP
 
-### Users
+### users
   | Column Name | Data Type |
   | --- | --- |
-  | id | Integer |
+  | id | Integer(autoincrement) |
   | user_name | String |
   | first_name | String |
   | last_name | String |
-  | hash | text |
+  | hash | String |
 
-### Dice
+### dice_names
   | Column Name | Data Type |
   | --- | --- |
   | dice_id | Integer(autoincrement) |
   | dice_name | String |
   | user_id | Integer |
-  
 
-### DiceOptions
 
-  Many Users attend Many Meetings
+### dice_options
 
  | Column Name | Data Type |
  | --- | --- |
- | option_id | Integer(autoincrement) |
- | name | String |
-  | diceID | Integer |
-   | Position | Integer |
+ | id | Integer(autoincrement) |
+ | dice_option | String |
+  | position | Integer |
+   | dice_names_id | Integer |
 
  ---
- 
+
 
 ## Setup
 
