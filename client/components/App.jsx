@@ -16,7 +16,6 @@ import ResultsParent from './ResultsParent'
 import NEwEdit from './NEwEdit'
 import NewHistory from './NewHistory'
 
-
 const App = ({ auth }) => (
   <Router>
     <div className="has-text-centered">
@@ -27,8 +26,8 @@ const App = ({ auth }) => (
           <Route path="/login" component={Login} />
           <Route path="/addDice" component={AddDice} />
           <Route path="/register" component={Register} />
-          <Route path="/howto" component={HowTo} />
           <Route path="/history" component={NewHistory} />
+          <Route path="/howto" component={(props) => <HowTo showHeader={true} {...props} />} />
           <Route exact path="/alldice" component={AllDice} />
           <Route exact path="/alldice/:id" component={SpecificDice} />
           <Route path="/results" component={Results} />

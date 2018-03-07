@@ -4,7 +4,6 @@ import { getDiceHistory } from '../actions/diceHistory'
 import { getDiceOutcomes } from '../actions/diceOutcomes'
 import { getDiceNames } from '../actions/diceNames'
 import { getUsers } from '../actions/users'
-
 import Header from './Header'
 
 class NewHistory extends React.Component {
@@ -27,7 +26,7 @@ class NewHistory extends React.Component {
     this.setState({
       userInput: newUserInput
     })
-    
+
   };
 
   render() {
@@ -60,53 +59,52 @@ class NewHistory extends React.Component {
     console.log({ historyRollOptionResultIDs })
 
 
-    
+
 
 
     return (
       <div>
-        <p>Hello World!</p>
-        <div class="timeline">
-          <header class="timeline-header">
-            <span class="tag is-medium is-primary">Start</span>
-          </header>
-        {arrayOfRolls.map((roll) => {
-          return <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <p class="heading">{roll.dice_name}</p>
-            <p>{roll.outcome}</p>
-            <p>{roll.roll_score}</p>
-            <p>{roll.rolled_on}</p>
-            {/* {this.state.userInput.map((input, i) => <p>input</p>)}
-            <input type="text" onChange={this.handleUserInput.bind(this)} placeholder="Did you commit the dice's suggestion?"/> */}
-          </div>
-        </div>
-          
-        })}
-            <div class="timeline-header">
-              <span class="tag is-medium is-primary">End</span>
+        <Header />
+        <div className="spacing">
+          <div className="timeline is-centered">
+            <header className="timeline-header">
+              <span className="tag is-large is-danger">Latest dices</span>
+            </header>
+            {arrayOfRolls.slice(0).reverse().map((roll) => {
+              return <div className="timeline-item">
+                <div className="timeline-marker is-danger"></div>
+                <div className="timeline-content">
+                  <p className="title is-5" id="makewhite">{roll.dice_name}</p>
+                  <p className="title is-4" id="makepink">{roll.outcome}</p>
+                  <p>You rolled {roll.roll_score}</p>
+                  <p>on {new Date(roll.rolled_on).toDateString()}</p>
+                </div>
+              </div>
+
+            })}
+            <div className="timeline-header">
+              <span className="tag is-large is-danger">Older dices</span>
             </div>
           </div>
-
-
         </div>
-        )
-      }
-    
-    }
-    
-    
-const mapStateToProps = (state)=> {
-          console.log(state)
+
+
+      </div>
+    )
+  }
+
+}
+
+
+const mapStateToProps = (state) => {
   return {
-          names: state.diceNames,
-        diceID: state.diceID,
-        outcomes: state.diceOutcomes,
-        userID: state.userID,
-        diceHistory: state.diceHistory,
-        auth: state.auth
-      }
-    }
-    
+    names: state.diceNames,
+    diceID: state.diceID,
+    outcomes: state.diceOutcomes,
+    userID: state.userID,
+    diceHistory: state.diceHistory,
+    auth: state.auth
+  }
+}
+
 export default connect(mapStateToProps)(NewHistory)

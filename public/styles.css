@@ -6,6 +6,10 @@ h1, h2, p, a {
     color:white;
 }
 
+#makepink {
+    color: rgb(252, 215, 221);
+}
+
 #bgimg {
  background-color: #393939;
 }
@@ -14,24 +18,54 @@ h1, h2, p, a {
     background-color: #D37984;
    }
 
+#diceRed {
+    background-color: rgb(167, 17, 6)
+    }
+
+.diceImg {
+    padding-top:22em;
+    width:250px;
+    height:auto;
+    margin: 0 auto
+}
+
+
+
 #heroimg {
 
-    background-image: url("./images/sihouette.svg") ;
+    background-image: url("./images/diceLifeText.svg") ;
     background-color: #393939;
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
+  background-position: 0px -70vh;
+
   background-size: cover;
-   /* width: 150% !important;  */
+
+}
+
+@media (max-width: 900px) {
+    #heroimg {
+        background-position-x: center;
+        background-position-y: -20vh;
+
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 900px) {
+    #heroimg {
+        background-position-x: center;
+        background-position-y: -40vh;
+
+    }
 }
 
 #headerimg {
 
-    background-image: url("./images/sihouette.svg") ;
+    background-image: url("./images/dicelife-xsm.svg") ;
     background-color: #393939;
   background-repeat: no-repeat;
-  /* background-position: center;
-  background-size: cover; */
-  height:200% !important;
+  background-size:cover;
+  height: 300% !important;
 
 
 }
@@ -46,16 +80,31 @@ h1, h2, p, a {
 }
 
 .hero-head, .hero-foot {
-    height: 15vh;
+    height: 22vh;
+}
+
+.page-head {
+    height: 12vh;
 }
 
 .hero-bod {
     height: 70vh;
 }
 
-#homebuttons {
-    height: 15vh;
+#login {
+    padding-top: 50em;
 }
+
+#homebuttons {
+    height: 10vh;
+
+}
+
+.HomeButtons {
+    padding-top: 10em
+}
+
+
 
 #makeblack {
     color:black;
@@ -69,12 +118,16 @@ h1, h2, p, a {
     padding-bottom: 3em;
 }
 
+#allDice{
+    padding-top:3em
+}
+
 .greybg {
     background-color: #393939;
 }
 
 .specificDiceTitle {
-    padding-top: 15vh;
+    padding-top: 8vh;
 }
 .animations{
     padding-top: 20vh;
@@ -90,12 +143,11 @@ a.create:hover {
   color: #FFF;
   font-weight: bold;
   padding: .5rem 1rem;
-  background-color: #292929;
 }
 
 /* Move create dice link off bottom of page */
-div.alldice, div.animations {
-  margin-bottom: 2em;
+div.alldice, div.animations, div.addDice {
+ margin: 7em
 }
 
 /* Text on if 7 roll again screen */
@@ -144,8 +196,38 @@ div.dice_images img {
 }
 
 #howto-overlay {
-   
-background-color: #393939af;
-   
+
+background-color: #393939d3;
+
 }
 
+/* #rolldicebuttonstyling {
+    margin-bottom: 1em;
+    background-color: #393939d3;
+    padding-top:5em
+} */
+
+.hero-body.lessbottompadding {
+    padding-bottom: 1em !important;
+}
+#rotatingWord {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+
+div#rolldicebuttonstyling, .delete-button , div.specificDiceFooter, div.action-buttons{
+  margin-bottom: 1em;
+}
+
+/* div#rolldicebuttonstyling {
+  font-size: 1.8rem;
+  font-family: 'Gloria Hallelujah', cursive;
+  background-color: #a71106;
+  font-weight: bold;
+  text-shadow: 2px 2px #111;
+} */
+
+.spacing {
+    margin: 80px;
+    padding: auto;
+}
