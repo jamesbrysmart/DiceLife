@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function OKButton (props) {
   return (
     <div className= "OKButton">
-    <div className= 'button is-primary'>
+    <div className= 'button is-primary' id='diceRed'>
     <Link to='/AllDice' onClick ={props.toggleHowTo}> OK! </Link>
     </div>
     </div>

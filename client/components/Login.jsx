@@ -31,7 +31,7 @@ class Login extends React.Component {
         <section className="hero is-dark is-fullheight" id="heroimg">
           <div className="hero-body">
             <div className="container">
-            <div className="login">
+            <div className="login"id = "howto-overlay">
               <form className="form " onSubmit={this.submit}>
                 <h1 className="title is-2" id="makewhite">Login</h1>
                 <hr />

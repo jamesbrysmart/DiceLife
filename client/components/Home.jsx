@@ -50,7 +50,9 @@ class Home extends React.Component {
                                         <div className="columns">
 
                                             <span className="column is-3"> </span>
-                                            
+                                            <div className='diceImg'>
+                                                <img src='/images/dice-25637_640.png'/>
+                                            </div>
 
 
                                             <span className="column is-3"> </span>
