@@ -6,6 +6,7 @@ import {getDiceNames} from '../actions/diceNames'
 import Header from './Header'
 import {getUsers} from '../actions/users'
 import {addUserID} from '../actions/userID'
+import { getDiceHistory } from '../actions/diceHistory'
 
 class AllDice extends React.Component {
   constructor(props){
@@ -27,12 +28,18 @@ class AllDice extends React.Component {
     this.props.dispatch(getDiceOutcomes())
     this.props.dispatch(getDiceNames())
     this.props.dispatch(getUsers())
+
+    this.props.dispatch(getDiceHistory())
+  }
+  componentDidMount(){
+
     this.props.dispatch(addUserID(this.findUserId()))
 
   }
 
   render() {
     const specificDice = this.props.diceNames
+
 
     const diceOutcomes = this.props
 
@@ -44,6 +51,7 @@ class AllDice extends React.Component {
         return dice
       }
     })
+
     return (
 
       <div>

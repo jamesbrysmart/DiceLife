@@ -1,8 +1,8 @@
 
-export default function userID(state=[], action) { 
+export default function userID(state=null, action) { 
     switch (action.type) {
       case 'ADD_USER_ID':
-      return action.id 
+        return action.id 
       default:
         return state
     }
