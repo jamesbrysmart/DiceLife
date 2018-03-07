@@ -30,6 +30,13 @@ function addNewDiceOptions(result, data, testDb) {
             {'dice_option': data.body.dice_option_5,'position': data.body.position_5, 'dice_names_id': result[0]}])
 }
 
+function inactiveDice(id, testDb) {
+  const db = testDb || connection
+  return db('dice_names')
+  .where('id', id)
+  .update({'active': false})
+}
+
 function getUsers (testDb) {
   const db = testDb || connection
   return db('users')
@@ -56,5 +63,6 @@ module.exports = {
   connection,
   getUsers,
   getDiceHistory,
-  addNewRoll
+  addNewRoll,
+  inactiveDice
 }

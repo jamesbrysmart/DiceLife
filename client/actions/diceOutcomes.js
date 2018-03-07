@@ -53,7 +53,7 @@ export function addNewDice (dice) {
   return (dispatch) => {
     request('post', 'diceOptions', dice)
 
-      .then(res => dispatch(addDiceOutcome(res.body)))
+      .then(res => dispatch(addDiceOutcome(dice)))
       .catch(err => console.log({err}))
   }
 }

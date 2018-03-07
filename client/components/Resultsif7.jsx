@@ -11,7 +11,7 @@ class ResultsIf7 extends React.Component {
     this.rollTheDice = this.rollTheDice.bind(this)
     this.runFunctions = this.runFunctions.bind(this)
   }
-  
+
   runFunctions(){
     this.rollTheDice()
     this.props.resetState()
@@ -32,10 +32,8 @@ class ResultsIf7 extends React.Component {
   render(){
     return (
       <div className = 'roll_again'>
-      <p> You rolled a 7! Time to roll again! </p>
-      <div className='button is-danger'>
-      <button onClick={this.runFunctions}>Roll The Dice</button>
-    </div>
+        <p> You rolled a 7! Time to roll again! </p>
+        <p className='button is-danger' onClick={this.runFunctions}>Roll The Dice</p>
       </div>
     )
   }

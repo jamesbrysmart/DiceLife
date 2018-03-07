@@ -8,6 +8,8 @@ import diceID from './diceID'
 import users from './users'
 import userID from './userID'
 import diceHistory from './diceHistory'
+import HeaderIsMount from './mountHeader'
+
 
 export default combineReducers({
   auth,
@@ -17,5 +19,6 @@ export default combineReducers({
   diceID,
   users,
   userID,
-  diceHistory
+  diceHistory,
+  HeaderIsMount
 })

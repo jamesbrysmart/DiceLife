@@ -1,5 +1,6 @@
 import React from 'react'
-import Nav from './Nav'
+import setHeaderToMounted from '../actions/header' 
+import {connect} from 'react-redux'
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class Header extends React.Component {
   }
   componentWillMount() {
     this.timer()
-  }
+    }
+
   timer() {
     this.interval = setInterval(this.printTime, 1500)
   }
@@ -35,6 +37,7 @@ class Header extends React.Component {
   componentWillUnmount(){
     clearInterval(this.interval)
   }
+
   render() {
     return (
       <div className="is-bold">
@@ -47,9 +50,6 @@ class Header extends React.Component {
               <h2 className="subtitle is-3  has-text-centered">
         <p> Eat,play...<p id="changingWord">Karaoke</p></p>
         </h2>
-        <h4 className="title is-4">
-           <Nav />
-            </h4>
             </div>
           </div>
         </section>
@@ -59,6 +59,11 @@ class Header extends React.Component {
     )
   }
 }
+function mapStateToProps(state) {
+  return state
+}
 
-export default Header
+export default connect(mapStateToProps)(Header)
+
+
 

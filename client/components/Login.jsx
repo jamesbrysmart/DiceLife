@@ -28,12 +28,12 @@ class Login extends React.Component {
     const {auth} = this.props
     return (
       <div>
-       
 
 
 
 
-       <section className="hero is-dark is-fullheight" id="heroimg">
+
+       <section className="hero is-dark is-fullheight">
        <div className="hero-body">
        <div className="container">
       <form className="form "   onSubmit={this.submit}>
@@ -56,7 +56,7 @@ class Login extends React.Component {
 
 
 
-      
+
       </div>
     )
   }
