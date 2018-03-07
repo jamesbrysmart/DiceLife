@@ -203,25 +203,31 @@ background-color: #393939d3;
 
 }
 
-#rolldicebuttonstyling {
+/* #rolldicebuttonstyling {
     margin-bottom: 1em;
-
     background-color: #393939d3;
     padding-top:5em
-}
+} */
 
 .hero-body.lessbottompadding {
     padding-bottom: 1em !important;
 }
 #rotatingWord {
     font-family: 'Gloria Hallelujah', cursive;
-
 }
 
 
 div#rolldicebuttonstyling, .delete-button , div.specificDiceFooter, div.action-buttons{
   margin-bottom: 1em;
 }
+
+/* div#rolldicebuttonstyling {
+  font-size: 1.8rem;
+  font-family: 'Gloria Hallelujah', cursive;
+  background-color: #a71106;
+  font-weight: bold;
+  text-shadow: 2px 2px #111;
+} */
 
 .spacing {
     margin: 80px;
