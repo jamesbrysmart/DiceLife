@@ -59,11 +59,11 @@ class AllDice extends React.Component {
     <div className="alldice">
 
       <h2 className="title is-3" id="makewhite">Select a dice</h2>
-      <div className="columns is-multiline column is-6 is-narrow is-offset-3">
+      <div id='allDice' className="columns is-multiline column is-6 is-narrow is-offset-3">
       {userDice.map((dice, i) => {
         return <div className="column is-3" key={i}>
           <p id="alldicepadding"><Link to={`/alldice/${dice.id}`}>
-          {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p>{dice.dice_name}</p></Link></p>
+          {<img src="/images/dice_placeholder.png" alt="Dice image"/>}<p style={{fontSize:20}}>{dice.dice_name}</p></Link></p>
 
         </div>
       })}

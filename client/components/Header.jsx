@@ -11,7 +11,7 @@ class Header extends React.Component {
 
   render() {
     return (
-        <section className="hero is-danger" id='diceRed' >
+        <section className="hero is-danger" id='headerimg' >
           <div className="hero-head">
             <Nav />
             
