@@ -8,15 +8,16 @@ class HowTo extends React.Component {
 
   render() {
     return (
-      <div className="HowTo" id="howto-overlay">
+      <div className="HowTo" >
         < br />
         <div className="columns">
           <span className="column is-3"></span>
           <div className="column is-6">
-            <h2 className="title is-2" id="makewhite">
+            
+              <div className="box" id="howto-overlay"  >
+              <h2 className="title is-2" id="makewhite">
               How To Play:
             </h2>
-              <div className="box" id="howtoboxcolor"  >
                 <div class="content" id="makewhite">
                   
                 <p> Rule number 1: You must obey the will of the Dice </p> 
