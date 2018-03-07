@@ -20,7 +20,7 @@ class HowTo extends React.Component {
               <h2 className="title is-2" id="makewhite">
               How To Play:
             </h2>
-                <div class="content" id="makewhite">
+                <div className="content" id="makewhite">
                   
                 <p> Rule number 1: You must obey the will of the Dice </p> 
                 <p>  ◙ In fermentum leo eu lectus mollis, quis dictum mi aliquet. </p>
