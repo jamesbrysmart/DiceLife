@@ -14,14 +14,36 @@ h1, h2, p, a {
     background-color: #D37984;
    }
 
+#diceRed {
+    background-color: rgb(167, 17, 6)
+    }
+
 #heroimg {
 
-    background-image: url("./images/sihouette.svg") ;
+    background-image: url("./images/diceLifeText.svg") ;
     background-color: #393939;
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
+  background-position: 0px -70vh;
+
   background-size: cover;
-   /* width: 150% !important;  */
+
+}
+
+@media (max-width: 900px) {
+    #heroimg {
+        background-position-x: center;
+        background-position-y: -20vh;
+
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 900px) {
+    #heroimg {
+        background-position-x: center;
+        background-position-y: -40vh;
+
+    }
 }
 
 #headerimg {
@@ -29,8 +51,6 @@ h1, h2, p, a {
     background-image: url("./images/sihouette.svg") ;
     background-color: #393939;
   background-repeat: no-repeat;
-  /* background-position: center;
-  background-size: cover; */
   height:200% !important;
 
 
@@ -53,6 +73,10 @@ h1, h2, p, a {
     height: 70vh;
 }
 
+#login {
+    padding-top: 50em;
+}
+
 #homebuttons {
     height: 15vh;
 }
@@ -68,6 +92,8 @@ h1, h2, p, a {
 #alldicepadding {
     padding-bottom: 3em;
 }
+
+
 
 .greybg {
     background-color: #393939;
@@ -94,8 +120,9 @@ a.create:hover {
 }
 
 /* Move create dice link off bottom of page */
-div.alldice, div.animations {
-  margin-bottom: 2em;
+div.alldice, div.animations, div.addDice {
+ margin: 7em   
+
 }
 
 /* Text on if 7 roll again screen */
@@ -156,3 +183,7 @@ background-color: #393939af;
 .hero-body.lessbottompadding {
     padding-bottom: 1em !important; 
 }
+#rotatingWord {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
