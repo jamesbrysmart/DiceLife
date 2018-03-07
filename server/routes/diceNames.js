@@ -16,5 +16,16 @@ router.get('/', decode, (req, res) => {
     })
 })
 
+router.put('/:id', decode, (req, res) => {
+  db.inactiveDice(req.params.id)
+    .then(result => {
+      res.json({result})
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).send('DATABASE_ERROR: ' + err.message)
+    })
+  })
+
 
 module.exports = router

@@ -1,5 +1,5 @@
 import request from '../utils/api'
-
+import { isError } from 'util';
 
 function requestDiceNames() {
   return {
@@ -14,12 +14,27 @@ function receiveDiceNames(names) {
   }
 }
 
+export function addDiceName(name) {
+  return {
+    type: 'ADD_DICE_NAME',
+    name
+  }
+}
+
+function removeDiceName(id) {
+  return {
+    type: 'REMOVE_DICE_NAME',
+    id
+  }
+}
+
 function showError(errorMessage) {
   return {
     type:'SHOW_ERROR',
     errorMessage
   }
 }
+
 
 
 // Sends a request to server for the names of dice
@@ -32,6 +47,19 @@ export function getDiceNames() {
     })
     .catch(err => {
       dispatch(showError(err.message))
+    })
+  }
+}
+
+export function inactiveDice(id) {
+  return function(dispatch) {
+    request('put', 'diceNames/'+ id)
+    .then(res => {
+      dispatch(removeDiceName(id))
+    })
+      .catch(err => {
+        console.log(err)
+        dispatch(showError(err.message))
     })
   }
 }
