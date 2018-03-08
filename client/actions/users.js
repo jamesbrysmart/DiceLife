@@ -1,12 +1,12 @@
 import request from '../utils/api'
 
-function requestUsers() {
+export function requestUsers() {
     return {
       type: 'REQUEST_USERS'
     }
   }
   
-  function receiveUsers(users) {
+ export function receiveUsers(users) {
     return {
       type:'RECEIVE_USERS',
       users

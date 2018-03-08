@@ -1,26 +1,26 @@
 import request from '../utils/api'
 
-function requestDiceHistory() {
+export function requestDiceHistory() {
     return {
       type: 'REQUEST_DICE_HISTORY',
     }
 }
   
-function receiveDiceHistory(history) {
+export function receiveDiceHistory(history) {
 return {
     type:'RECEIVE_DICE_HISTORY',
     history
     }
 }
 
-function addDiceHistory(newRoll) {
+export function addDiceHistory(newRoll) {
     return {
       type:'ADD_DICE_HISTORY',
       newRoll
     }
 }
 
-function showError(errorMessage) {
+export function showError(errorMessage) {
     return {
       type:'SHOW_ERROR',
       errorMessage

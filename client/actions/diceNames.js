@@ -1,13 +1,13 @@
 import request from '../utils/api'
 import { isError } from 'util';
 
-function requestDiceNames() {
+export function requestDiceNames() {
   return {
     type: 'REQUEST_DICE_NAMES'
   }
 }
 
-function receiveDiceNames(names) {
+export function receiveDiceNames(names) {
   return {
     type: 'RECEIVE_DICE_NAMES',
     names
@@ -21,14 +21,14 @@ export function addDiceName(name) {
   }
 }
 
-function removeDiceName(id) {
+export function removeDiceName(id) {
   return {
     type: 'REMOVE_DICE_NAME',
     id
   }
 }
 
-function showError(errorMessage) {
+export function showError(errorMessage) {
   return {
     type:'SHOW_ERROR',
     errorMessage

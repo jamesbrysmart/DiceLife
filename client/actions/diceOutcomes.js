@@ -1,19 +1,19 @@
 import request from '../utils/api'
 
-function requestDiceOutcomes() {
+export function requestDiceOutcomes() {
   return {
     type: 'REQUEST_DICE_OUTCOME',
   }
 }
 
-function receiveDiceOutcomes(outcomes) {
+export function receiveDiceOutcomes(outcomes) {
   return {
     type:'RECEIVE_DICE_OUTCOME',
     outcomes
   }
 }
 
-function addDiceOutcome(outcome) {
+export function addDiceOutcome(outcome) {
 
   return {
     type:'ADD_DICE_OUTCOME',
@@ -21,7 +21,7 @@ function addDiceOutcome(outcome) {
   }
 }
 
-function editDiceOutcome(oldDice, newDice) {
+export function editDiceOutcome(oldDice, newDice) {
   return {
     type:'EDIT_DICE_OUTCOME',
     oldDice,
@@ -29,7 +29,7 @@ function editDiceOutcome(oldDice, newDice) {
   }
 }
 
-function showError(errorMessage) {
+export function showError(errorMessage) {
   return {
     type:'SHOW_ERROR',
     errorMessage
