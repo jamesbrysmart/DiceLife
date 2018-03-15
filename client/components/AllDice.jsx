@@ -69,7 +69,7 @@ class AllDice extends React.Component {
       })}
       </div>
       <div className='button is-danger'>
-        <Link to="/create" className="create">Create your own dice</Link>
+        <Link to="/create" className="create">Create your own die</Link>
       </div>
     </div>
     </div>
