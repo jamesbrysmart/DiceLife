@@ -1,12 +1,12 @@
 {
   "name": "boilerplate-react-webpack",
   "version": "0.1.1",
-  "description": "A webpack React starter",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "description": "A dice roll app to help take risks",
+  "repository": "https://github.com/jamesbrysmart/DiceLife.git",
   "main": "server/index.js",
   "scripts": {
     "postinstall": "webpack",
-    "dev": "nodemon --watch server server/index & webpack --watch",
+    "dev": " node server server/index & webpack --watch",
     "start": "node server/index",
     "test": "jest --watchAll",
     "watch": "nodemon -e js,jsx -x npm test",
@@ -28,7 +28,7 @@
     ]
   },
   "author": "EDA",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "enzyme": "^2.8.2",
     "enzyme-adapter-react-16": "^1.1.1",

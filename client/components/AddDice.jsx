@@ -10,7 +10,7 @@ class AddDice extends React.Component {
     super(props)
     this.state = {
       dice_name: '',
-      user_id: this.props.userID,
+      user_id: this.props.auth.user.id,
       dice_option_1: '',
       position_1: 1,
       dice_option_2: '',
@@ -34,9 +34,7 @@ class AddDice extends React.Component {
     this.props.dispatch(addNewDice(this.state))
     this.props.dispatch(addDiceName(this.state.dice_name))
   }
-
-  componentWillMount() {
-  }
+ 
 
   render() {
     return (
