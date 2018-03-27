@@ -13,16 +13,16 @@ class AllDice extends React.Component {
   super(props)
   this.state = { 
   }
-  this.findUserId = this.findUserId.bind(this)
+  // this.findUserId = this.findUserId.bind(this)
 
   }
 
-  findUserId() {
-    let activeUser = this.props.auth.user.user_name
-    let usersArray = this.props.users.users
-    let currentUser = usersArray.find(user => user.user_name == activeUser)
-    return currentUser.id
-  }
+  // findUserId() {
+  //   let activeUser = this.props.auth.user.user_name
+  //   let usersArray = this.props.users.users
+  //   let currentUser = usersArray.find(user => user.user_name == activeUser)
+  //   return currentUser.id
+  // }
 
   componentWillMount() {
     this.props.dispatch(getDiceOutcomes())
@@ -33,7 +33,7 @@ class AllDice extends React.Component {
   }
   componentDidMount(){
 
-    this.props.dispatch(addUserID(this.findUserId()))
+    // this.props.dispatch(addUserID(this.findUserId()))
 
   }
 
@@ -41,13 +41,13 @@ class AllDice extends React.Component {
     const specificDice = this.props.diceNames
 
 
-    const diceOutcomes = this.props
+    // const diceOutcomes = this.props
 
     const activeDice = specificDice.filter((dice)=>{
       return dice.active == 1
     })
     const userDice = activeDice.filter((dice)=> {
-      if(dice.user_id == this.findUserId() || dice.user_id == null) {
+      if(dice.user_id == this.props.auth.user.id || dice.user_id == null) {
         return dice
       }
     })
